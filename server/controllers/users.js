@@ -47,7 +47,7 @@ exports.addUser = async (req, res) => {
 //delet user by id
 exports.removeUser = async (req, res) => {
   try {
-    const id = req.body;
+    const { id } = req.body;
     const result = await User.findByIdAndDelete(id);
     res.send("done");
   } catch (err) {

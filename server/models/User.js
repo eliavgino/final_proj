@@ -37,8 +37,8 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.generateUserJWT = function () {
   const token = jwt.sign(
-    { _id: this._id, role: this.role, user_Name: this.user_Name },
-    "whats app im doing generate now for the sign up"
+    { _id: this._id, role: this.role, name: this.user_Name },
+    process.env.USER_TOKEN
   );
   return token;
 };

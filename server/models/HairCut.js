@@ -10,11 +10,11 @@ const HairCutschema = new mongoose.Schema({
   },
   barber: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Baraber",
+    ref: "Barber",
   },
   date: {
     type: Date,
-    required: true,
+    default: Date(Date.now()),
   },
   hairCut: {
     type: mongoose.Schema.Types.ObjectId,
@@ -22,19 +22,18 @@ const HairCutschema = new mongoose.Schema({
   },
   active: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 });
 
 const HairCut = new mongoose.model("HairCut", HairCutschema);
 function validateHairCut(haircut) {
   const schema = {
-    client_Name: Joi.string().required(),
-    barber_name: Joi.string().required(),
-    date: Joi.date().required(),
+    user: Joi.required(),
+    barber: Joi.required(),
+    hairCut: Joi.required(),
   };
-  return Joi.validateHairCut(haircut, schema);
+  return Joi.validate(haircut, schema);
 }
 
-module.exports = validateHairCut;
-module.exports = HairCut;
+module.exports = { HairCut, validateHairCut };

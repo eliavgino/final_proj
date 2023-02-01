@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { unique } = require("joi/lib/types/array");
-const { ref, string, date, number } = require("joi");
 
-const ExpensesSchema = new mongoose.Schema({
+const schema = new mongoose.Schema({
   product: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Product",
@@ -24,13 +22,16 @@ const ExpensesSchema = new mongoose.Schema({
   },
 });
 
-const Expenses = new mongoose.model("Expenses", ExpensesSchema);
+const Expenses = new mongoose.model("Expenses", schema);
+
 function validateExpenses(expenses) {
   const schema = {
+    product: Joi.string(),
+    date_month: Joi.number(),
+    date_year: Joi.number(),
     amount: Joi.number().required(),
   };
-  return Joi.validateExpenses(expenses, schema);
+  return Joi.validate(expenses, schema);
 }
 
-module.exports = validateExpenses;
-module.exports = Expenses;
+module.exports = { Expenses, validateExpenses };

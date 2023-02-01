@@ -5,6 +5,11 @@ const morgan = require("morgan");
 const cors = require("cors");
 const connectDb = require("./config/db");
 const user = require("./routes/user");
+const barber = require("./routes/barBer");
+const photo = require("./routes/photo");
+const haircut = require("./routes/hairCut");
+const expenses = require("./routes/expense");
+const product = require("./routes/product");
 
 dotenv.config();
 connectDb();
@@ -12,6 +17,11 @@ connectDb();
 app.use(cors());
 app.use(express.json());
 app.use(process.env.USER_URL, user);
+app.use(process.env.BARBER_URL, barber);
+app.use(process.env.photo_URL, photo);
+app.use(process.env.haircut_URL, haircut);
+app.use(process.env.EXPENSES_URL, expenses);
+app.use(process.env.PRODUCT_URL, product);
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3030;
 app.listen(port, () => console.log(`active on ${port}`));

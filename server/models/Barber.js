@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { unique } = require("joi/lib/types/array");
 const jwt = require("jsonwebtoken");
-const { ref, string, date, number, array } = require("joi");
 const { Numbers } = require("@mui/icons-material");
 
 const BarberSchema = new mongoose.Schema({
@@ -37,33 +35,37 @@ const BarberSchema = new mongoose.Schema({
   comments: {
     type: [
       {
-        id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         body: String,
       },
     ],
   },
-  photos: {
-    type: [{ photo: { type: Buffer }, id: { type: Number, unique: true } }],
-  },
 });
 
-BarberSchema.methods.generateJWT = function () {
+BarberSchema.methods.generatebarberJWT = function () {
   const token = jwt.sign(
-    { _id: this._id, role: this.role },
-    "whats app im doing jenerat now for the sign up"
+    { _id: this._id, role: this.role, name: this.barber_Name },
+    process.env.USER_TOKEN
   );
   return token;
 };
 const Barber = new mongoose.model("Barber", BarberSchema);
-function validateClient(barber) {
+function validateBarber(barber) {
   const schema = {
     barber_Name: Joi.string().min(2).max(50).required(),
-    email: Joi.email().min(4).max(255).required(),
+    email: Joi.string().email().min(4).max(255).required(),
     password: Joi.string().min(5).max(255).required(),
     phoneNumber: Joi.string().min(13).max(13).required(),
   };
   return Joi.validate(barber, schema);
 }
+function validateComment(comment) {
+  const schema = {
+    id: Joi.required(),
+    user_id: Joi.required(),
+    body: Joi.string().min(1).required(),
+  };
+  return Joi.validate(comment, schema);
+}
 
-module.exports = validateClient;
-module.exports = Barber;
+module.exports = { validateBarber, Barber, validateComment };
