@@ -1,4 +1,4 @@
-const { Photo } = require("../models/Photo");
+const Photo = require("../models/Photo");
 
 //get all Photos
 exports.getPhoto = async (req, res) => {
@@ -25,10 +25,13 @@ exports.getPhotoById = async (req, res) => {
 //add new Photo
 exports.addPhoto = async (req, res) => {
   try {
-    const body = req.body;
+    // const body = req.body;
 
     //create the photo
-    const photo = new Photo(body);
+    let photo = await new Photo({
+      barber: req.body.barber,
+      photo: req.body.photo,
+    });
 
     //save the Photo and send
     photo = await photo.save();
