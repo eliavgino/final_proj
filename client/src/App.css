@@ -31,7 +31,11 @@
   font-family: myFirstFont;
   src: url(../public/fonts/JosefinSans-VariableFont_wght.ttf);
   font-family: mySecondFont;
-  src:url(../public/fonts/Shrikhand-Regular.ttf)
+  src:url(../public/fonts/Shrikhand-Regular.ttf);
+}
+@font-face {
+  font-family: ThirdFont;
+  src: url(../public/fonts/DancingScript-Medium.ttf);
 }
 .mainBodyHome{
 
@@ -121,7 +125,7 @@ body{
 }
 .navBarName{
 
-  font-family: mySecondFont;
+  font-family: ThirdFont;
   position: absolute;
   margin: 0;
   color:rgb(240, 255, 219);
@@ -154,7 +158,6 @@ body{
   transition:linear 0.1s;
 
 }
-
 /* /////////////aboutUs */
 .aboutUsContainer{
 
@@ -277,20 +280,24 @@ left:7.5vw;
 /* /////////profile */
 .profileContainer{
 
-right: -50vw;
-position: fixed;
+  right: -50vw;
+  position: fixed;
+  background-color:#F5F5F5;
+  border: #00000079 solid 0.1vw;
+  height: 80vh;
+  margin-top: 10vh;
 
-}
-.slideIn{
-
-  animation: profileSlideIn 0.8s forwards;
-
-}
-.slideOut{
-
-  animation: profileSlideOut 0.8s forwards;
-
-}
+  }
+  .slideIn{
+  
+    animation: profileSlideIn 0.8s forwards;
+  
+  }
+  .slideOut{
+  
+    animation: profileSlideOut 0.8s forwards;
+  
+  }
 @keyframes profileSlideIn {
   
   100%{
