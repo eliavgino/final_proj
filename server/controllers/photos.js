@@ -30,6 +30,7 @@ exports.addPhoto = async (req, res) => {
     let photo = await new Photo({
       barber: req.body.barber,
       photo: req.body.photo,
+      description: req.body.description,
     });
 
     //save the Photo and send

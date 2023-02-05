@@ -19,7 +19,8 @@ root.render(
           {/* <AddPhotos /> */}
           {/* <App /> */}
           <BarberProfile />
-          <OurCreativeTeam />
+          {/* <AddPhotos /> */}
+          {/* <OurCreativeTeam /> */}
         </BarberProvider>
       </PhotosProvider>
     </UserProvider>
