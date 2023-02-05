@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
-const { Numbers } = require("@mui/icons-material");
 
 const BarberSchema = new mongoose.Schema({
   barber_Name: {

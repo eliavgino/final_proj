@@ -23,5 +23,5 @@ app.use(process.env.haircut_URL, haircut);
 app.use(process.env.EXPENSES_URL, expenses);
 app.use(process.env.PRODUCT_URL, product);
 
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`active on ${port}`));

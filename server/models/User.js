@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { unique } = require("joi/lib/types/array");
 const jwt = require("jsonwebtoken");
-const { ref, string, date, number } = require("joi");
+
 
 const UserSchema = new mongoose.Schema({
   user_Name: {

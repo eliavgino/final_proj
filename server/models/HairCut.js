@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { unique } = require("joi/lib/types/array");
-const { ref, string, date, number } = require("joi");
+
+
 
 const HairCutschema = new mongoose.Schema({
   user: {
