@@ -6,18 +6,18 @@ export const BarbersContext = createContext();
 
 function BarberProvider(props) {
   const { children } = props;
-  const url = "http://localhost:4000/api/v1/barbers";
+  const url = "http://localhost:4000/api/v1/barber";
   const [barbers, setBarbers] = useState([]);
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
   const getAllBarbers = async () => {
     try {
-      const barber = await axios.get(url, {});
+      let response = await axios.get(url, {});
+      const barber = response.data;
       console.log(barber);
       //adding the barber into arry of barbers
-      setBarbers([...barbers, barber]);
-      console.log(barbers);
+      setBarbers(barber);
     } catch (error) {
       console.log(error);
       alert(error.response.data);
@@ -26,7 +26,7 @@ function BarberProvider(props) {
 
   return (
     <div>
-      <BarbersContext.Provider value={{ getAllBarbers }}>
+      <BarbersContext.Provider value={{ getAllBarbers, barbers }}>
         {children}
       </BarbersContext.Provider>
     </div>

@@ -13,14 +13,13 @@ exports.getPhoto = async (req, res) => {
 //get by id
 exports.getPhotoById = async (req, res) => {
   try {
-    const id = req.body;
-    const result = await Photo.findById(id);
+    const result = await Photo.find({ barber: req.body.barber });
+    console.log(result);
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send(err);
   }
 };
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 //add new Photo
 exports.addPhoto = async (req, res) => {
