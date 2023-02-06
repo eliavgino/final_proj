@@ -17,7 +17,8 @@ root.render(
     <UserProvider>
       <PhotosProvider>
         <BarberProvider>
-         <BarberApp/>
+          <AddPhotos /> 
+           <App />
         </BarberProvider>
       </PhotosProvider>
     </UserProvider>

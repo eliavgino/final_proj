@@ -3,7 +3,7 @@ const Photo = require("../models/Photo");
 //get all Photos
 exports.getPhoto = async (req, res) => {
   try {
-    const result = await Photo.find();
+    const result = await Photo.find().populate('barber');
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send(err);
@@ -25,11 +25,11 @@ exports.getPhotoById = async (req, res) => {
 exports.addPhoto = async (req, res) => {
   try {
     // const body = req.body;
-
     //create the photo
     let photo = await new Photo({
       barber: req.body.barber,
       photo: req.body.photo,
+      description: req.body.description,
     });
 
     //save the Photo and send

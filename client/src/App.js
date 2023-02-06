@@ -1,5 +1,4 @@
 import "./App.css";
-import "./App.css";
 import BarberApp from "./components/barberApp";
 
 function App() {
