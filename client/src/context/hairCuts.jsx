@@ -1,13 +1,17 @@
-import jwt_decode from "jwt-decode";
+
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
+import jwt_decode from 'jwt-decode';
+
 
 
 export const HairCutsContext = createContext();
 
+
 function HairCutsProvider(props) {
   const { children } = props;
- 
+  const token=localStorage.getItem('token')
+  const decoded = jwt_decode(token);
    const[pageState,setPageState]=useState("chooseHairCut")
     const [chooseTime,setChooseTime]=useState()
     const [chooseHairCut,setChooseHairCut]=useState()
@@ -83,7 +87,7 @@ function HairCutsProvider(props) {
   return (
     <div>
       <HairCutsContext.Provider
-        value={{pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice }}
+        value={{pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token }}
       >
         {children}
       </HairCutsContext.Provider>

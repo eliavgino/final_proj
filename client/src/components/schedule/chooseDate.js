@@ -21,12 +21,7 @@ const ChooseDate = () => {
       console.log(chooseTime)
     }
     console.log(activeHaircuts)
-   //  let remainingAppointments = appointments.filter(appointment => {
-   //    return !activeHaircuts.some(activeHaircut => {
-   //      return activeHaircut.date === appointment.date && activeHaircut.time === appointment.time;
-   //    });
-   //  });
-   
+
    
     return (
       <div className="appointment-list">

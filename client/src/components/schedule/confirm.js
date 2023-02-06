@@ -3,9 +3,11 @@ import { useContext,useEffect,useState } from 'react';
 import { HairCutsContext } from '../../context/hairCuts';
 
 const Confirm = () => {
-    const {chooseTime,chooseHairCut,chooseBarber}=useContext(HairCutsContext)
+    const {chooseTime,chooseHairCut,chooseBarber,decoded,token}=useContext(HairCutsContext)
+    const email = decoded.email;
+    console.log(email)
     function handleConfirm(){
-        console.log(chooseHairCut._id ,chooseTime.date,chooseTime.time,chooseBarber._id)
+        console.log(chooseHairCut._id ,chooseTime.date,chooseTime.time,chooseBarber._id ,decoded)
         
     }
     return (

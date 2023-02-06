@@ -1,0 +1,185 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+        "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #333333;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+  
+  .card {
+    width: 20%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-header {
+    background-color: rgba(34, 34, 34);
+    color: #fff;
+    padding: 7px;
+    font-size: 18px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top:1px solid #1d1d1d;
+    opacity:0.9 ;
+    
+  }
+  
+  .chat-window {
+    height: 300px;
+    overflow-y: auto;
+    scrollbar-width:thin;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    border-left:1px solid #1d1d1d;
+    border-right:1px solid #1d1d1d;
+    background-image: url("./helpers/woodBackground.avif");
+    /* opacity: 0.8; */
+    background-size: cover;
+    
+  }
+  
+  .message-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  .chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #c0bfbf;
+   
+  }
+  
+  .message-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  .input {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background: #e8e8e8;
+    transition: 0.3s;
+  }
+  
+  .input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    transition: 0.3s;
+  }
+  
+  button {
+    background: #f35f3e;
+    padding: 24px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    border-radius: 7px;
+  }
+  
+  button:hover {
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  button:hover:before {
+    margin-left: 0%;
+    transform: rotate(90deg);
+  }
+  
+  button::before {
+    content: "";
+    background-image: url("./helpers/message1.png");
+    height: 40px;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    transition: all 0.3s ease-in-out;
+    background-size: 100%;
+  }
+  
+  .selfMes {
+    background-color: rgb(139, 139, 139,0.7);
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    max-width: 70%;
+    align-self: flex-start;
+    text-align: left;
+    list-style-type: none;
+    margin-left: -15%;
+    display: flex;
+    border:2px solid #1d1d1d;
+    }
+    .selfMes img {
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+    }
+    
+    .responseMes {
+    background-color: rgb(46, 54, 54,0.5);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 10px 0;
+    max-width: 70%;
+    align-self: flex-end;
+    text-align: right;
+    list-style-type: none;
+    margin-left:30% ;
+    display: flex;
+    justify-content: flex-end;
+    border:2px solid #1d1d1d;
+    }
+    .responseMes img {
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
+    
+    }
+  .chat-image {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+    
+    
+  }
+  
+  .chat-text {
+    display: inline-block;
+    
+  }
+  
