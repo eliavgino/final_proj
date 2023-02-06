@@ -17,6 +17,7 @@ import BarberProfile from "./components/barberProfile";
 import Login from "./components/logIn";
 import SignUp from "./components/signUp";
 import HairCutsProvider from "./context/hairCuts";
+import BarberComments from "./components/BarberComments";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,9 +29,10 @@ root.render(
             <CommentProvider>
               {/* <AddPhotos /> */}
               {/* <App /> */}
-              <BarberProfile />
+              {/* <BarberProfile /> */}
               {/* <AddPhotos /> */}
               {/* <OurCreativeTeam /> */}
+              <BarberComments />
             </CommentProvider>
           </BarberProvider>
         </PhotosProvider>
