@@ -7,6 +7,7 @@ export const BarbersContext = createContext();
 function BarberProvider(props) {
   const { children } = props;
   const url = "http://localhost:4000/api/v1/barber";
+  const [barberId, setBarberId] = useState();
   const [barbers, setBarbers] = useState([]);
   const [barber, setBarber] = useState();
   const [errorMsg, setErrorMsg] = useState(null);
@@ -39,7 +40,14 @@ function BarberProvider(props) {
   return (
     <div>
       <BarbersContext.Provider
-        value={{ getAllBarbers, barbers, getbarberById, barber }}
+        value={{
+          getAllBarbers,
+          barbers,
+          getbarberById,
+          barber,
+          setBarberId,
+          barberId,
+        }}
       >
         {children}
       </BarbersContext.Provider>
