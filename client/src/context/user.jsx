@@ -7,7 +7,6 @@ export const UserContext = createContext();
 function UserProvider(props) {
   const { children } = props;
   const url = "http://localhost:4000/api/v1/user";
-  const [users, setusers] = useState([]);
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
@@ -20,9 +19,7 @@ function UserProvider(props) {
       console.log(user);
       console.log(response.headers["x-auth-token"]);
       localStorage.setItem("token", response.headers["x-auth-token"]);
-
-      //adding the user into arry of users
-      setusers([...users, user]);
+   
     } catch (error) {
       console.log(error);
       alert(error.response.data);
@@ -36,13 +33,11 @@ function UserProvider(props) {
         userObj,
         {}
       );
-      console.log("this is what i send" + userObj.password + userObj.email);
-      console.log("this is what i get as a respnonse : " + response.data);
+     
       localStorage.setItem("token", response.data);
-      console.log(localStorage.getItem("token"));
       const token = localStorage.getItem("token");
-      console.log(jwt_decode(token).user_id);
       setUsername(jwt_decode(token).name);
+      return 'success'
     } catch (error) {
       setErrorMsg(error);
       alert(error.response.data);
@@ -52,14 +47,16 @@ function UserProvider(props) {
   const getAllUsers = async () => {
     try {
       const response = await axios.get(url, {});
-      console.log(response);
-      setusers(response.data);
     } catch (error) {
       setErrorMsg(error);
       alert(error.message);
     }
   };
-
+  /////log out
+  const logOut = async () => {
+    localStorage.removeItem('token');
+    setUsername('')
+  };
   //   const resetPassword = async (userObj) => {
   //     try {
   //       if (userObj.password == userObj.newPassword) {
@@ -84,9 +81,9 @@ function UserProvider(props) {
       <UserContext.Provider
         value={{
           addNewUser,
-          users,
           authUser,
           getAllUsers,
+          logOut
           //   resetPassword,
         }}
       >

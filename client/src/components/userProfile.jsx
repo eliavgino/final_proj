@@ -1,13 +1,21 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import { Typography, Container, Avatar } from "@mui/material";
+import { Typography, Container, Avatar, Icon, AccessAlarm, ThreeDRotation } from "@mui/material";
 import { shadows } from "@mui/system";
 import UserHairCuts from "./userHaircuts";
+import { useContext } from "react";
+import { PagenationContext } from "../context/pagenation";
+import CloseIcon from '@mui/icons-material/Close';
 
 function UserProfile() {
+
+  const {animation,setAnimation}=useContext(PagenationContext);
+
   return (
 
-    <Box className='profileContainer slideOut' sx={{width:{lg:'35vw',xs:'80vw'},left:{lg:'-50vw',xs:'11vw'},top:{lg:'12vh',xs:'12vh'}}}>
+    <Box className={`profileContainer ${animation}`} sx={{width:{lg:'35vw',xs:'80vw'},left:{lg:'-50vw',xs:'11vw'},top:{lg:'12vh',xs:'12vh'}}}>
+
+      <CloseIcon onClick={()=>{setAnimation('slideOut')}} sx={{position:'absolute',zIndex:'999',right:0,margin:'0.4vw'}}/>
 
       <Box className='profileHeaderBackground'></Box>           
       <Avatar className='profileAvatar' sx={{height:{lg:'14vh',xs:'15vh'},width:{lg:'7vw',xs:'22vw'},marginLeft:{lg:'4vw',xs:'10vw'}}}>

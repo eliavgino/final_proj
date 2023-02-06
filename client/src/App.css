@@ -42,6 +42,16 @@
   width: 99.5vw;
   top: 5vh;
 }
+.signUpDisplay{
+
+
+
+}
+.logInDisplay{
+
+
+
+}
 /* ///////////siteHeader */
 .siteHeaderContainer {
   display: flex;
@@ -123,7 +133,7 @@ body {
   background-color: #757533;
   border: none;
   font-family: mySecondFont;
-  height: 85%;
+  height: 84%;
   transition: linear 0.3s;
   position: relative;
 }
@@ -275,12 +285,9 @@ body {
 }
 .profileContainer{
 
-  
-  
   position:fixed;
   height: 75vh;
   background-color: #ebebe1;
-  
   
 }
 .slideIn{
@@ -332,5 +339,12 @@ body {
   top: 1vh;
   
 
+
+}
+/* /////////log in */
+.logInContainer{
+
+  position: absolute;
+  top: 10vh;
 
 }

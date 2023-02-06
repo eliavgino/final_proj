@@ -19,9 +19,7 @@ function Stories() {
   get();
 
  }, [])
- 
-  const items=[1,2,3,4]
-  console.log(photos)
+
   return (
     <Box className="storiesContainer">
 
@@ -44,7 +42,6 @@ function Stories() {
 
               <Avatar sx={{left:{lg:'7.5vw',xs:'14vw'},width:{lg:'5vw',xs:'18vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
 
-                {console.log(photo.barber["profilePhoto"])}
                 <Image cloudName="ddwsr6uth" publicId={photo.barber["profilePhoto"]}></Image>
 
               </Avatar>

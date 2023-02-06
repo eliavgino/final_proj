@@ -97,7 +97,7 @@ export default function BarberProfileAlbum() {
           </Stack>
         </Container>
       </Box>
-      <Grid container spacing={4} xs={{ padding: "0 20px" }} justify="center">
+      <Grid container spacing={4} sx={{ padding: "0 20px" }} justify="center">
         {barberPhotos.map((photo) => (
           <Grid item key={photo._id} xs={12} sm={6} md={4}>
             {" "}

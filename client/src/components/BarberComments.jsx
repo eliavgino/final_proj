@@ -104,7 +104,17 @@ const BarberComments = () => {
             </Card>
           ))}
         </Box>
-        <Card
+      </div>
+    );
+  } else {
+    page =<h1>loading</h1>
+  ;
+  }
+  return (
+    <div>
+      {console.log(page)}
+      {page}
+      <Card
           variant="outlined"
           sx={{
             marginRight: 5,
@@ -184,15 +194,6 @@ const BarberComments = () => {
             </IconButton>
           </CardOverflow>
         </Card>
-      </div>
-    );
-  } else {
-    page = <h1>loading</h1>;
-  }
-  return (
-    <div>
-      {console.log(page)}
-      {page}
     </div>
   );
 };
