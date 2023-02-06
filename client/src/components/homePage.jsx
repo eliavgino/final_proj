@@ -27,7 +27,7 @@ function HomePage() {
         <OurCreativeTeam/>
         <Details />
       </div>
-      <UserProfile />
+      {/* <UserProfile /> */}
     </>
   );
 }

@@ -1,0 +1,16 @@
+.container{
+    height: 90%;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: auto;
+    position: relative;
+    
+}
+.selectHaircut{
+    height: 50px;
+    width: 50px;
+}

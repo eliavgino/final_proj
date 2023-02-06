@@ -21,17 +21,15 @@ const AddPhotos = () => {
       .then((res) => {
         console.log(res.data.secure_url);
         addNewphoto({
-          barber: "63e0aed64c9d283228d8e734",
+          barber: "63df7ce3dd4a0d2a523b666c",
           photo: res.data.secure_url,
           description: description,
-        })})
-        .catch(err=>{
-
-          console.log('ll')
-
-        })
-
-    };
+        });
+      })
+      .catch((err) => {
+        console.log("ll");
+      });
+  };
   return (
     <div>
       <input

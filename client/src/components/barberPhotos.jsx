@@ -1,85 +1,50 @@
-import React from "react";
-import Box from "@mui/material/Box";
-import { useState, useEffect, useContext } from "react";
+import * as React from "react";
+import { useEffect, useContext, useState } from "react";
+import { PhotosContext } from "../context/photos";
 import { BarbersContext } from "../context/barbers";
-import { Typography, Container, Avatar } from "@mui/material";
-import { shadows } from "@mui/system";
-import UserHairCuts from "./userHaircuts";
+import AppBar from "@mui/material/AppBar";
+import Button from "@mui/material/Button";
+import CameraIcon from "@mui/icons-material/PhotoCamera";
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+import Stack from "@mui/material/Stack";
+import Toolbar from "@mui/material/Toolbar";
+import Container from "@mui/material/Container";
+import AspectRatio from "@mui/joy/AspectRatio";
+import Avatar from "@mui/joy/Avatar";
+import Box from "@mui/joy/Box";
+import Card from "@mui/joy/Card";
+import CardOverflow from "@mui/joy/CardOverflow";
+import Link from "@mui/joy/Link";
+import IconButton from "@mui/joy/IconButton";
+import Typography from "@mui/joy/Typography";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import ModeCommentOutlined from "@mui/icons-material/ModeCommentOutlined";
+import SendOutlined from "@mui/icons-material/SendOutlined";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { withTheme } from "@emotion/react";
 import BarberComments from "./BarberComments";
-import BarberPhotos from "./barberPhotos";
 
-function BarberProfile() {
-  const { getbarberById, barber } = useContext(BarbersContext);
+const theme = createTheme();
 
+export default function BarberPhotos() {
+  const { barberPhotos, getPhotosByBarberId, addNewphoto } =
+    useContext(PhotosContext);
+  const { barber, barberId } = useContext(BarbersContext);
   useEffect(() => {
-    getbarberById({ _id: "63df7ce3dd4a0d2a523b666c" });
+    getPhotosByBarberId({ barber: "63df7ce3dd4a0d2a523b666c" });
+
+    console.log("barber idgdgd" + barberId);
   }, []);
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-
-        gap: "4vh",
-        width: "100vw",
-        height: "100vh",
-      }}
-    >
-      {console.log(barber)}
-      <Box className="profileHeaderBackgroundB" sx={{ bgcolor: "black" }}></Box>
-      <Avatar
-        className="profileAvatarB"
-        src={barber.profilePhoto}
-        sx={{
-          height: { lg: "14vh", xs: "15vh" },
-          width: { lg: "7vw", xs: "22vw" },
-          marginLeft: { lg: "45vw", xs: "10vw" },
-        }}
-      ></Avatar>
-
-      <Box
-        className="profileUserDetailsB"
-        component="div"
-        sx={{
-          minHeight: "20vh",
-          left: { lg: "34vw", xs: "13vw" },
-          top: { lg: "4vh", xs: "8vh" },
-          display: "flex",
-          height: "20%",
-          width: { lg: "30vw", xs: "75vw" },
-        }}
+    <>
+      <Grid
+        container
+        spacing={1}
+        xs={{ padding: "0 2%" }}
+        justify="center"
+        sx={{ marginLeft: "2", marginRight: "2" }}
       >
-        <Box
-          sx={{
-            textAlign: "center",
-            width: "33%",
-            borderRight: "0.01vw solid black",
-            height: "20%",
-          }}
-        >
-          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
-            {barber.barber_Name}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            textAlign: "center",
-            width: "33%",
-            borderRight: "0.01vw solid black",
-            height: "20%",
-          }}
-        >
-          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
-            {barber.email}
-          </Typography>
-        </Box>
-        <Box sx={{ textAlign: "center", width: "33%", height: "20%" }}>
-          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
-            {barber.phoneNumber}
-          </Typography>
-        </Box>
-      </Box>
-      <Grid container spacing={4} xs={{ padding: "0 20px" }} justify="center">
         {barberPhotos.map((photo) => (
           <Grid item key={photo._id} xs={12} sm={6} md={4}>
             {" "}
@@ -159,9 +124,6 @@ function BarberProfile() {
           </Grid>
         ))}
       </Grid>
-      <BarberComments />
-    </Box>
+    </>
   );
 }
-
-export default BarberProfile;

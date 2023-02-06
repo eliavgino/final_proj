@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Joi = require("joi");
-const { ref, string, date, number } = require("joi");
+
 
 const ProductSchema = new mongoose.Schema({
   product_name: {
