@@ -8,9 +8,12 @@ import AddPhotos from "./components/addPhotos";
 import PhotosProvider from "./context/photos";
 import BarberProvider from "./context/barbers";
 import OurCreativeTeam from "./components/ourCreativeTeam";
-import BarberProfile from "./components/barberProfile";
+import barberPhotos from "./components/barberPhotos";
 import CommentProvider from "./context/comments";
-import BarberComments from "./components/BarberComments";
+import HomePage from "./components/homePage";
+import UserHairCuts from "./components/userHaircuts";
+import NavBar from "./components/navBar";
+import BarberProfile from "./components/barberProfile";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,10 +22,13 @@ root.render(
       <PhotosProvider>
         <BarberProvider>
           <CommentProvider>
-            <AddPhotos />
+            <BarberProfile />
+
+            {/* <UserHairCuts /> */}
+            {/* <AddPhotos /> */}
             {/* <App /> */}
             {/* <OurCreativeTeam /> */}
-            <BarberProfile />
+            {/* <barberPhotos /> */}
             {/* <AddPhotos /> */}
             {/* <BarberComments /> */}
           </CommentProvider>

@@ -6,7 +6,7 @@ import SiteHeader from "./siteHeader";
 import { Box } from "@mui/system";
 import Stories from "./stories";
 import Details from "./details";
-import UserProfile from "./userProfile";
+// import UserProfile from "./userProfile";
 
 function HomePage() {
   return (
@@ -21,7 +21,7 @@ function HomePage() {
         <OurCreativeTeam />
         <Details />
       </div>
-      <UserProfile />
+      {/* <UserProfile /> */}
     </>
   );
 }

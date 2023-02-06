@@ -187,7 +187,91 @@ const BarberComments = () => {
       </div>
     );
   } else {
-    page = <h1>loading</h1>;
+    page = (
+      <>
+        <h1>loading</h1>
+        <Card
+          variant="outlined"
+          sx={{
+            marginRight: 5,
+            marginLeft: 5,
+            bgcolor: "white",
+            minWidth: 300,
+            "--Card-radius": (theme) => theme.vars.radius.xs,
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", pb: 1.5, gap: 1 }}>
+            <Box
+              sx={{
+                position: "relative",
+                "&:before": {
+                  content: '""',
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  bottom: 0,
+                  right: 0,
+                  m: "-2px",
+                  borderRadius: "50%",
+                  background:
+                    "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
+                },
+              }}
+            >
+              <Avatar
+                size="sm"
+                src="/static/logo.png"
+                sx={{
+                  p: 0.5,
+                  border: "2px solid",
+                  borderColor: "background.body",
+                }}
+              />
+            </Box>
+          </Box>
+
+          <Typography fontSize="sm">
+            write a comment about the barber
+          </Typography>
+
+          <CardOverflow sx={{ p: "var(--Card-padding)", display: "flex" }}>
+            <IconButton
+              size="sm"
+              variant="plain"
+              color="neutral"
+              sx={{ ml: -1 }}
+            >
+              <Face />
+            </IconButton>
+            <Input
+              onChange={(e) => {
+                setbody(e.target.value);
+              }}
+              variant="plain"
+              size="sm"
+              placeholder="Add a comment…"
+              sx={{ flexGrow: 1, mr: 1, "--Input-focusedThickness": "0px" }}
+            />
+            <IconButton
+              onClick={() => {
+                addCommentToBarber({
+                  id: "63df7ccbdd4a0d2a523b6669",
+                  user_id: "63d7f38260b55e1906dcbb29",
+                  body: body,
+                });
+                getCommentByBarberId({ id: "63df7ccbdd4a0d2a523b6669" });
+              }}
+              size="sm"
+              variant="plain"
+              color="neutral"
+              sx={{ ml: -1 }}
+            >
+              <SendIcon />
+            </IconButton>
+          </CardOverflow>
+        </Card>
+      </>
+    );
   }
   return (
     <div>

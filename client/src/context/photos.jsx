@@ -1,6 +1,7 @@
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
+import { convertLength } from "@mui/material/styles/cssUtils";
 
 export const PhotosContext = createContext();
 
@@ -12,8 +13,22 @@ function PhotosProvider(props) {
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
+  const getAllPhotos= async (photoObj) => {
+    try {
+    
+      const photo = (await axios.get(url)).data;
+      console.log(photo);
+      //array of all the photos
+      setphotos(photo);
+    } catch (error) {
+      console.log(error);
+      alert(error.response.data);
+    }
+  };
+
   const addNewphoto = async (photoObj) => {
     try {
+    
       const photo = await axios.post(url, photoObj, {});
       console.log(photo);
       //adding the photo into arry of photos
@@ -39,7 +54,7 @@ function PhotosProvider(props) {
   return (
     <div>
       <PhotosContext.Provider
-        value={{ addNewphoto, getPhotosByBarberId, barberPhotos, photos }}
+        value={{ addNewphoto, getPhotosByBarberId, getAllPhotos, barberPhotos, photos }}
       >
         {children}
       </PhotosContext.Provider>
