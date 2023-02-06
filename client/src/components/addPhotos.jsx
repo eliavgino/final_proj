@@ -21,12 +21,12 @@ const AddPhotos = () => {
       .then((res) => {
         console.log(res.data.secure_url);
         setimagurl(res.data.secure_url);
+        addNewphoto({
+          barber: "63df7ce3dd4a0d2a523b666c",
+          photo: res.data.secure_url,
+          description: description,
+        });
       });
-    addNewphoto({
-      barber: "63df7ce3dd4a0d2a523b666c",
-      photo: imagurl,
-      description: description,
-    });
   };
   return (
     <div>
