@@ -31,6 +31,9 @@ const BarberSchema = new mongoose.Schema({
     type: String,
     default: "barber",
   },
+  profilePhoto: {
+    type: String,
+  },
   comments: {
     type: [
       {
@@ -55,6 +58,7 @@ function validateBarber(barber) {
     email: Joi.string().email().min(4).max(255).required(),
     password: Joi.string().min(5).max(255).required(),
     phoneNumber: Joi.string().min(13).max(13).required(),
+    profilePhoto: Joi.string(),
   };
   return Joi.validate(barber, schema);
 }

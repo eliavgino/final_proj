@@ -6,17 +6,21 @@ import { useState } from 'react';
 
 const ChooseDate = () => {
     const {pageState,setPageState,appointments,chooseTime,setChooseTime}=useContext(Context)
-    const days = ["Monday", "Tuesday", "Wednesday"];
     const [buttonState,setButtonState]=useState("")
-   
-
+    //filter the optional days from the appointments array
+    const days = [];
+      for (const appointment of appointments) {
+      if (!days.includes(appointment.day)) {
+         days.push(appointment.day);
+      }
+      }
+      
     function handleClick(appointment) {
       setChooseTime(appointment);
       setButtonState(appointment.id);
-      
     }
 
-
+    
     return (
       <div className="appointment-list">
       {days.map(day => (
