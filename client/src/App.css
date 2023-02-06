@@ -54,7 +54,12 @@ html {
   font-family: myFirstFont;
   src: url(../public/fonts/JosefinSans-VariableFont_wght.ttf);
   font-family: mySecondFont;
-  src: url(../public/fonts/Shrikhand-Regular.ttf);
+  src:url(../public/fonts/Shrikhand-Regular.ttf);
+
+}
+@font-face {
+  font-family: myThirdFont;
+  src:url(../public/fonts/DancingScript-Medium.ttf);
 }
 .mainBodyHome {
   position: absolute;
@@ -121,34 +126,37 @@ body {
   display: flex;
   justify-content: end;
 }
-.navBarName {
+.navBarName{
+
   font-family: mySecondFont;
   position: absolute;
   margin: 0;
   color: rgb(240, 255, 219);
   left: 1vw;
   top: 0.2vh;
+
 }
 .navBarButtonsContainer {
   position: relative;
   display: flex;
   right: 0.5vw;
+  height: 100%;
 }
 .navBarButton {
   color: rgb(240, 255, 219);
   background-color: #757533;
   border: none;
   font-family: mySecondFont;
-  height: 100%;
+  height: 85%;
   transition: linear 0.3s;
+  position: relative;
 }
 .navBarButton:hover {
-  padding-bottom: 0.2vh;
-  padding-left: 0.2vw;
-  margin-left: 0.1vw;
-  transition: linear 0.1s;
+  bottom:0.02vw ;
+  margin-left: -0.2vw;
+  margin-right: 0.2vw;
+  transition: linear 0.3s;
 }
-
 /* /////////////aboutUs */
 .aboutUsContainer {
   height: 60vh;
@@ -209,6 +217,12 @@ body {
   bottom: 7vh;
   left: 7.5vw;
 }
+.storieImage{
+
+  position: relative;
+  width:100% ;
+
+}
 /* //////////creativeTeam */
 .creativeTeamContainer {
   height: 60vh;
@@ -244,27 +258,107 @@ body {
   text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
 }
 /* /////////profile */
-.profileContainer {
-  right: -50vw;
-  position: fixed;
+.profileAvatar{
+
+  position: relative;
+  top: 5vh;
+
 }
-.slideIn {
-  animation: profileSlideIn 0.8s forwards;
+.profileUserName{
+
+  position: relative;
+
 }
-.slideOut {
-  animation: profileSlideOut 0.8s forwards;
+.profileHeaderBackground{
+
+  width: 100%;
+  height: 14vh;
+  position: absolute;
+  background-color: #ffffff;
+  border-bottom: 0.1vw solid rgba(0, 0, 0, 0.356);
+
+}
+.profileUserDetails{
+
+  position: relative;
+  border-bottom:0.1vw solid rgba(0, 0, 0, 0.356); ;
+
+}
+.profileUserHairCuts{
+
+ position: relative;
+ border-radius: 1em;
+ background-color:rgb(247, 244, 244);
+ border: 1.5vw solid rgb(247, 244, 244);
+
+}
+.profileHairCutsContainer{
+
+  position: relative;
+
+}
+.profileContainer{
+
+  
+  
+  position:fixed;
+  height: 75vh;
+  background-color: #ebebe1;
+  
+  
+}
+.slideIn{
+
+  animation: profileSlideIn 0.5s forwards;
+
+}
+.slideOut{
+
+  animation: profileSlideOut 0.5s forwards;
+
 }
 @keyframes profileSlideIn {
-  100% {
-    right: 31vw;
+  
+  100%{
+
+    left: 34vw;
+
   }
 }
 @keyframes profileSlideOut {
-  0% {
-    right: 31vw;
-  }
-  100% {
-    right: -50vw;
-  }
-}
+  0%{
 
+    left:34vw
+
+  }
+ 
+
+}
+<<<<<<< HEAD
+
+=======
+/* ///////////userHairCuts */
+.userHairCutsContainer{
+
+  background-color: #ebebe2;
+  width: 30.5vw;
+  position: relative;
+  background: none;
+
+}
+.hairCutRow{
+
+  display: flex;
+  gap: 7.2vw;
+  background-color:rgb(247, 244, 244) ;
+  position: relative;
+  width: fit-content;
+  border: 0.3vw rgb(247, 244, 244) solid ;
+  border-radius: 1em;
+  box-shadow: 0vw 0vw 00vw 0.1vw;
+  top: 1vh;
+  
+
+
+}
+>>>>>>> 1e40220436103ff963e2585987c874bcae3e25ca

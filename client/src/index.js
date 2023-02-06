@@ -23,7 +23,8 @@ root.render(
           <SignUp/>
           <App />
           <BarberProfile />
-          <OurCreativeTeam />
+          {/* <AddPhotos /> */}
+          {/* <OurCreativeTeam /> */}
         </BarberProvider>
       </PhotosProvider>
     </UserProvider>

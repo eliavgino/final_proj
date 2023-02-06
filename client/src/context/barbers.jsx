@@ -7,7 +7,9 @@ export const BarbersContext = createContext();
 function BarberProvider(props) {
   const { children } = props;
   const url = "http://localhost:4000/api/v1/barber";
+  const [barberId, setBarberId] = useState();
   const [barbers, setBarbers] = useState([]);
+  const [barber, setBarber] = useState();
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
@@ -23,10 +25,30 @@ function BarberProvider(props) {
       alert(error.response.data);
     }
   };
-
+  const getbarberById = async (barberId) => {
+    try {
+      let response = await axios.post(
+        "http://localhost:4000/api/v1/barber/barberprofile",
+        barberId,
+        {}
+      );
+      setBarber(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div>
-      <BarbersContext.Provider value={{ getAllBarbers, barbers }}>
+      <BarbersContext.Provider
+        value={{
+          getAllBarbers,
+          barbers,
+          getbarberById,
+          barber,
+          setBarberId,
+          barberId,
+        }}
+      >
         {children}
       </BarbersContext.Provider>
     </div>

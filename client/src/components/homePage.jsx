@@ -18,7 +18,7 @@ function HomePage() {
         <Box id="results" />
         <Stories />
         <Box id="team" />
-        <OurCreativeTeam />
+        {/* <OurCreativeTeam /> */}
         <Details />
       </div>
       <UserProfile />
