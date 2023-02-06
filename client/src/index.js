@@ -9,6 +9,8 @@ import PhotosProvider from "./context/photos";
 import BarberProvider from "./context/barbers";
 import OurCreativeTeam from "./components/ourCreativeTeam";
 import BarberProfile from "./components/barberProfile";
+import CommentProvider from "./context/comments";
+import BarberComments from "./components/BarberComments";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,11 +18,14 @@ root.render(
     <UserProvider>
       <PhotosProvider>
         <BarberProvider>
-          {/* <AddPhotos /> */}
-          {/* <App /> */}
-          <BarberProfile />
-          {/* <AddPhotos /> */}
-          {/* <OurCreativeTeam /> */}
+          <CommentProvider>
+            {/* <AddPhotos /> */}
+            {/* <App /> */}
+            {/* <OurCreativeTeam /> */}
+            <BarberProfile />
+            {/* <AddPhotos /> */}
+            {/* <BarberComments /> */}
+          </CommentProvider>
         </BarberProvider>
       </PhotosProvider>
     </UserProvider>

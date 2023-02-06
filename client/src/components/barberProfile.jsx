@@ -23,6 +23,7 @@ import ModeCommentOutlined from "@mui/icons-material/ModeCommentOutlined";
 import SendOutlined from "@mui/icons-material/SendOutlined";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { withTheme } from "@emotion/react";
+import BarberComments from "./BarberComments";
 
 function Copyright() {
   return (
@@ -42,10 +43,11 @@ const theme = createTheme();
 export default function BarberProfileAlbum() {
   const { barberPhotos, getPhotosByBarberId, addNewphoto } =
     useContext(PhotosContext);
-  const { barber, getbarberById } = useContext(BarbersContext);
+  const { barber, getbarberById, barberId } = useContext(BarbersContext);
   useEffect(() => {
     getPhotosByBarberId({ barber: "63df7ce3dd4a0d2a523b666c" });
     getbarberById({ _id: "63df7ce3dd4a0d2a523b666c" });
+    console.log("barber idgdgd" + barberId);
   }, []);
   return (
     <>
@@ -60,12 +62,20 @@ export default function BarberProfileAlbum() {
           <Typography
             component="h1"
             variant="h2"
+            justifyContent="center"
             align="center"
             color="text.primary"
             gutterBottom
           >
+            <Avatar
+              src="https://res.cloudinary.com/ddwsr6uth/image/upload/v1675603028/fw4s0icujglpqma9stwg.png"
+              alt="Profile picture"
+              variant="circular"
+              className="h-full w-full shadow-xl"
+            />
             name
           </Typography>
+
           <Typography
             variant="h5"
             align="center"
@@ -167,6 +177,7 @@ export default function BarberProfileAlbum() {
           </Grid>
         ))}
       </Grid>
+      <BarberComments />
     </>
   );
 }

@@ -39,7 +39,7 @@ const AddPhotos = () => {
       <input onChange={(e) => setdescription(e.target.value)} />
 
       <AddToPhotosIcon onClick={uploadImage}>add photo</AddToPhotosIcon>
-      <Image cloudName="ddwsr6uth" publicId={imagurl} />
+      {/* <Image cloudName="ddwsr6uth" publicId={imagurl} /> */}
     </div>
   );
 };

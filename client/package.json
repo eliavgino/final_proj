@@ -5,6 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@heroicons/react": "^2.0.14",
+    "@material-tailwind/react": "^1.2.5",
     "@mui/icons-material": "^5.11.0",
     "@mui/joy": "^5.0.0-alpha.65",
     "@mui/material": "^5.11.5",
