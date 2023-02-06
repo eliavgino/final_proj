@@ -1,12 +1,12 @@
 import React from 'react';
 import { useContext,useEffect,useState } from 'react';
-import {Context} from "../../context/scheduleContext"
+import { HairCutsContext } from '../../context/hairCuts';
 
 const Confirm = () => {
-    const {chooseTime,chooseHairCut}=useContext(Context)
+    const {chooseTime,chooseHairCut,chooseBarber}=useContext(HairCutsContext)
     function handleConfirm(){
-        console.log(chooseHairCut ,chooseTime)
-            
+        console.log(chooseHairCut._id ,chooseTime.date,chooseTime.time,chooseBarber._id)
+        
     }
     return (
        

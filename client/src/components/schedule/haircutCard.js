@@ -17,7 +17,7 @@ const HaircutCard = (props) => {
         setChooseHairCut(null)
       }}
     function handlClick2(productname){
-      if(chooseHairCut==productname){
+      if(chooseHairCut.product_name==productname.product_name){
         setBottomClick(10)
         setChooseHairCut(null)
       }}
@@ -26,7 +26,7 @@ const HaircutCard = (props) => {
     <div class="box">
         <div class="card">
           <div class="imgBx" style={{bottom:`${bottomClick}px`}}>
-          <img   onClick={chooseHairCut ? ()=>{handlClick2(haircut.product_name)}: ()=>{handlClick(haircut.product_name)}} src={background} alt="images"/>
+          <img   onClick={chooseHairCut ? ()=>{handlClick2(haircut)}: ()=>{handlClick(haircut)}} src={background} alt="images"/>
           </div>
           <div class="details">
               <h2>{haircut.product_name}<br/><span>{haircut.product_price}$</span></h2>

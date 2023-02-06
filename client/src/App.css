@@ -334,31 +334,3 @@ body {
  
 
 }
-<<<<<<< HEAD
-
-=======
-/* ///////////userHairCuts */
-.userHairCutsContainer{
-
-  background-color: #ebebe2;
-  width: 30.5vw;
-  position: relative;
-  background: none;
-
-}
-.hairCutRow{
-
-  display: flex;
-  gap: 7.2vw;
-  background-color:rgb(247, 244, 244) ;
-  position: relative;
-  width: fit-content;
-  border: 0.3vw rgb(247, 244, 244) solid ;
-  border-radius: 1em;
-  box-shadow: 0vw 0vw 00vw 0.1vw;
-  top: 1vh;
-  
-
-
-}
->>>>>>> 1e40220436103ff963e2585987c874bcae3e25ca

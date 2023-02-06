@@ -16,6 +16,9 @@ const HairCutschema = new mongoose.Schema({
     type: Date,
     default: Date(Date.now()),
   },
+  hour:{
+    type:String
+  },
   hairCut: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Product",
@@ -31,7 +34,9 @@ function validateHairCut(haircut) {
   const schema = {
     user: Joi.required(),
     barber: Joi.required(),
+    date:Joi.required(),
     hairCut: Joi.required(),
+    hour: Joi.required()
   };
   return Joi.validate(haircut, schema);
 }

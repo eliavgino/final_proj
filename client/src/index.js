@@ -11,6 +11,8 @@ import OurCreativeTeam from "./components/ourCreativeTeam";
 import BarberProfile from "./components/barberProfile";
 import Login from "./components/logIn";
 import SignUp from "./components/signUp";
+import CommentProvider from "./context/comments";
+import HairCutsProvider from "./context/hairCuts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,13 +20,17 @@ root.render(
     <UserProvider>
       <PhotosProvider>
         <BarberProvider>
+          <CommentProvider>
+            <HairCutsProvider>
           {/* <AddPhotos /> */}
           <Login/>
           <SignUp/>
           <App />
-          <BarberProfile />
+          {/* <BarberProfile /> */}
           {/* <AddPhotos /> */}
           {/* <OurCreativeTeam /> */}
+          </HairCutsProvider>
+          </CommentProvider>
         </BarberProvider>
       </PhotosProvider>
     </UserProvider>
