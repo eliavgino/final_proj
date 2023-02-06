@@ -24,9 +24,8 @@ export default function OurCreativeTeam() {
   }, []);
   return (
     <Grid container spacing={4} xs={{ padding: "0 20px" }} justify="center">
-      {console.log("barbers:")}
-      {console.log(barbers)}
-
+      {/* {console.log("barbers:")}
+      {console.log(barbers)} */}
       {barbers.map((val) => (
         <Grid item xs={12} sm={6} md={4}>
           <Card

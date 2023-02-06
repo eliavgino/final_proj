@@ -25,5 +25,5 @@ app.use(process.env.EXPENSES_URL, expenses);
 app.use(process.env.PRODUCT_URL, product);
 app.use(process.env.auth_URL, auth);
 
-const port = process.env.PORT || 3030;
+const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`active on ${port}`));
