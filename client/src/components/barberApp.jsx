@@ -1,21 +1,44 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomePage from './homePage'
 import NavBar from './navBar'
 import { useContext } from 'react';
 import { PagenationContext } from '../context/pagenation';
 import Login from './logIn';
 import SignUp from './signUp';
+import BarberProfile from './barberProfile';
+import { BrowserRouter,Route,Router,Routes, useNavigate } from "react-router-dom";
+import UserProfile from './userProfile';
+import MustLogIn from './MustLogIn';
 
 function BarberApp() {
     
   const {page, setPage,logSignDisplay}=useContext(PagenationContext);
 
+  const navigate=useNavigate();
+
+  useEffect(() => {
+  
+    navigate('/');
+
+  }, [])
+  
 
   return (
     <>
         <NavBar/>
-        <HomePage/>
-        <div style={{display:logSignDisplay,position:'fixed',width:'100vw',height:'100vh',backgroundColor:'white'}}>{page==='logIn'?<Login/>:<SignUp/>}</div>
+      
+          <Routes>
+
+            <Route element={<HomePage/>} path="/"/>
+            <Route element={<Login/>} path="/logIn"/>
+            <Route element={<BarberProfile/>} path="/barberProfile"/>
+
+          </Routes>
+
+          <MustLogIn/>
+          
+          <UserProfile />
+        
     </>
   )
 }

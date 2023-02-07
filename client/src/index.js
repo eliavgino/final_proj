@@ -21,25 +21,27 @@ import ScheduleMain from "./components/schedule/scheduleMain";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <UserProvider>
-      <HairCutsProvider>
-        <PhotosProvider>
-          <BarberProvider>
-            <CommentProvider>
-              <PagenationProvider>
-                {/* <AddPhotos /> */}
-                {/* <App /> */}
-                {/* <BarberProfile /> */}
-                {/* <AddPhotos /> */}
-                <HomePage />
-                {/* <OurCreativeTeam /> */}
-                {/* <ScheduleMain /> */}
-              </PagenationProvider>
-            </CommentProvider>
-          </BarberProvider>
-        </PhotosProvider>
-      </HairCutsProvider>
-    </UserProvider>
+    <BrowserRouter>
+      <UserProvider>
+        <HairCutsProvider>
+          <PhotosProvider>
+            <BarberProvider>
+              <CommentProvider>
+                <PagenationProvider>
+                  {/* <AddPhotos /> */}
+                  {/* <App /> */}
+                  {/* <BarberProfile /> */}
+                  {/* <AddPhotos /> */}
+                  <HomePage />
+                  {/* <OurCreativeTeam /> */}
+                  {/* <ScheduleMain /> */}
+                </PagenationProvider>
+              </CommentProvider>
+            </BarberProvider>
+          </PhotosProvider>
+        </HairCutsProvider>
+      </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

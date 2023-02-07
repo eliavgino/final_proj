@@ -13,15 +13,23 @@ import Link from "@mui/joy/Link";
 import Favorite from "@mui/icons-material/Favorite";
 import Visibility from "@mui/icons-material/Visibility";
 import Grid from "@mui/material/Grid";
+import { useNavigate } from "react-router-dom";
+import { PagenationContext } from "../context/pagenation";
 
 import CreateNewFolder from "@mui/icons-material/CreateNewFolder";
 
 export default function OurCreativeTeam() {
-  const { barbers, getAllBarbers, setBarberId, barberId } =
-    useContext(BarbersContext);
+
+    const { barbers, getAllBarbers, setBarberId, barberId, getbarberById } = useContext(BarbersContext);
+    
+    const {setPage}=useContext(PagenationContext);
+
+    const navigate=useNavigate();
+
   useEffect(() => {
     getAllBarbers();
   }, []);
+
   return (
     <Box className="creativeTeamContainer">
       <Box sx={{fontSize:{lg:'5vw',xs:'11vw'}}} component="p" className="creativeTeamHeader">Our creative team</Box>
@@ -30,7 +38,7 @@ export default function OurCreativeTeam() {
         {barbers.map((val) => (
           <Grid item xs={12} sm={6} md={4}>
             <Card
-              onClick={() => setBarberId(val._id)}
+              onClick={() =>{ getbarberById(val._id);setBarberId(val._id);navigate('/barberProfile');setPage('/barberProfile')}}
               sx={{
                 width: 300,
                 bgcolor: "initial",
@@ -38,7 +46,7 @@ export default function OurCreativeTeam() {
                 "--Card-padding": "0px",
               }}
             >
-              <Box sx={{ position: "relative" }} onClick={()=>{console.log()}}>
+              <Box sx={{ position: "relative" }} onClick={()=>{console.log();}}>
                 <AspectRatio ratio="4/3">
                   <figure>
                     <img
@@ -87,7 +95,7 @@ export default function OurCreativeTeam() {
                           {val.barber_Name}
                         </Link>
                       </Typography>
-                      <IconButton size="sm" color="neutral" sx={{color:"white", ml: "auto" }}>
+                      <IconButton  size="sm" color="neutral" sx={{color:"white", ml: "auto" }}>
                         <CreateNewFolder />
                         add comment
                       </IconButton>

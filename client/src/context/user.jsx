@@ -16,7 +16,6 @@ function UserProvider(props) {
 
       //storge user deatails into token
       let user = response.data;
-      console.log(user);
       console.log(response.headers["x-auth-token"]);
       localStorage.setItem("token", response.headers["x-auth-token"]);
    

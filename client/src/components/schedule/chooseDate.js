@@ -21,7 +21,7 @@ function CalendarCard() {
     appointments,
     chooseTime,
     setChooseTime,
-    activeHaircuts
+    activeHaircuts,setChooseHaircut
   } = useContext(HairCutsContext)
   const startTime = () => {
     let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -74,7 +74,10 @@ function CalendarCard() {
     console.log(chooseTime)
   }
 
-
+function handleBack(){
+  setPageState("chooseHairDresser")
+  setChooseHaircut(null)
+}
 
   return (
     <body className="body" onLoad={startTime}>
@@ -146,9 +149,17 @@ function CalendarCard() {
               <div id="day"></div>
               <div id="month"></div>
               <h2 id="selected" hidden={chooseTime?false:true}>Date Selected</h2>
-              <button disabled={chooseTime ? false : true} onClick={() => setPageState("chooseHairDresser")} id="nextBtn" hidden={chooseTime?false:true}>Next</button>
+              <div id="nextBtn">
+              <button style={{fontSize:"20px",
+     color:"#232227",
+     fontFamily: 'Montserrat',
+     fontWeight:1000}} onClick={() => setPageState("chooseHairCut")}  hidden={chooseTime?false:true}>Back</button>
+              <button style={{fontSize:"20px",
+     color:"#232227",
+     fontFamily: 'Montserrat',
+     fontWeight:1000}} disabled={chooseTime ? false : true} onClick={() => handleBack()}  hidden={chooseTime?false:true}>Next</button>
               <i class="fa fa-pencil edit" aria-hidden="true"></i>
-            </div>
+            </div></div>
           </div>
         </div>
       </div>

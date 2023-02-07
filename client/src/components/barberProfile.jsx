@@ -7,12 +7,13 @@ import { shadows } from "@mui/system";
 import UserHairCuts from "./userHaircuts";
 import BarberComments from "./BarberComments";
 import BarberPhotos from "./barberPhotos";
+import { convertLength } from "@mui/material/styles/cssUtils";
 
 function BarberProfile() {
-  const { getbarberById, barber } = useContext(BarbersContext);
+  const { getbarberById, barberId, barber } = useContext(BarbersContext);
 
   useEffect(() => {
-    getbarberById({ _id: "63df7ce3dd4a0d2a523b666c" });
+    getbarberById({ _id: barberId });
   }, []);
 
   return (
@@ -20,17 +21,15 @@ function BarberProfile() {
       sx={{
         display: "flex",
         flexDirection: "column",
-
         gap: "4vh",
         width: "100vw",
         height: "100vh",
       }}
     >
-      {console.log(barber)}
       <Box className="profileHeaderBackgroundB" sx={{ bgcolor: "black" }}></Box>
       <Avatar
         className="profileAvatarB"
-        src={barber.profilePhoto}
+        src={barber["profilePhoto"]}
         sx={{
           height: { lg: "14vh", xs: "15vh" },
           width: { lg: "7vw", xs: "22vw" },

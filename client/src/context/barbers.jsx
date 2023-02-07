@@ -13,7 +13,7 @@ function BarberProvider(props) {
     profilePhoto: "",
     phoneNumber: "",
     email: "",
-    barber_Name: "",
+    barbaer_Name: "",
   });
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
@@ -31,6 +31,7 @@ function BarberProvider(props) {
   };
   const getbarberById = async (barberId) => {
     try {
+      console.log("ll");
       let response = await axios.post(
         "http://localhost:4000/api/v1/barber/barberprofile",
         barberId,

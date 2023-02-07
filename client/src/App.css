@@ -12,8 +12,6 @@ html {
   height: 100%;
 }
 
-
-
 :root {
   overflow-x: hidden;
 
@@ -355,6 +353,106 @@ body {
   box-shadow: 0vw 0vw 00vw 0.1vw;
   top: 1vh;
   
+}
+/* ////////log in */
+.logSignPageContainer{
 
+  display: flex;
+  position: relative;
+  justify-content: center;
+  justify-items: center;
+  top: 10vh;
+  height: 75vh;
+  
+}
+.logInContainer{
+
+  position: relative;
+  border: 0.1vw solid rgba(0, 0, 0, 0.267);
+  height: 75vh;
+  background-color: #918d8d2d;
 
 }
+.logInImageContainer{
+
+  position: absolute;
+  background-image: url('../public/images/logIn\ background.jpeg');
+  background-repeat: no-repeat;
+  height: 75vh;
+  z-index: 998;
+  display: flex;
+  transition: 1s;
+
+}
+.SignUpContainer{
+
+  position: relative;
+  border: 0.1vw solid rgba(109, 108, 108, 0.452);
+
+}
+.logInParagraph{
+
+  
+  font-weight: 600;
+  color: #dad5d5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40vh;
+
+}
+.logSignButton{
+
+}
+.imageSignAni{
+
+ animation: log 0.5s forwards;
+
+}
+@keyframes log {
+  
+100%{
+
+  left:49VW ;
+
+}
+}
+.parSignAni{
+  animation: parSignAni 1s forwards;
+}
+@keyframes parSignAni {
+  
+  100%{
+
+    margin-left: 2.5vw
+
+  }
+}
+.imageLogAni{
+
+ animation: imageLogAni 0.5s forwards;
+
+}
+@keyframes imageLogAni {
+0%{
+
+  left: 52vw;
+
+}  
+}
+.parLogAni{
+  animation: parLogAni 1s forwards;
+}
+@keyframes parLogAni {
+  0%{
+
+    margin-left: 2vw;
+
+  }
+}
+/* //////////log in alert */
+
+
+
+
+
