@@ -17,7 +17,7 @@ function PhotosProvider(props) {
     try {
     
       const photo = (await axios.get(url)).data;
-      console.log(photo);
+
       //array of all the photos
       setphotos(photo);
     } catch (error) {

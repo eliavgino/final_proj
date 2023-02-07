@@ -78,59 +78,87 @@ function BarberProfile() {
           </Typography>
         </Box>
       </Box>
+      <Grid container spacing={4} xs={{ padding: "0 20px" }} justify="center">
+        {barberPhotos.map((photo) => (
+          <Grid item key={photo._id} xs={12} sm={6} md={4}>
+            {" "}
+            <Card
+              variant="outlined"
+              sx={{
+                minWidth: 300,
+                "--Card-radius": (theme) => theme.vars.radius.xs,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  pb: 1.5,
+                  gap: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    "&:before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      bottom: 0,
+                      right: 0,
+                      m: "-2px",
+                      borderRadius: "50%",
+                      background:
+                        "linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)",
+                    },
+                  }}
+                >
+                  <Avatar size="sm" src={photo.photo} />
+                </Box>
+              </Box>
+              <CardOverflow>
+                <AspectRatio>
+                  <img src={photo.photo} alt="" loading="lazy" />
+                </AspectRatio>
+              </CardOverflow>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  mx: -1,
+                  my: 1,
+                }}
+              >
+                <Box sx={{ width: 0, display: "flex", gap: 0.5 }}>
+                  <IconButton variant="plain" color="neutral" size="sm">
+                    <FavoriteBorder />
+                  </IconButton>
+                  <IconButton variant="plain" color="neutral" size="sm">
+                    <ModeCommentOutlined />
+                  </IconButton>
+                  <IconButton variant="plain" color="neutral" size="sm">
+                    <SendOutlined />
+                  </IconButton>
+                </Box>
+              </Box>
 
-      <Typography
-        component="p"
-        className="profileUserHairCutsB"
-        sx={{
-          width: { lg: "fit-content", xs: "30vw" },
-          fontSize: { lg: "2vw", xs: "5vw" },
-          left: { lg: "43vw", xs: "35vw" },
-        }}
-      >
-        my haircuts
-      </Typography>
-      <Box
-        component="div"
-        className="photos"
-        sx={{
-          position: "relative",
-          minHeight: "80vh",
-          width: "80vw",
-          height: "20vh",
-          left: "18vh",
-        }}
-      >
-        <BarberPhotos />
-      </Box>
-
-      <Typography
-        component="p"
-        className="profileUserHairCutsB"
-        sx={{
-          width: { lg: "fit-content", xs: "30vw" },
-          fontSize: { lg: "2vw", xs: "5vw" },
-          marginTop: "5vh",
-          left: { lg: "43vw", xs: "35vw" },
-        }}
-      >
-        comeents
-      </Typography>
-
-      <Box
-        component="div"
-        className="comments"
-        sx={{
-          position: "relative",
-          minHeight: "80vh",
-          width: "80vw",
-
-          height: "20vh",
-          left: "18vh",
-        }}
-      >
-        <BarberComments />
-      </Box>
+              <Typography fontSize="sm">
+                <Link
+                  component="button"
+                  color="neutral"
+                  fontWeight="lg"
+                  textColor="text.primary"
+                >
+                  description
+                </Link>{" "}
+                {photo.description}
+              </Typography>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+      <BarberComments />
     </Box>
   );
 }

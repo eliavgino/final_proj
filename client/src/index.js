@@ -14,12 +14,9 @@ import HomePage from "./components/homePage";
 import UserHairCuts from "./components/userHaircuts";
 import NavBar from "./components/navBar";
 import BarberProfile from "./components/barberProfile";
-import Login from "./components/logIn";
-import SignUp from "./components/signUp";
 import HairCutsProvider from "./context/hairCuts";
-import BarberComments from "./components/BarberComments";
-import ChooseHairCut from "./components/schedule/chooseHairCut";
-
+import PagenationProvider from "./context/pagenation";
+import BarberApp from "./components/barberApp";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -28,13 +25,13 @@ root.render(
         <PhotosProvider>
           <BarberProvider>
             <CommentProvider>
-              <AddPhotos />
-              {/* <App /> */}
-              {/* <BarberProfile /> */}
-              {/* <AddPhotos /> */}
-              {/* <OurCreativeTeam /> */}
-              {/* <BarberComments /> */}
-              {/* <ChooseHairCut /> */}
+              <PagenationProvider>
+                {/* <AddPhotos /> */}
+                {/* <App /> */}
+                <BarberProfile />
+                {/* <AddPhotos /> */}
+                {/* <OurCreativeTeam /> */}
+              </PagenationProvider>
             </CommentProvider>
           </BarberProvider>
         </PhotosProvider>
