@@ -21,18 +21,18 @@ import Typography from "@mui/joy/Typography";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import ModeCommentOutlined from "@mui/icons-material/ModeCommentOutlined";
 import SendOutlined from "@mui/icons-material/SendOutlined";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { withTheme } from "@emotion/react";
 import BarberComments from "./BarberComments";
 
-const theme = createTheme();
+export default function BarberPhoto() {
 
-export default function BarberPhotos() {
   const { barberPhotos, getPhotosByBarberId, addNewphoto } =
     useContext(PhotosContext);
+
   const { barber, barberId } = useContext(BarbersContext);
+
   useEffect(() => {
-    getPhotosByBarberId({ barber: "63df7ce3dd4a0d2a523b666c" });
+    getPhotosByBarberId({ barber: barberId  });
 
     console.log("barber idgdgd" + barberId);
   }, []);

@@ -19,22 +19,26 @@ import Input from "@mui/joy/Input";
 import HomePage from "./homePage";
 
 const BarberComments = () => {
+
   const [body, setbody] = useState();
+
   const { getCommentByBarberId, barberComments, addCommentToBarber } =
     useContext(CommentContext);
+
   const { barberId } = useContext(BarbersContext);
+
   let page;
+
   useEffect(() => {
-    getCommentByBarberId({ id: "63df7ccbdd4a0d2a523b6669" });
-    // console.log("barber id :" + barberId);
-    console.log("here e e e e e e e => " + barberComments);
+
+    getCommentByBarberId({ id: barberId });
+
   }, []);
 
   if (barberComments) {
     page = (
       <div>
-        {/* {console.log(barberComments)}
-      {console.log(barberId)} */}
+      
         <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
           {barberComments.map((val) => (
             <Card
@@ -149,6 +153,15 @@ const BarberComments = () => {
           </Typography>
 
           <CardOverflow sx={{ p: "var(--Card-padding)", display: "flex" }}>
+            <form onSubmit={async(e)=>{e.preventDefault()
+            console.log(e.target.reset())
+             await addCommentToBarber({
+              id: barberId,
+              user_id: "63d7f38260b55e1906dcbb29",
+              body: body,
+            })
+            await getCommentByBarberId({ id: barberId });
+          }}>
             <IconButton
               size="sm"
               variant="plain"
@@ -167,14 +180,7 @@ const BarberComments = () => {
               sx={{ flexGrow: 1, mr: 1, "--Input-focusedThickness": "0px" }}
             />
             <IconButton
-              onClick={() => {
-                addCommentToBarber({
-                  id: "63df7ccbdd4a0d2a523b6669",
-                  user_id: "63d7f38260b55e1906dcbb29",
-                  body: body,
-                });
-                getCommentByBarberId({ id: "63df7ccbdd4a0d2a523b6669" });
-              }}
+              type="submit"
               size="sm"
               variant="plain"
               color="neutral"
@@ -182,6 +188,7 @@ const BarberComments = () => {
             >
               <SendIcon />
             </IconButton>
+            </form>
           </CardOverflow>
         </Card>
       </div>
@@ -255,11 +262,11 @@ const BarberComments = () => {
             <IconButton
               onClick={() => {
                 addCommentToBarber({
-                  id: "63df7ccbdd4a0d2a523b6669",
+                  id: barberId,
                   user_id: "63d7f38260b55e1906dcbb29",
                   body: body,
                 });
-                getCommentByBarberId({ id: "63df7ccbdd4a0d2a523b6669" });
+                getCommentByBarberId({ id: barberId });
               }}
               size="sm"
               variant="plain"

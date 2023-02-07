@@ -6,13 +6,12 @@ function PagenationProvider(props) {
 
     const { children } = props;
 
-    const [page,setPage]=useState('');
-    const [logSignDisplay,setLogSignDisplay]=useState('none');
+    const [page,setPage]=useState('home');
     const [animation,setAnimation]=useState('')
 
   return (
     <>
-      <PagenationContext.Provider value={{page,setPage,logSignDisplay,setLogSignDisplay,animation,setAnimation}}>
+      <PagenationContext.Provider value={{page,setPage,animation,setAnimation}}>
         {children}
       </PagenationContext.Provider>
     </>

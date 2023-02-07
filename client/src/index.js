@@ -17,26 +17,28 @@ import BarberProfile from "./components/barberProfile";
 import HairCutsProvider from "./context/hairCuts";
 import PagenationProvider from "./context/pagenation";
 import BarberApp from "./components/barberApp";
+import Login from "./components/logIn";
+import { BrowserRouter } from "react-router-dom";
+import MustLogIn from "./components/MustLogIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
     <UserProvider>
       <PhotosProvider>
         <BarberProvider>
-          <CommentProvider/>
+          <CommentProvider>
             <HairCutsProvider>
               <PagenationProvider>
-          {/* <AddPhotos /> */}
-          {/* <App /> */}
-          <BarberApp />
-          {/* <AddPhotos /> */}
-          {/* <OurCreativeTeam /> */}
+               <MustLogIn/>
             </PagenationProvider>
           </HairCutsProvider>
+          </CommentProvider>
         </BarberProvider>
       </PhotosProvider>
     </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

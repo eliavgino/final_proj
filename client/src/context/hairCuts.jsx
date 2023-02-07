@@ -10,8 +10,11 @@ export const HairCutsContext = createContext();
 
 function HairCutsProvider(props) {
   const { children } = props;
-  const token=localStorage.getItem('token')
-  const decoded = jwt_decode(token);
+  const token=localStorage.getItem('token')?localStorage.getItem('token'):'noT';
+  let decoded;
+  if(token!=='noT'){
+   decoded = jwt_decode(token);
+  }
    const[pageState,setPageState]=useState("chooseHairCut")
     const [chooseTime,setChooseTime]=useState()
     const [chooseHairCut,setChooseHairCut]=useState()
