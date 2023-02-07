@@ -17,6 +17,7 @@ import BarberProfile from "./components/barberProfile";
 import HairCutsProvider from "./context/hairCuts";
 import PagenationProvider from "./context/pagenation";
 import BarberApp from "./components/barberApp";
+import ScheduleMain from "./components/schedule/scheduleMain";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -28,9 +29,11 @@ root.render(
               <PagenationProvider>
                 {/* <AddPhotos /> */}
                 {/* <App /> */}
-                <BarberProfile />
+                {/* <BarberProfile /> */}
                 {/* <AddPhotos /> */}
+                <HomePage />
                 {/* <OurCreativeTeam /> */}
+                {/* <ScheduleMain /> */}
               </PagenationProvider>
             </CommentProvider>
           </BarberProvider>
