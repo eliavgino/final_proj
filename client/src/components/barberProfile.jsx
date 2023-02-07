@@ -11,9 +11,8 @@ import BarberPhotos from "./barberPhotos";
 function BarberProfile() {
   const { getbarberById, barber } = useContext(BarbersContext);
 
-  useEffect(() => {
-    getbarberById({ _id: "63df7ce3dd4a0d2a523b666c" });
-  }, []);
+  useEffect(() => {}, []);
+  getbarberById({ _id: "63df7ce3dd4a0d2a523b666c" });
   return (
     <Box
       sx={{

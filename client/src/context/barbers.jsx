@@ -9,7 +9,12 @@ function BarberProvider(props) {
   const url = "http://localhost:4000/api/v1/barber";
   const [barberId, setBarberId] = useState();
   const [barbers, setBarbers] = useState([]);
-  const [barber, setBarber] = useState();
+  const [barber, setBarber] = useState({
+    profilePhoto: "",
+    phoneNumber: "",
+    email: "",
+    barber_Name: "",
+  });
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 

@@ -13,6 +13,18 @@ exports.getHairCuts = async (req, res) => {
     res.status(400).send(err);
   }
 };
+//get all hair cuts date
+/////////////////////////////////////////////////////////////////////////////////////
+exports.getHairCutsDate = async (req, res) => {
+  try {
+    const result = await HairCut.find().select("date active hour -_id");
+
+    res.status(200).send(result);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).send(err);
+  }
+};
 /////////////////////////////////////////////////
 //get by user id
 exports.getHairCutByUser = async (req, res) => {

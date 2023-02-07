@@ -9,9 +9,11 @@ const {
   getHairCutByBarber,
   getHairCutByUser,
   getHairCutByBarberId,
+  getHairCutsDate,
 } = require("../controllers/hairCuts");
 
 router.route("/").get(getHairCuts).post(addHairCuts);
+router.route("/getHairCutsDate").get(getHairCutsDate);
 router.route("/deleteHairCut").post(removeHairCut);
 router.route("/getHairCutByUser").post(getHairCutByUser);
 router.route("/getHairCutByBarber").post(getHairCutByBarber);
