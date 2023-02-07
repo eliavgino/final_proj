@@ -3,6 +3,7 @@ import { useContext,useEffect,useState } from 'react';
 import { HairCutsContext } from '../../context/hairCuts';
 import HaircutCard from './haircutCard';
 import "./chooseHairCut.css"
+import "./chooseDates.css"
 const ChooseHairCut = () => {
    const {pageState,setPageState,haircuts,getAllHaircutsPrice,chooseHairCut,setChooseHairCut}=useContext(HairCutsContext)
    const [buttonState,setButtonState]=useState("")

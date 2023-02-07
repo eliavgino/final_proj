@@ -20,6 +20,7 @@ import BarberApp from "./components/barberApp";
 import Login from "./components/logIn";
 import { BrowserRouter } from "react-router-dom";
 import MustLogIn from "./components/MustLogIn";
+import ScheduleMain from "./components/schedule/scheduleMain";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,7 +32,7 @@ root.render(
           <CommentProvider>
             <HairCutsProvider>
               <PagenationProvider>
-               <MustLogIn/>
+                <ScheduleMain/>
             </PagenationProvider>
           </HairCutsProvider>
           </CommentProvider>

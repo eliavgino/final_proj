@@ -10,10 +10,11 @@ export const HairCutsContext = createContext();
 
 function HairCutsProvider(props) {
   const { children } = props;
-  const token=localStorage.getItem('token')?localStorage.getItem('token'):'noT';
-  let decoded;
-  if(token!=='noT'){
-   decoded = jwt_decode(token);
+  let decoded
+  const token = localStorage.getItem('token') 
+  if (token) {
+     decoded = jwt_decode(token);
+   
   }
    const[pageState,setPageState]=useState("chooseHairCut")
     const [chooseTime,setChooseTime]=useState()
@@ -63,7 +64,7 @@ function HairCutsProvider(props) {
     console.log(activeHaircuts)
    
     let id=0
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 30; i++) {
       const date = new Date(currentDate);
       date.setDate(currentDate.getDate() + i);
       
@@ -74,7 +75,7 @@ function HairCutsProvider(props) {
           const endMinute = (minute + 30) % 60;
            
           let obj={
-            day: daysOfWeek[date.getDay()],
+            day: date.getDate(),
             date:`${date.getFullYear()}-${("0" + (date.getMonth() + 1)).slice(-2)}-${("0" + date.getDate()).slice(-2)}T21:00:00.000Z`,
             time: `${hour}:${minute.toString().padStart(2, "0")}-${endHour}:${endMinute.toString().padStart(2, "0")}`,
             id:id++}
