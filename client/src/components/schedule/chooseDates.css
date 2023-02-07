@@ -140,9 +140,10 @@
      color:#232227;
      font-family: 'Montserrat', sans-serif;
      font-weight:1000;
-     margin-top: 60%;
+     
      align-items: center;
      text-align: center;
+     margin: 5rem;
  
    }
    .date i{
