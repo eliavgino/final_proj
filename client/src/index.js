@@ -28,8 +28,8 @@ root.render(
             <HairCutsProvider>
               <PagenationProvider>
           {/* <AddPhotos /> */}
-          {/* <App /> */}
-          <BarberApp />
+          <App />
+          {/* <BarberApp /> */}
           {/* <AddPhotos /> */}
           {/* <OurCreativeTeam /> */}
             </PagenationProvider>

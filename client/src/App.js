@@ -3,11 +3,13 @@ import './App.css';
 import ScheduleMain from './components/schedule/scheduleMain';
 import "./App.css";
 import BarberApp from "./components/barberApp";
+import Login from './components/logIn';
 
 function App() {
   return (
     <div className="App">
     <ScheduleMain/>
+    {/* <Login/> */}
       {/* <BarberApp /> */}
     </div>
   );
