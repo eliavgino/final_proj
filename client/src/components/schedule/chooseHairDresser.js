@@ -59,8 +59,8 @@ const ChooseHairCut = () => {
             </div>
           </div>
           <div style={{justifyContent:'center',display:'flex',flexDirection:'row',alignItems:'center'} }>
-              <button id="nextBtn"   onClick={()=>{setPageState("chooseDate")}}>Back</button>
-              <button id="nextBtn" disabled={chooseBarber ? false : true}  onClick={()=>{setPageState("confirm")}}>Next</button>
+              <button id="nextBtn"   onClick={()=>{setPageState("chooseHairCut")}}>Back</button>
+              <button id="nextBtn" disabled={chooseBarber ? false : true}  onClick={()=>{setPageState("chooseDate")}}>Next</button>
           </div>
         </div>
       </div>

@@ -21,6 +21,7 @@ import BarberApp from "./components/barberApp";
 import ScheduleMain from "./components/schedule/scheduleMain";
 import { BrowserRouter } from "react-router-dom";
 import RoleProvider from "./context/role";
+import ChatBox from './components/chatbot/chatBox'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -33,7 +34,7 @@ root.render(
               <CommentProvider>
                 <PagenationProvider>
                   <RoleProvider>
-                    <BarberApp/>
+                    <ChatBox/>
                   </RoleProvider>
                 </PagenationProvider>
               </CommentProvider>
