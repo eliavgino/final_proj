@@ -19,7 +19,7 @@ function HairCutsProvider(props) {
    const[pageState,setPageState]=useState("chooseHairCut")
     const [chooseTime,setChooseTime]=useState()
     const [chooseHairCut,setChooseHairCut]=useState()
-    const [chooseBarber,setChooseBarber]=useState()
+    const [chooseBarber,setChooseBarber]=useState({_id:"a"})
     const [haircuts,setHaircuts]=useState([])
     const [barbers,setBarbers]=useState([])
     const[activeHaircuts,setActiveHaircuts]=useState([])
@@ -51,7 +51,8 @@ function HairCutsProvider(props) {
   async function getUpcomingHairCuts (){
       try {
         const response = await axios.get("http://localhost:4000/api/v1/haircut");
-        setActiveHaircuts(response.data.filter(hairCut => hairCut.active === true));
+        console.log(chooseBarber)
+        setActiveHaircuts((response.data.filter(hairCut => hairCut.active === true)));
         
         
       } catch (error) {
@@ -62,12 +63,15 @@ function HairCutsProvider(props) {
       getUpcomingHairCuts();
     }, []);
     console.log(activeHaircuts)
-   
+    console.log(chooseBarber._id)
+    let filteredHaircuts= activeHaircuts.filter(hairCut=>hairCut.barber._id===chooseBarber._id)
+    console.log(filteredHaircuts)
     let id=0
     for (let i = 0; i < 30; i++) {
       const date = new Date(currentDate);
       date.setDate(currentDate.getDate() + i);
-      
+       
+            
       for (let hour = 9; hour < 18; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
           
@@ -80,7 +84,7 @@ function HairCutsProvider(props) {
             time: `${hour}:${minute.toString().padStart(2, "0")}-${endHour}:${endMinute.toString().padStart(2, "0")}`,
             id:id++}
             
-          if(!(activeHaircuts.some(item => (item.date)=== obj.date && item.hour === obj.time))){
+          if(!(filteredHaircuts.some(item => (item.date)=== obj.date && item.hour === obj.time))){
             
             appointments.push(obj)
            }}
