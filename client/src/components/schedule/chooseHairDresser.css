@@ -1,33 +1,33 @@
-.container{
-    height: 90%;
-    width: 90%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin: auto;
-    position: relative;
-    
+.container {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  flex-wrap: nowrap;
+  margin: auto;
+  position: relative;
 }
 
-.chooseHairDresser{
-    min-width: 150px;
-    min-height: 30px;
-    max-width: 150px;
-    max-height: 30px;
-    margin: 10px;
-    background-color: lightgray;
-    border-radius: 5px;
-    margin: 0.5rem 0.5rem;
-    text-align: center;
-    font-size: 1rem;
-    transition: all 0.2s ease-in-out;
+.chooseHairDresser {
+  min-width: 150px;
+  min-height: 30px;
+  max-width: 150px;
+  max-height: 30px;
+  margin: 10px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 0.5rem 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
 }
 .chooseHairDresser:hover {
-    background-color: gray;
-    cursor: pointer;
- }
+  background-color: gray;
+  cursor: pointer;
+}
 .clicked-button {
-    background-color: gray;
-  }
+  background-color: gray;
+}

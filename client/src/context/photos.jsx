@@ -13,9 +13,8 @@ function PhotosProvider(props) {
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
-  const getAllPhotos= async () => {
+  const getAllPhotos = async () => {
     try {
-    
       const photo = (await axios.get(url)).data;
 
       //array of all the photos
@@ -28,7 +27,6 @@ function PhotosProvider(props) {
 
   const addNewphoto = async (photoObj) => {
     try {
-    
       const photo = await axios.post(url, photoObj, {});
       console.log(photo);
       //adding the photo into arry of photos
@@ -54,7 +52,13 @@ function PhotosProvider(props) {
   return (
     <div>
       <PhotosContext.Provider
-        value={{ addNewphoto, getPhotosByBarberId, getAllPhotos, barberPhotos, photos }}
+        value={{
+          addNewphoto,
+          getPhotosByBarberId,
+          getAllPhotos,
+          barberPhotos,
+          photos,
+        }}
       >
         {children}
       </PhotosContext.Provider>
