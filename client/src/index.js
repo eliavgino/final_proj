@@ -18,6 +18,8 @@ import HairCutsProvider from "./context/hairCuts";
 import PagenationProvider from "./context/pagenation";
 import BarberApp from "./components/barberApp";
 import ScheduleMain from "./components/schedule/scheduleMain";
+import { BrowserRouter } from "react-router-dom";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -28,13 +30,7 @@ root.render(
             <BarberProvider>
               <CommentProvider>
                 <PagenationProvider>
-                  {/* <AddPhotos /> */}
-                  {/* <App /> */}
-                  {/* <BarberProfile /> */}
-                  {/* <AddPhotos /> */}
-                  <HomePage />
-                  {/* <OurCreativeTeam /> */}
-                  {/* <ScheduleMain /> */}
+                  <BarberApp/>
                 </PagenationProvider>
               </CommentProvider>
             </BarberProvider>

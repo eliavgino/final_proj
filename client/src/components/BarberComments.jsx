@@ -17,6 +17,8 @@ import Face from "@mui/icons-material/Face";
 import SendIcon from "@mui/icons-material/Send";
 import Input from "@mui/joy/Input";
 import HomePage from "./homePage";
+import { PagenationContext } from "../context/pagenation";
+import jwtDecode from "jwt-decode";
 
 const BarberComments = () => {
 
@@ -24,6 +26,8 @@ const BarberComments = () => {
 
   const { getCommentByBarberId, barberComments, addCommentToBarber } =
     useContext(CommentContext);
+
+  const {setMustLogIn}=useContext(PagenationContext);
 
   const { barberId } = useContext(BarbersContext);
 
@@ -36,6 +40,7 @@ const BarberComments = () => {
   }, []);
 
   if (barberComments) {
+    {console.log(barberComments)}
     page = (
       <div>
       
@@ -153,14 +158,19 @@ const BarberComments = () => {
           </Typography>
 
           <CardOverflow sx={{ p: "var(--Card-padding)", display: "flex" }}>
-            <form onSubmit={async(e)=>{e.preventDefault()
-            console.log(e.target.reset())
+            <form onSubmit={async(e)=>{
+              e.preventDefault()
+              e.target.reset()
+              if(!localStorage.getItem('token'))
+              setMustLogIn('')
+              else{
              await addCommentToBarber({
               id: barberId,
-              user_id: "63d7f38260b55e1906dcbb29",
+              user_id:jwtDecode(localStorage.getItem("token"))._id ,
               body: body,
             })
             await getCommentByBarberId({ id: barberId });
+          }
           }}>
             <IconButton
               size="sm"
@@ -250,6 +260,22 @@ const BarberComments = () => {
             >
               <Face />
             </IconButton>
+            <form onSubmit={(e)=>{
+
+              
+              
+              console.log(!localStorage.getItem('token'))
+              if(!localStorage.getItem('token'))
+              setMustLogIn('');
+              else{
+              addCommentToBarber({
+                id: barberId,
+                user_id: jwtDecode(localStorage.getItem("token"))._id,
+                body: body,
+              });
+              getCommentByBarberId({ id: barberId });
+            }
+              }}>
             <Input
               onChange={(e) => {
                 setbody(e.target.value);
@@ -260,14 +286,7 @@ const BarberComments = () => {
               sx={{ flexGrow: 1, mr: 1, "--Input-focusedThickness": "0px" }}
             />
             <IconButton
-              onClick={() => {
-                addCommentToBarber({
-                  id: barberId,
-                  user_id: "63d7f38260b55e1906dcbb29",
-                  body: body,
-                });
-                getCommentByBarberId({ id: barberId });
-              }}
+              type="submit"
               size="sm"
               variant="plain"
               color="neutral"
@@ -275,6 +294,7 @@ const BarberComments = () => {
             >
               <SendIcon />
             </IconButton>
+            </form>
           </CardOverflow>
         </Card>
       </>
@@ -282,7 +302,6 @@ const BarberComments = () => {
   }
   return (
     <div>
-      {console.log(page)}
       {page}
     </div>
   );

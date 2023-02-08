@@ -13,7 +13,7 @@ function PhotosProvider(props) {
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
-  const getAllPhotos= async (photoObj) => {
+  const getAllPhotos= async () => {
     try {
     
       const photo = (await axios.get(url)).data;
