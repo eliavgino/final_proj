@@ -14,7 +14,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -34,10 +34,9 @@ function Copyright(props) {
   );
 }
 
-const theme = createTheme();
-
 function SignUp() {
-  //   const navigat = useNavigate();
+  
+  const navigate = useNavigate();
   const { addNewUser, users } = useContext(UserContext);
   const [user, setUser] = useState({
     user_Name: null,
@@ -47,7 +46,9 @@ function SignUp() {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+
+    <Box  className="SignUpContainer">
+
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -65,8 +66,13 @@ function SignUp() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              console.log(user);
-              addNewUser(user);
+              e.target.reset();
+              const response=addNewUser(user);
+              if(response){
+
+                navigate('/')
+
+              }
             }}
           >
             <Box sx={{ mt: 3 }}>
@@ -121,6 +127,7 @@ function SignUp() {
                     label="phoneNumber"
                     type="tel"
                     id="phoneNumber"
+                    placeholder="+972..."
                     autoComplete="phoneNumber"
                     onChange={(ev) =>
                       setUser({ ...user, phoneNumber: ev.target.value })
@@ -140,11 +147,6 @@ function SignUp() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                onClick={(e) => {
-                  e.preventDefault();
-                  addNewUser(user);
-                  //   navigat("/login");
-                }}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign Up
@@ -162,7 +164,9 @@ function SignUp() {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
-    </ThemeProvider>
+    </Box>
+
+ 
   );
 }
 export default SignUp;

@@ -14,12 +14,13 @@ import HomePage from "./components/homePage";
 import UserHairCuts from "./components/userHaircuts";
 import NavBar from "./components/navBar";
 import BarberProfile from "./components/barberProfile";
+import BarberPhoto from "./components/barberPhotos";
 import HairCutsProvider from "./context/hairCuts";
 import PagenationProvider from "./context/pagenation";
 import BarberApp from "./components/barberApp";
 import ScheduleMain from "./components/schedule/scheduleMain";
-import {BrowserRouter} from "react-router-dom"
-import Login from "./components/logIn";
+import { BrowserRouter } from "react-router-dom";
+import RoleProvider from "./context/role";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,14 +32,9 @@ root.render(
             <BarberProvider>
               <CommentProvider>
                 <PagenationProvider>
-                  {/* <AddPhotos /> */}
-                  {/* <App /> */}
-                  {/* <BarberProfile /> */}
-                  {/* <AddPhotos /> */}
-                  {/* <HomePage /> */}
-                  {/* <Login/> */}
-                  {/* <OurCreativeTeam /> */}
-                  <ScheduleMain />
+                  <RoleProvider>
+                    <BarberApp/>
+                  </RoleProvider>
                 </PagenationProvider>
               </CommentProvider>
             </BarberProvider>

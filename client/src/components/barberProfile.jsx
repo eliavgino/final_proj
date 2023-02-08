@@ -13,7 +13,13 @@ function BarberProfile() {
   const { getbarberById, barberId, barber } = useContext(BarbersContext);
 
   useEffect(() => {
-    getbarberById({ _id: barberId });
+
+    const get=async()=>{
+     await getbarberById({ _id: barberId });
+    }
+    get()
+    console.log(barberId)
+    console.log( barber)
   }, []);
 
   return (
@@ -24,6 +30,7 @@ function BarberProfile() {
         gap: "4vh",
         width: "100vw",
         height: "100vh",
+        position:"absolute"
       }}
     >
       <Box className="profileHeaderBackgroundB" sx={{ bgcolor: "black" }}></Box>

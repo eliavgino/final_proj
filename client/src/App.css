@@ -303,7 +303,7 @@ body {
     left: 34vw;
   }
 }
-/* /////////profile */
+/* ///////// barber profile */
 .profileAvatarB {
   position: relative;
   top: 5vh;
@@ -331,7 +331,7 @@ body {
   position: relative;
 }
 .profileContainerB {
-  position: fixed;
+  position: relative;
   height: 75vh;
   background-color: #ebebe1;
 }
@@ -451,6 +451,57 @@ body {
   }
 }
 /* //////////log in alert */
+.mustLogInContainer{
+
+  width: 100vw;
+  height: 100vh;  
+  background-color: #00000075;
+  position: fixed;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+.mustLogInCardContainer{
+
+  width: 27vw;
+  height: 32vh;
+  background-color: #dad5d5;
+  border-top: 0.3vw solid rgba(255, 0, 0, 0.5);
+  border-radius: 2em;
+  box-shadow: 0.4vw 0.4vw 0.3vw 0.1vw rgba(0, 0, 0, 0.384);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+
+
+}
+.oopsPar{
+
+  font-family: mySecondFont;
+  margin: 1vw;
+  font-size: 1.2vw;
+
+}
+.mustLogInPar{
+
+  font-family: mySecondFont;
+  margin: 1vw;
+  font-size: 1.2vw;
+
+}
+.mustLogInButton{
+
+  position: relative;
+  align-self: center;
+  justify-content: end;
+  top: 6vh;
+  background-color: rgb(180, 153, 46);
+  border: 0.1vw solid rgba(0, 0, 0, 0.336);
+
+}
 
 
 

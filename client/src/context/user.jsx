@@ -1,6 +1,7 @@
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
+import RoleC from "./role";
 
 export const UserContext = createContext();
 
@@ -18,6 +19,8 @@ function UserProvider(props) {
       let user = response.data;
       console.log(response.headers["x-auth-token"]);
       localStorage.setItem("token", response.headers["x-auth-token"]);
+      const token = localStorage.getItem("token");
+      setUsername(jwt_decode(token).name);
    
     } catch (error) {
       console.log(error);

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import HomePage from './homePage'
 import NavBar from './navBar'
 import { useContext } from 'react';
-import { PagenationContext } from '../context/pagenation';
 import Login from './logIn';
 import SignUp from './signUp';
 import BarberProfile from './barberProfile';
@@ -11,8 +10,6 @@ import UserProfile from './userProfile';
 import MustLogIn from './MustLogIn';
 
 function BarberApp() {
-    
-  const {page, setPage,logSignDisplay}=useContext(PagenationContext);
 
   const navigate=useNavigate();
 
