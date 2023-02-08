@@ -121,6 +121,7 @@ function SignUp() {
                     label="phoneNumber"
                     type="tel"
                     id="phoneNumber"
+                    placeholder="+972..."
                     autoComplete="phoneNumber"
                     onChange={(ev) =>
                       setUser({ ...user, phoneNumber: ev.target.value })

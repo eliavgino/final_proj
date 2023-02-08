@@ -14,10 +14,13 @@ import HomePage from "./components/homePage";
 import UserHairCuts from "./components/userHaircuts";
 import NavBar from "./components/navBar";
 import BarberProfile from "./components/barberProfile";
+import BarberPhoto from "./components/barberPhotos";
 import HairCutsProvider from "./context/hairCuts";
 import PagenationProvider from "./context/pagenation";
 import BarberApp from "./components/barberApp";
 import ScheduleMain from "./components/schedule/scheduleMain";
+import { BrowserRouter } from "react-router-dom";
+import SignUp from "./components/signUp";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -35,6 +38,8 @@ root.render(
                   <HomePage />
                   {/* <OurCreativeTeam /> */}
                   {/* <ScheduleMain /> */}
+                  {/* <BarberPhoto /> */}
+                  {/* <SignUp /> */}
                 </PagenationProvider>
               </CommentProvider>
             </BarberProvider>
