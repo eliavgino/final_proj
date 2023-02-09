@@ -26,14 +26,22 @@ body {
   }
   
   .card {
-    width: 20%;
+    width: 17%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 30px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom:5.5rem ;
+    right:2.5rem ;
+    z-index: 99999;
   }
   
   .chat-header {
+    display: flex;
+    justify-content: space-between;
+    
+    
     background-color: rgba(34, 34, 34);
     color: #fff;
     padding: 7px;
@@ -46,7 +54,7 @@ body {
   }
   
   .chat-window {
-    height: 300px;
+    height: 250px;
     overflow-y: auto;
     scrollbar-width:thin;
     color: #333;
@@ -186,3 +194,18 @@ body {
     
   }
    
+  #minimizebtn{
+    height: 25px;
+    width: 30px;
+    border-radius:7px ;
+    margin-right: 0.3rem;
+  }
+
+  #minimizebtn:hover{
+    
+   background-color: #646464;
+  }
+  #chatbtn:hover{
+    transition: all 0.3s ease-in-out;
+    opacity:0.6 ;
+  }
