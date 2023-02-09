@@ -47,7 +47,7 @@ function SignUp() {
 
   return (
 
-    <Box  className="SignUpContainer">
+    <Box sx={{overflow:"hidden"}} className="SignUpContainer">
 
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -96,7 +96,6 @@ function SignUp() {
                   <TextField
                     required
                     fullWidth
-                    id="email"
                     label="Email Address"
                     name="email"
                     autoComplete="email"
@@ -112,7 +111,6 @@ function SignUp() {
                     name="password"
                     label="Password"
                     type="password"
-                    id="password"
                     autoComplete="new-password"
                     onChange={(ev) =>
                       setUser({ ...user, password: ev.target.value })
@@ -126,7 +124,6 @@ function SignUp() {
                     name="phoneNumber"
                     label="phoneNumber"
                     type="tel"
-                    id="phoneNumber"
                     placeholder="+972..."
                     autoComplete="phoneNumber"
                     onChange={(ev) =>

@@ -8,11 +8,16 @@ import { useContext } from "react";
 import { PhotosContext } from "../context/photos";
 import { useNavigate } from 'react-router-dom';
 import { BarbersContext } from '../context/barbers';
+import { PagenationContext } from "../context/pagenation";
 
 function Stories() {
   const { getAllPhotos, photos } = useContext(PhotosContext);
 
   const { setBarberId }=useContext(BarbersContext);
+
+  const {setPage}=useContext(PagenationContext);
+
+
 
   const navigate=useNavigate()
 
@@ -62,7 +67,7 @@ function Stories() {
                 </Box>
               </Box>
 
-              <Avatar onClick={()=>{setBarberId(photo.barber["_id"]);navigate('/barberProfile')}} sx={{left:{lg:'7.5vw',xs:'14vw'},width:{lg:'5vw',xs:'18vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
+              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile')}} sx={{left:{lg:'7.5vw',xs:'14vw'},width:{lg:'5vw',xs:'18vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
 
                 <Image cloudName="ddwsr6uth" publicId={photo.barber["profilePhoto"]}></Image>
 

@@ -38,7 +38,7 @@ export default function OurCreativeTeam() {
         {barbers.map((val) => (
           <Grid item xs={12} sm={6} md={4}>
             <Card
-              onClick={() =>{ setBarberId(val._id);navigate('/barberProfile');setPage('/barberProfile')}}
+              onClick={() =>{ setBarberId(val._id);navigate('/barberProfile');setPage('barberProfile')}}
               sx={{
                 width: 300,
                 bgcolor: "initial",
