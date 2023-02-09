@@ -9,7 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 function MustLogIn() {
   
-  const {mustLogDis, setMustLogIn}=useContext(PagenationContext);
+  const {mustLogDis, setMustLogIn, setDis}=useContext(PagenationContext);
 
   const navigate=useNavigate()
 
@@ -23,7 +23,7 @@ function MustLogIn() {
       <Box component="p" className="oopsPar">OOPS!</Box>
       <Box component="p" className="mustLogInPar">You must log in to complete this action!</Box>
 
-      <Button className='mustLogInButton' onClick={()=>{setMustLogIn('none');navigate('/logIn')}} >Log in</Button>
+      <Button className='mustLogInButton' onClick={()=>{setMustLogIn('none');navigate('/logIn');setDis('none')}} >Log in</Button>
 
       </Box>
 

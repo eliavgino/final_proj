@@ -15,7 +15,7 @@ function Stories() {
 
   const { setBarberId }=useContext(BarbersContext);
 
-  const {setPage}=useContext(PagenationContext);
+  const {setPage,setDis}=useContext(PagenationContext);
 
 
 
@@ -55,7 +55,7 @@ function Stories() {
             <>
               <Box
                 sx={{ width: { lg: "20vw", xs: "45vw" } }}
-                className="card"
+                className="ourResultCard"
                 component="div"
               >
                 <Box component="div">
@@ -67,7 +67,7 @@ function Stories() {
                 </Box>
               </Box>
 
-              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile')}} sx={{left:{lg:'7.5vw',xs:'14vw'},width:{lg:'5vw',xs:'18vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
+              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile');setDis('')}} sx={{left:{lg:'7.5vw',xs:'14vw'},width:{lg:'5vw',xs:'18vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
 
                 <Image cloudName="ddwsr6uth" publicId={photo.barber["profilePhoto"]}></Image>
 

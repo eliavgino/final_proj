@@ -5,12 +5,12 @@ import { useContext } from 'react';
 
 function BarberHairCuts() {
 
-    const {getHairCutsById, barberHairCuts, setBarberHairCuts, setHaircuts}=useContext(HairCutsContext);
+    const {getHairCutsByBarberId, barberHairCuts, setBarberHairCuts, setHaircuts}=useContext(HairCutsContext);
 
     const {barberId}=useContext(BarbersContext);
 
     useEffect(() => {
-        getHairCutsById(barberId)
+        getHairCutsByBarberId(barberId)
     }, [])
 
   return (
