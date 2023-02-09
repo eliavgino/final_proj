@@ -12,8 +12,6 @@ import { Button } from "@mui/joy";
 const Confirm = () => {
   const { chooseTime, chooseHairCut, chooseBarber, decoded, token } =
     useContext(HairCutsContext);
-  const email = decoded.email;
-  console.log(email);
   async function addNewHaircut() {
     try {
       const res = await axios.post("http://localhost:4000/api/v1/haircut", {
@@ -23,7 +21,7 @@ const Confirm = () => {
         date: chooseTime.date,
         hairCut: chooseHairCut,
       });
-      return res.data;
+      
     } catch (error) {
       console.error(error);
       throw error;

@@ -22,7 +22,7 @@ const ChooseHairCut = () => {
               
         </div>
         <div style={{justifyContent:'center',display:'flex',flexDirection:'row',alignItems:'center'} }>
-        <button className='selectHaircut' onClick={()=>{setPageState("chooseDate")}}>Click</button>
+        <button className='selectHaircut' onClick={()=>{setPageState("chooseHairDresser")}}>Click</button>
        </div>
         </div>
     );

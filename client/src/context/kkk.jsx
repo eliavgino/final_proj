@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { createContext, useState, useEffect } from "react";
 import jwt_decode from 'jwt-decode';
@@ -19,27 +18,26 @@ function HairCutsProvider(props) {
     const [chooseTime,setChooseTime]=useState()
     const [chooseHairCut,setChooseHairCut]=useState()
     const [chooseBarber,setChooseBarber]=useState({_id:"a"})
-    const [barberHairCuts,setBarberHairCuts]=useState([])
     const [haircuts,setHaircuts]=useState([])
+    const [barberHairCuts,setBarberHairCuts]=useState([])
     const [barbers,setBarbers]=useState([])
     const[activeHaircuts,setActiveHaircuts]=useState([])
     const appointments = [];
     const currentDate = new Date();
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-    async function getHairCutsById(id){
-      try {
-        const response = await axios.post("http://localhost:4000/api/v1/hairCut/getHairCutByBarberId",{id});
-        setBarberHairCuts(response.data)
-        if(!response){
-          console.log("this is empty")
-        }
-    } catch (error) {
-      console.error(error);
-    }
-  
-    }
+  async function getHairCutsById(id){
+    try {
+      const response = await axios.post("http://localhost:4000/api/v1/hairCut/getHairCutByBarberId",{id});
+      setBarberHairCuts(response.data)
+      if(!response){
+        console.log("this is empty")
+      }
+  } catch (error) {
+    console.error(error);
+  }
 
+  }
    async function getAllHaircutsPrice() {
       try {
           const response = await axios.get("http://localhost:4000/api/v1/product");
@@ -77,6 +75,7 @@ function HairCutsProvider(props) {
       getUpcomingHairCuts();
     }, []);
     console.log(activeHaircuts)
+    console.log(activeHaircuts)
     console.log(chooseBarber._id)
     let filteredHaircuts= activeHaircuts.filter(hairCut=>hairCut.barber._id===chooseBarber._id)
     console.log(filteredHaircuts)
@@ -109,7 +108,7 @@ function HairCutsProvider(props) {
   return (
     <div>
       <HairCutsContext.Provider
-        value={{getHairCutsById,barberHairCuts,setBarberHairCuts,currentDate,pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token }}
+        value={{pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token }}
       >
         {children}
       </HairCutsContext.Provider>

@@ -153,11 +153,11 @@ function handleBack(){
               <button style={{fontSize:"20px",
      color:"#232227",
      fontFamily: 'Montserrat',
-     fontWeight:1000}} onClick={() => setPageState("chooseHairCut")}  hidden={chooseTime?false:true}>Back</button>
+     fontWeight:1000}} onClick={() => setPageState("confirm")}  hidden={chooseTime?false:true}>Next</button>
               <button style={{fontSize:"20px",
      color:"#232227",
      fontFamily: 'Montserrat',
-     fontWeight:1000}} disabled={chooseTime ? false : true} onClick={() => handleBack()}  hidden={chooseTime?false:true}>Next</button>
+     fontWeight:1000}} onClick={() => handleBack()} >Back</button>
               <i class="fa fa-pencil edit" aria-hidden="true"></i>
             </div></div>
           </div>
