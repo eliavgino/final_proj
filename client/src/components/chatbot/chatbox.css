@@ -13,9 +13,9 @@
     border-radius: 30px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    bottom:5.5rem ;
+    bottom:3rem ;
     right:2.5rem ;
-    z-index: 9999;
+    z-index: 99999;
   }
   
   .chat-header {
@@ -43,7 +43,8 @@
     font-weight: 500;
     border-left:1px solid #1d1d1d;
     border-right:1px solid #1d1d1d;
-    background-color: #646464;
+    border-bottom:1px solid #1d1d1d;
+    background-color: rgba(107, 107, 107, 0.7);
     opacity: 0.8;
     background-size: cover;
     
@@ -66,6 +67,7 @@
    border-bottom-right-radius:30px ;
    font-size: medium;
    background-color: rgb(174, 174, 174);
+   border:1px solid #1d1d1d;
   }
   
   .message-input {

@@ -11,9 +11,9 @@ function SiteHeader() {
             </div>
         </Box>
         <Box sx={{width:{lg:'70vw',xs:'100vw'}}} className='logoHalf'>
-            <Box className='logoContainer'>
+            {/* <Box className='logoContainer'>
                 <Box component={'img'} sx={{right:{lg:'10vw'},width:{lg:'150%',sm:'100%'}}} className='logo' src="/images/logo.png" alt="error" />
-            </Box>
+            </Box> */}
         </Box>
 
     </div>

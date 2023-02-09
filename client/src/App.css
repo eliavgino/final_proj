@@ -72,7 +72,7 @@ html {
 }
 .zitataHalf {
   width: 30vw;
-  background-color: var(--lether-10);
+  background-color: rgb(35, 35, 35);
 }
 .zitatatContainer {
   display: flex;
@@ -80,13 +80,19 @@ html {
   position: relative;
 }
 .zitata {
-  font-size: 3.9vw;
+text-align: center;
+  font-size: 3.5vw;
   text-align: center;
   position: relative;
   font-family: myFirstFont;
-  top: 3vh;
-  color: var(--lether-1);
-  font-weight: 800;
+  top: 10vh;
+  padding: 2rem;
+  word-spacing: 0.5rem;
+  line-height: 3rem;
+  text-shadow: 2px 2px 4px #989797;
+  
+  color: white;
+  font-weight: 400;
 }
 .logoHalf {
   display: flex;
@@ -94,7 +100,7 @@ html {
   align-items: center;
   position: relative;
   background: rgba(58, 57, 57, 0.7)
-    url("../public/images/header\ background.jpeg");
+    url("../public/images/homePage-Grooming.jpeg");
   background-position: 50%;
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
@@ -113,16 +119,17 @@ body {
 /* ///////////navBar */
 .navBarContainer {
   width: 99.5vw;
-  height: 6.5vh;
-  background-color: var(--olive-1);
+  height: 9vh;
+  background-color: #151414;
   border-bottom: solid #130e0b 0.1vw;
-  border-bottom-left-radius: 0.9em;
-  border-bottom-right-radius: 0.9em;
+  border-bottom-left-radius: 0.6em;
+  border-bottom-right-radius: 0.6em;
   position: fixed;
   z-index: 3;
   opacity: 0.99;
   display: flex;
   justify-content: end;
+  
 }
 .navBarName {
   font-family: mySecondFont;
@@ -130,17 +137,17 @@ body {
   margin: 0;
   color: rgb(240, 255, 219);
   left: 1vw;
-  top: 0.2vh;
+  top: 2vh;
 }
 .navBarButtonsContainer {
   position: relative;
   display: flex;
-  right: 0.5vw;
+  right: 2vw;
   height: 100%;
 }
 .navBarButton {
   color: rgb(240, 255, 219);
-  background-color: #757533;
+  background-color: #151414;
   border: none;
   font-family: mySecondFont;
   height: 65%;
@@ -155,105 +162,150 @@ body {
 }
 /* /////////////aboutUs */
 .aboutUsContainer {
-  height: 60vh;
+  background-image: url('../public/images/backGroundTest.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  height: 50vh;
   width: 99.5vw;
-  background-color: var(--lether-0);
+  background-color: white;
   position: relative;
-  text-align: center;
-  margin-top: 4vh;
+  
+  margin-top: 0.5vh;
+  align-items: center;
+  text-align: left;
+  
+
+  
 }
 .aboutUsHeader {
-  color: rgb(0, 0, 0);
+  color: whitesmoke;
   font-family: myFirstFont;
   margin: 0;
   position: relative;
   bottom: 5vh;
-  text-shadow: 1vh 1vh rgba(0, 0, 0, 0.219);
+  text-shadow: 2px 2px 4px #989797;
+  text-align: left;
+  font-size: 4rem;
+  top:-4rem;
+  
 }
 .aboutUsContent {
-  color: rgb(0, 0, 0);
+  color: white(0, 0, 0);
   font-family: myFirstFont;
   margin: 0;
   position: absolute;
   top: 15vh;
-  left: 1vw;
+  left: 2vw;
+  right: 2vw;
+  font-family: myFirstFont;
+  word-spacing: 0.5rem;
+   line-height: 2.3rem;
+   font-size: 2rem;
+   text-align: left;
+   text-shadow: 2px 2px 4px #989797;
+   width: 70%;
 }
 /* //////////stories */
 .storiesContainer {
-  height: 60vh;
+  height: 70vh;
   width: 100vw;
-  background-color: var(--olive-3);
+  background-color: rgb(27, 27, 27);
   position: relative;
   text-align: center;
-  margin-top: 4vh;
+  margin-top: 0.5vh;
 }
 .storiesHeader {
-  color: var(--lether-10);
+  text-align: left;
+  color: whitesmoke;
   font-family: myFirstFont;
   margin: 0;
   position: relative;
-  bottom: 5vh;
+  padding: 2rem;
+  text-shadow: 2px 2px 4px #989797;
+  font-size: 4rem;
+  
   text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
 }
 .cardsContainer {
+  margin-top: 6rem;
   left: 2vw;
   position: relative;
-  top: -4vh;
+  top: -2vh;
 }
 .ourResultCard {
   height: 45vh;
-  background-color: rgb(199, 167, 119);
+  background-color: rgb(247, 247, 247);
   border: 0.1vw solid black;
   justify-content: center;
   align-items: end;
   overflow: visible;
+  border-radius: 10px;
+  align-items: center;
+  object-fit: cover;
+  
+}
+.ourResultCard img {
+  width: 99%;
+  height: 99%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 .cardAvatar {
   position: absolute;
   bottom: 7vh;
   left: 7.5vw;
-  border:0.2vw solid #000000;
 }
 .storieImage {
   position: relative;
   width: 100%;
-  height: 45vh;
- 
 }
 /* //////////creativeTeam */
 .creativeTeamContainer {
-  height: 60vh;
+  height: 80vh;
   width: 100vw;
-  background-color: var(--lether-10);
+  background-image: url("../public//images/yearone-2y4qGxu-4Do-unsplash\ \(1\).jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   text-align: center;
-  margin-top: 4vh;
+  margin-top: 0.5vh;
 }
 .creativeTeamHeader {
-  color: var(--olive-2);
+  color: whitesmoke;
   font-family: myFirstFont;
   margin: 0;
+  margin-left: 2rem;
   position: relative;
-  bottom: 5vh;
+  bottom: -5vh;
   text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
+  text-align: left;
+  font-size: 4rem;
+}
+.creativeTeamCardsContainer{
+  margin-top: 6rem;
+  left: 2vw;
+  position: relative;
+  top: 10rem;
+  border-top: 0.2rem solid rgb(247, 244, 244);
+  
+
+}
+.cardBottom{
+  border-bottom: 0.2rem solid rgb(247, 244, 244);
+  
+  border-left: 0.2rem solid rgb(247, 244, 244);
+  border-radius: 5px;
+
+
+
 }
 /* //////////details */
 .detailsContainer {
-  height: 60vh;
-  width: 100vw;
-  background-color: var(--olive-3);
-  position: relative;
-  text-align: center;
-  margin-top: 4vh;
+ 
+  margin-top: 0.5vh;
 }
-.detailsHeader {
-  color: var(--lether-10);
-  font-family: myFirstFont;
-  margin: 0;
-  position: relative;
-  bottom: 5vh;
-  text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
-}
+
 /* /////////profile */
 .profileAvatar {
   position: relative;

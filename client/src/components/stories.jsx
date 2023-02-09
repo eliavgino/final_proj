@@ -33,16 +33,17 @@ function Stories() {
   return (
     <Box className="storiesContainer">
       {console.log("photos")}
-      {console.log(photos)}
+      
       <Box
         component="p"
-        sx={{ fontSize: { lg: "5vw", xs: "12vw" } }}
+       
         className="storiesHeader"
       >
-        Our results
+        Latest works
       </Box>
 
       <Box className="cardsContainer" component="div">
+      
         <AliceCarousel
           responsive={{ 0: { items: 2 }, 1024: { items: 4 } }}
           autoPlayInterval="3000"

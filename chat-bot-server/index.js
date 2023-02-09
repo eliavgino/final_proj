@@ -79,7 +79,7 @@ io.on("connection", (socket) => {
   setTimeout(() => {
   socket.emit("receiveMessage", {
     message: "Welcome to our barbershop chatbot! How can I help you today?"
-  });}, 3000);
+  });}, 1500);
 
   socket.on("sendMessage", (data) => {
     console.log(data.message);
