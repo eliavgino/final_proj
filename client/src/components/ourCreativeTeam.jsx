@@ -33,7 +33,7 @@ export default function OurCreativeTeam() {
   return (
     <Box className="creativeTeamContainer">
       <Box sx={{fontSize:{lg:'5vw',xs:'11vw'}}} component="p" className="creativeTeamHeader">Our creative team</Box>
-      <Grid container spacing={4} sx={{ padding: "0 20px" }} justify="center">
+      <Grid container spacing={4} sx={{ padding: "0 20px" }} justify="center" className="creativeTeamCardsContainer">
       
         {barbers.map((val) => (
           <Grid item xs={12} sm={6} md={4}>
@@ -103,7 +103,7 @@ export default function OurCreativeTeam() {
                   </Box>
                 </CardCover>
               </Box>
-              <Box
+              <Box className="cardBottom"
                 sx={{ display: "flex", gap: 1, mt: 1.5, alignItems: "center" }}
               >
                 <Avatar
