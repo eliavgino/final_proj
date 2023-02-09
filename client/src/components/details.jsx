@@ -96,7 +96,7 @@ function Details() {
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href=""><Link  to="about" spy={true} smooth={true}> </Link>About us</a>
+                                        <a href=""><Link  to="about" spy={true} smooth={true}> About us</Link></a>
                                     </li>
                                     <li>
                                     <a href="">Contact us</a>
