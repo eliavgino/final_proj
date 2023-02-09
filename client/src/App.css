@@ -269,6 +269,7 @@ body {
 .profileUserDetails {
   position: relative;
   border-bottom: 0.1vw solid rgba(0, 0, 0, 0.356);
+  gap: 0.1vw;
 }
 .profileUserHairCuts {
   position: relative;
@@ -279,34 +280,24 @@ body {
 .profileHairCutsContainer {
   position: relative;
 }
-.profileContainer{
+.profileCard{
 
   position:fixed;
   height: 75vh;
   background-color: #ebebe1; 
+  overflow: hidden;
   
 }
-.slideIn {
-  animation: profileSlideIn 0.5s forwards;
-}
-.slideOut {
-  animation: profileSlideOut 0.5s forwards;
-}
-@keyframes profileSlideIn {
- 100%{
+.profileContainer{
 
-    left:+10vw
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000059;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
- }
-}
-@keyframes profileSlideOut {
-  0%{
-
-    left:+10vw
-  }
-  100% {
-    left: -100vw;
-  }
 }
 /* ///////// barber profile */
 .profileAvatarB {
@@ -353,19 +344,47 @@ body {
   background-color: #ebebe2;
   width: 30.5vw;
   position: relative;
-  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .hairCutRow {
+
   display: flex;
-  gap: 7.2vw;
   background-color: rgb(247, 244, 244);
+  gap: 16%;
   position: relative;
-  width: fit-content;
   border: 0.3vw rgb(247, 244, 244) solid;
   border-radius: 1em;
   box-shadow: 0vw 0vw 00vw 0.1vw;
-  top: 1vh;
+  top:1vh;
+  z-index: 2;
   
+}
+.userHairCutsTable{
+
+  z-index: 1;
+  position: relative;
+  height:29vh;
+  background-color: #ffffff;
+  border:0.2vw solid #1212004b;
+  top: 0.5vh;
+  overflow: scroll;
+  scrollbar-width: 1vw;
+
+
+}
+.userProfileTableRow{
+
+  border-bottom:0.1vw solid #121200;
+  display: flex; 
+
+}
+.userProfileTableCell{
+
+  width: 36%;
+
 }
 /* ////////log in */
 .logSignPageContainer{

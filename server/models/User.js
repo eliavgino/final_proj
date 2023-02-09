@@ -36,7 +36,7 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.generateUserJWT = function () {
   const token = jwt.sign(
-    { _id: this._id, role: this.role, name: this.user_Name },
+    { _id: this._id, role: this.role, name: this.user_Name, email:this.email, phoneNumber:this.phoneNumber },
     process.env.USER_TOKEN
   );
   return token;

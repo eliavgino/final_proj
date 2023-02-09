@@ -13,15 +13,15 @@ function PagenationProvider(props) {
     const { children } = props;
 
     const [page,setPage]=useState('home');
-    const [animation,setAnimation]=useState('slideOut');
+    const [userProfileDis,setUserProfileDis]=useState('none');
     const [mustLogDis,setMustLogIn]=useState('none');
     const [barCantDis,setBarCantDis]=useState('none');
     const [addPhotoDis,setAddPhotoDis]=useState('none');
-    const [dis,setDis]=useState('none');
+    const [dis,setDis]=useState('');
 
   return (
     <>
-      <PagenationContext.Provider value={{page,setPage,animation,setAnimation,mustLogDis,setMustLogIn,barCantDis,setBarCantDis, addPhotoDis,setAddPhotoDis,dis,setDis}}>
+      <PagenationContext.Provider value={{page,setPage,userProfileDis,setUserProfileDis,mustLogDis,setMustLogIn,barCantDis,setBarCantDis, addPhotoDis,setAddPhotoDis,dis,setDis}}>
         {children}
       </PagenationContext.Provider>
     </>
