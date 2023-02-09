@@ -8,9 +8,15 @@ import UserHairCuts from "./userHaircuts";
 import BarberComments from "./BarberComments";
 import BarberPhotos from "./barberPhotos";
 import { convertLength } from "@mui/material/styles/cssUtils";
+import { RoleContext } from "../context/role";
+import BarberHairCuts from "./barberHairCuts";
+import jwtDecode from "jwt-decode";
 
 function BarberProfile() {
-  const { getbarberById, barberId, barber } = useContext(BarbersContext);
+
+  const { getbarberById, barberId, barber, cerruntBarberId } = useContext(BarbersContext);
+
+  const {role,setRole}=useContext(RoleContext)
 
   useEffect(() => {
 
@@ -18,9 +24,7 @@ function BarberProfile() {
      await getbarberById({ _id: barberId });
     }
     get()
-    console.log(barberId)
-    console.log( barber)
-  }, []);
+  }, [barberId]);
 
   return (
     <Box
@@ -86,6 +90,37 @@ function BarberProfile() {
           </Typography>
         </Box>
       </Box>
+      {console.log(cerruntBarberId)}
+      {cerruntBarberId===barberId?
+      <>
+      {console.log(barberId)}
+      <Typography
+        component="p"
+        className="profileLastHairCutsB"
+        sx={{
+          width: { lg: "fit-content", xs: "30vw" },
+          fontSize: { lg: "2vw", xs: "5vw" },
+          left: { lg: "43vw", xs: "35vw" },
+        }}
+      >
+        Last haircuts
+      </Typography>
+      <Box
+        component="div"
+        className="photos"
+        sx={{
+          position: "relative",
+          minHeight: "80vh",
+          width: "80vw",
+          height: "20vh",
+          left: "18vh",
+        }}
+      >
+        <BarberHairCuts />
+      </Box>
+      </>
+      :
+      null}
 
       <Typography
         component="p"
@@ -96,7 +131,7 @@ function BarberProfile() {
           left: { lg: "43vw", xs: "35vw" },
         }}
       >
-        my haircuts
+        My haircuts
       </Typography>
       <Box
         component="div"
@@ -122,7 +157,7 @@ function BarberProfile() {
           left: { lg: "43vw", xs: "35vw" },
         }}
       >
-        comeents
+        Comments
       </Typography>
 
       <Box

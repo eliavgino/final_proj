@@ -28,9 +28,9 @@ function PhotosProvider(props) {
   const addNewphoto = async (photoObj) => {
     try {
       const photo = await axios.post(url, photoObj, {});
-      console.log(photo);
+      console.log(photo.data);
       //adding the photo into arry of photos
-      setphotos([...photos, photo]);
+      setphotos([...photos, photo.data]);
     } catch (error) {
       console.log(error);
       alert(error.response.data);

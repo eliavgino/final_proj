@@ -14,12 +14,21 @@ import Input from "@mui/joy/Input";
 import Typography from "@mui/joy/Typography";
 import Fab from "@mui/material/Fab";
 import SendIcon from "@mui/icons-material/Send";
+import { PagenationContext } from "../context/pagenation";
+import { BarbersContext } from "../context/barbers";
 
 const AddPhotos = () => {
+
   const { addNewphoto } = useContext(PhotosContext);
+
+  const {addPhotoDis,setAddPhotoDis}=useContext(PagenationContext);
+  
+  const {cerruntBarberId}=useContext(BarbersContext);
+
   const [imagurl, setimagurl] = useState();
   const [imageToUploade, setimageToUploade] = useState();
   const [description, setdescription] = useState({});
+
   const uploadImage = () => {
     const formData = new FormData();
     formData.append("file", imageToUploade);
@@ -29,14 +38,15 @@ const AddPhotos = () => {
       .post("https://api.cloudinary.com/v1_1/ddwsr6uth/image/upload", formData)
       .then((res) => {
         console.log(res.data.secure_url);
+        console.log(cerruntBarberId);
         addNewphoto({
-          barber: "63df7ce3dd4a0d2a523b666c",
+          barber: cerruntBarberId,
           photo: res.data.secure_url,
           description: description,
         });
       })
       .catch((err) => {
-        console.log("ll");
+        console.log(err);
       });
   };
   return (
@@ -59,11 +69,17 @@ const AddPhotos = () => {
       <AddToPhotosIcon onClick={uploadImage}>add photo</AddToPhotosIcon>
       <Image cloudName="ddwsr6uth" publicId={imagurl} /> */}
       <Card
+      className={`addPhotoCard `}
         variant="outlined"
         sx={{
+          bgcolor:"white",
+          position: "fixed",
+          top:"8vh",
+          right:"6vw",
           minWidth: 300,
           width: "30%",
-          height: "30%",
+          height: "30vh%",
+          display:addPhotoDis,
           "--Card-radius": (theme) => theme.vars.radius.xs,
         }}
       >

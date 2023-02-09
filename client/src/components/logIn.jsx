@@ -52,13 +52,12 @@ const Login = () => {
   }
 
   return (
-      <Box className="logSignPageContainer">
+      <Box component="div" className="logSignPageContainer">
 
         <SignUp/>
 
         <Box component="div" className="LogInContainer">
           <Container component="main" maxWidth="xs">
-            <CssBaseline />
             <Box
               sx={{
                 marginTop: 8,
@@ -91,7 +90,6 @@ const Login = () => {
                       <TextField
                         required
                         fullWidth
-                        id="email"
                         label="Email Address"
                         name="email"
                         autoComplete="email"
@@ -107,7 +105,6 @@ const Login = () => {
                         name="password"
                         label="Password"
                         type="password"
-                        id="password"
                         autoComplete="new-password"
                         onChange={(ev) =>
                           setUser({ ...user, password: ev.target.value })

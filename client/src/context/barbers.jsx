@@ -5,9 +5,18 @@ import React, { createContext, useState, useEffect } from "react";
 export const BarbersContext = createContext();
 
 function BarberProvider(props) {
+
+  useEffect(() => {
+   if(localStorage.getItem('token'))
+    setCerruntBarberId(jwt_decode(localStorage.getItem('token'))._id)
+
+  }, [])
+  
+
   const { children } = props;
   const url = "http://localhost:4000/api/v1/barber";
   const [barberId, setBarberId] = useState();
+  const [cerruntBarberId,setCerruntBarberId]=useState('');
   const [barbers, setBarbers] = useState([]);
   const [barber, setBarber] = useState({
     profilePhoto: "",
@@ -31,7 +40,6 @@ function BarberProvider(props) {
   };
   const getbarberById = async (barberId) => {
     try {
-      console.log("ll");
       let response = await axios.post(
         "http://localhost:4000/api/v1/barber/barberprofile",
         barberId,
@@ -52,6 +60,8 @@ function BarberProvider(props) {
           barber,
           setBarberId,
           barberId,
+          cerruntBarberId,
+          setCerruntBarberId
         }}
       >
         {children}

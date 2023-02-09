@@ -28,24 +28,25 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserProvider>
-        <HairCutsProvider>
-          <PhotosProvider>
-            <BarberProvider>
-              <CommentProvider>
-                <PagenationProvider>
-                  <RoleProvider>
-                    {/* <BarberApp/> */}
-                    {/* <ScheduleMain/> */}
-                    {/* <Login/> */}
-                    <ChatBox/>
-                  </RoleProvider>
-                </PagenationProvider>
-              </CommentProvider>
-            </BarberProvider>
-          </PhotosProvider>
-        </HairCutsProvider>
-      </UserProvider>
+      <RoleProvider>
+        <BarberProvider>
+          <PagenationProvider>
+          <UserProvider>
+            <HairCutsProvider>
+              <PhotosProvider>
+                <CommentProvider>
+                  
+                      
+                        <ChatBox/>
+                      
+                  
+                </CommentProvider>
+              </PhotosProvider>
+            </HairCutsProvider>
+          </UserProvider>
+          </PagenationProvider>
+        </BarberProvider>
+      </RoleProvider> 
     </BrowserRouter>
   </React.StrictMode>
 );

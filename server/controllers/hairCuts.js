@@ -45,6 +45,7 @@ exports.getHairCutByUser = async (req, res) => {
 exports.getHairCutByBarberId = async (req, res) => {
   try {
     const id = req.body.id;
+    console.log(req.body)
     const result = await HairCut.find({ barber: id })
       .populate("hairCut")
       .populate("user")

@@ -11,7 +11,6 @@
 html {
   height: 100%;
 }
-
 :root {
   overflow-x: hidden;
 
@@ -144,7 +143,7 @@ body {
   background-color: #757533;
   border: none;
   font-family: mySecondFont;
-  height: 84%;
+  height: 65%;
   transition: linear 0.3s;
   position: relative;
 }
@@ -294,13 +293,19 @@ body {
   animation: profileSlideOut 0.5s forwards;
 }
 @keyframes profileSlideIn {
-  100% {
-    left: 34vw;
-  }
+ 100%{
+
+    left:+10vw
+
+ }
 }
 @keyframes profileSlideOut {
-  0% {
-    left: 34vw;
+  0%{
+
+    left:+10vw
+  }
+  100% {
+    left: -100vw;
   }
 }
 /* ///////// barber profile */
@@ -326,6 +331,14 @@ body {
   border-radius: 1em;
   background-color: rgb(247, 244, 244);
   border: 1.5vw solid rgb(247, 244, 244);
+}
+.profileLastHairCutsB{
+
+  position: relative;
+  border-radius: 1em;
+  background-color: rgb(247, 244, 244);
+  border: 1.5vw solid rgb(247, 244, 244);
+
 }
 .profileHairCutsContainerB {
   position: relative;
@@ -363,6 +376,7 @@ body {
   justify-items: center;
   top: 10vh;
   height: 75vh;
+  overflow: hidden;
   
 }
 .logInContainer{
@@ -502,8 +516,76 @@ body {
   border: 0.1vw solid rgba(0, 0, 0, 0.336);
 
 }
+/* ///////////barber cant add comments */
+.barCantContainer{
+
+  width: 100vw;
+  height: 100vh;  
+  background-color: #00000075;
+  position: fixed;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+.barCantCardContainer{
+
+  width: 27vw;
+  height: 32vh;
+  background-color: #dad5d5;
+  border-top: 0.3vw solid rgba(255, 0, 0, 0.5);
+  border-radius: 2em;
+  box-shadow: 0.4vw 0.4vw 0.3vw 0.1vw rgba(0, 0, 0, 0.384);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+}
+.barCantPar{
+
+  font-family: mySecondFont;
+  margin: 1vw;
+  font-size: 1.2vw;
+
+}
+.barCantButton{
+
+  position: relative;
+  align-self: center;
+  justify-content: end;
+  top: 6vh;
+  background-color: rgb(180, 153, 46);
+  border: 0.1vw solid rgba(0, 0, 0, 0.336);
+
+}
+/* ////////add photo icon */
+.addPhotoIcon{
+
+  top: 8vh;
+  right:1vw;
+  transition: 0.5s;
+
+}
+.addPhotoIcon:hover{
+
+  font-size: 5vw;
+  top: 7vh;
+  right: 0.5vw;
+  color: white;
+  background-color: #121200;
+  border:1vw solid #121200;
+  transition: 0.3s ;
+  border-radius: 0.3em;
+
+}
+/* /////////add photo component */
+.addPhotoCard{
 
 
+
+
+}
 
 
 

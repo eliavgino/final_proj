@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect, useContext, useState } from "react";
 import { PhotosContext } from "../context/photos";
 import { BarbersContext } from "../context/barbers";
+import AliceCarousel from "react-alice-carousel";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import CameraIcon from "@mui/icons-material/PhotoCamera";
@@ -25,33 +26,34 @@ import { withTheme } from "@emotion/react";
 import BarberComments from "./BarberComments";
 
 export default function BarberPhoto() {
-
   const { barberPhotos, getPhotosByBarberId, addNewphoto } =
     useContext(PhotosContext);
 
   const { barber, barberId } = useContext(BarbersContext);
 
   useEffect(() => {
-    getPhotosByBarberId({ barber: barberId  });
+    getPhotosByBarberId({ barber: barberId });
 
     console.log("barber idgdgd" + barberId);
   }, []);
   return (
     <>
-      <Grid
-        container
-        spacing={1}
-        xs={{ padding: "0 2%" }}
-        justify="center"
-        sx={{ marginLeft: "2", marginRight: "2" }}
-      >
-        {barberPhotos.map((photo) => (
-          <Grid item key={photo._id} xs={12} sm={6} md={4}>
-            {" "}
+      <Box className="photosContainer" component="div">
+        <AliceCarousel
+          responsive={{ 0: { items: 1 }, 1024: { items: 4 } }}
+          autoPlayInterval="3000"
+          autoPlay="true"
+          disableDotsControls="true"
+          autoPlayStrategy="default"
+          disableButtonsControls="true"
+          infinite="true"
+          items={barberPhotos.map((photo) => (
             <Card
+              className="stort_card"
               variant="outlined"
               sx={{
-                minWidth: 300,
+                width: 250,
+
                 "--Card-radius": (theme) => theme.vars.radius.xs,
               }}
             >
@@ -121,9 +123,9 @@ export default function BarberPhoto() {
                 {photo.description}
               </Typography>
             </Card>
-          </Grid>
-        ))}
-      </Grid>
+          ))}
+        />
+      </Box>
     </>
   );
 }

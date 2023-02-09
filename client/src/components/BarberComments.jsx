@@ -19,6 +19,7 @@ import Input from "@mui/joy/Input";
 import HomePage from "./homePage";
 import { PagenationContext } from "../context/pagenation";
 import jwtDecode from "jwt-decode";
+import { RoleContext } from "../context/role";
 
 const BarberComments = () => {
 
@@ -27,9 +28,11 @@ const BarberComments = () => {
   const { getCommentByBarberId, barberComments, addCommentToBarber } =
     useContext(CommentContext);
 
-  const {setMustLogIn}=useContext(PagenationContext);
+  const {setMustLogIn, setBarCantDis}=useContext(PagenationContext);
 
   const { barberId } = useContext(BarbersContext);
+
+  const {role}=useContext(RoleContext)
 
   let page;
 
@@ -40,7 +43,6 @@ const BarberComments = () => {
   }, []);
 
   if (barberComments) {
-    {console.log(barberComments)}
     page = (
       <div>
       
@@ -163,6 +165,9 @@ const BarberComments = () => {
               e.target.reset()
               if(!localStorage.getItem('token'))
               setMustLogIn('')
+              else if(role==='barber'){
+                setBarCantDis('')
+              }
               else{
              await addCommentToBarber({
               id: barberId,

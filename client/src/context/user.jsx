@@ -1,9 +1,11 @@
 import jwt_decode from "jwt-decode";
 import axios from "axios";
-import React, { createContext, useState, useEffect } from "react";
-import RoleC from "./role";
+import React, { createContext, useState, useEffect, useContext, useLayoutEffect } from "react";
+import { RoleContext } from "./role";
+import { BarbersContext } from "./barbers";
+import { PagenationContext } from "./pagenation";
 
-export const UserContext = createContext();
+export const UserContext = createContext(); 
 
 function UserProvider(props) {
   const { children } = props;
@@ -11,16 +13,26 @@ function UserProvider(props) {
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
+  const {role, setRole}=useContext(RoleContext);
+
+  const {setCerruntBarberId}=useContext(BarbersContext);
+
+  const {setPage,setDis}=useContext(PagenationContext);
+
   const addNewUser = async (userObj) => {
     try {
       const response = await axios.post(url, userObj, {});
 
       //storge user deatails into token
       let user = response.data;
-      console.log(response.headers["x-auth-token"]);
       localStorage.setItem("token", response.headers["x-auth-token"]);
       const token = localStorage.getItem("token");
       setUsername(jwt_decode(token).name);
+      setRole(jwt_decode(token).role);
+      setPage('home')
+      setDis('');
+      if(jwt_decode(token).role==='barber')
+      setCerruntBarberId(jwt_decode(token)._id)
    
     } catch (error) {
       console.log(error);
@@ -35,13 +47,21 @@ function UserProvider(props) {
         userObj,
         {}
       );
-     
       localStorage.setItem("token", response.data);
       const token = localStorage.getItem("token");
       setUsername(jwt_decode(token).name);
+      setRole(jwt_decode(token).role);
+      setPage('home')
+      setDis('')
+      if(jwt_decode(token).role==='barber')
+      setCerruntBarberId(jwt_decode(token)._id)
+      
+      
       return 'success'
     } catch (error) {
+      console.log(error);
       setErrorMsg(error);
+      
       alert(error.response.data);
     }
   };
@@ -58,6 +78,7 @@ function UserProvider(props) {
   const logOut = async () => {
     localStorage.removeItem('token');
     setUsername('')
+    setRole('')
   };
   //   const resetPassword = async (userObj) => {
   //     try {

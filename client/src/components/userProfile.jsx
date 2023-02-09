@@ -13,7 +13,7 @@ function UserProfile() {
 
   return (
 
-    <Box className={`profileContainer ${animation}`} sx={{width:{lg:'35vw',xs:'80vw'},left:{lg:'-50vw',xs:'11vw'},top:{lg:'12vh',xs:'12vh'}}}>
+    <Box className={`profileContainer ${animation}`} sx={{width:{lg:'50vw',xs:'80vw'},left:{lg:'-100vw',xs:'-100vw'},top:{lg:'12vh',xs:'12vh'}}}>
 
       <CloseIcon onClick={()=>{setAnimation('slideOut')}} sx={{position:'absolute',zIndex:'999',right:0,margin:'0.4vw'}}/>
 

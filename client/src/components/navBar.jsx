@@ -11,17 +11,37 @@ import { useContext,useEffect } from 'react';
 import { PagenationContext } from '../context/pagenation';
 import { UserContext } from '../context/user';
 import { useNavigate } from 'react-router-dom';
+import { RoleContext } from '../context/role';
+import { BarbersContext } from '../context/barbers';
+import jwtDecode from 'jwt-decode';
+
 
 export default function NavBar() {
     
-    const {page, setPage, setAnimation}=useContext(PagenationContext);
+    const {page, setPage, setAnimation, setDis}=useContext(PagenationContext);
+
     const {logOut,userName}=useContext(UserContext);
 
+    const {role, setRole}=useContext(RoleContext);
+
+    const {setBarberId, cerruntBarberId}=useContext(BarbersContext);
+
+    const barberProfile=()=>{
+
+        setBarberId(jwtDecode(localStorage.getItem('token'))._id);
+        navigate('/barberProfile');
+
+    }
+    const UserProfile=()=>{
+
+        setAnimation('slideIn');
+
+    }
     const navigate=useNavigate();
 
     useEffect(() => {
-      
-    }, [userName])
+      console.log(page)
+    }, [userName,page])
     
   return (
     <Box className='navBarContainer' sx={{color:'black', flexGrow: 1 }} >
@@ -29,15 +49,15 @@ export default function NavBar() {
         <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="div" className="navBarButtonsContainer">
 
             <Box sx={{display:page!=='home'?'none':''}}>
-                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton'><Link  to="about" spy={true} smooth={true} onClick={()=>{}} >About us </Link></Box>
+                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton'><Link  to="about" spy={true} smooth={true}>About us </Link></Box>
             </Box>
 
             <Box sx={{display:page!=='home'?'none':''}}>
-                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton'><Link  to="team" spy={true} smooth={true} onClick={()=>{}} >Our team</Link></Box>
+                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton'><Link  to="team" spy={true} smooth={true} onClick={()=>{}}>Our team</Link></Box>
             </Box>
 
             <Box sx={{display:page!=='home'?'none':''}}> 
-                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton'><Link  to="results" spy={true} smooth={true} onClick={()=>{}}>Our results</Link></Box>
+                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton'><Link  to="results" spy={true} smooth={true}>Our results</Link></Box>
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'none':''}} >
@@ -45,11 +65,11 @@ export default function NavBar() {
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'':'none'}}>
-                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton' onClick={()=>{setAnimation('slideIn')}}>Profile</Box>
+                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton' onClick={()=>{role==='barber'?barberProfile():UserProfile()}}>Profile</Box>
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'':'none'}}>
-                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton' onClick={()=>{logOut();navigate('/');setPage('home')}}><a style={{textDecoration:'none',color:'inherit'}} href='http://localhost:3000'> Log out</a></Box>
+                <Box sx={{fontSize:{lg:'1vw',xs:'2.7vw'}}} component="button" className='navBarButton' onClick={()=>{logOut();navigate('/');setPage('home')}}><a style={{textDecoration:'none',color:'inherit'}} href='http://localhost:3000'> Log out </a></Box>
             </Box>
             
         </Box>
