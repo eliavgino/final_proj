@@ -55,7 +55,7 @@ function Stories() {
             <>
               <Box
                 sx={{ width: { lg: "20vw", xs: "45vw" } }}
-                className="card"
+                className="ourResultCard"
                 component="div"
               >
                 <Box component="div">

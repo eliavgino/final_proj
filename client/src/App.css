@@ -200,7 +200,7 @@ body {
   position: relative;
   top: -2vh;
 }
-.card {
+.ourResultCard {
   height: 45vh;
   background-color: rgb(199, 167, 119);
   border: 0.1vw solid black;
