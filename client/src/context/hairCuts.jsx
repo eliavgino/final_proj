@@ -11,11 +11,9 @@ export const HairCutsContext = createContext();
 function HairCutsProvider(props) {
   const { children } = props;
   let decoded
-  const token = localStorage.getItem('token') 
-  if (token) {
-     decoded = jwt_decode(token);
-   
-  }
+  const token = localStorage.getItem('token') ?localStorage.getItem('token'):undefined
+  decoded = jwt_decode(token);
+  
    const[pageState,setPageState]=useState("chooseHairCut")
     const [chooseTime,setChooseTime]=useState()
     const [chooseHairCut,setChooseHairCut]=useState()
@@ -95,7 +93,7 @@ function HairCutsProvider(props) {
   return (
     <div>
       <HairCutsContext.Provider
-        value={{pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token }}
+        value={{currentDate,pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token }}
       >
         {children}
       </HairCutsContext.Provider>

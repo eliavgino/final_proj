@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import UserProvider from "./context/user";
 import AddPhotos from "./components/addPhotos";
@@ -22,6 +22,7 @@ import ScheduleMain from "./components/schedule/scheduleMain";
 import { BrowserRouter } from "react-router-dom";
 import RoleProvider from "./context/role";
 import ChatBox from './components/chatbot/chatBox'
+import Login from './components/logIn';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -34,6 +35,9 @@ root.render(
               <CommentProvider>
                 <PagenationProvider>
                   <RoleProvider>
+                    {/* <BarberApp/> */}
+                    {/* <ScheduleMain/> */}
+                    {/* <Login/> */}
                     <ChatBox/>
                   </RoleProvider>
                 </PagenationProvider>
