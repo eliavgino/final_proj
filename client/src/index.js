@@ -37,6 +37,7 @@ root.render(
                 <CommentProvider>
                   
                       
+                        <BarberApp/>
                         <ChatBox/>
                       
                   

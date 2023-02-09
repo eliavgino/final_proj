@@ -22,8 +22,7 @@ function ChatBox() {
   const { decoded, token, appointments, activeHaircuts } =
     useContext(HairCutsContext);
   let chosenBarber;
-  //sending the decoded variable to the socket server
-  socket.emit("sendMessage", { message: { decoded: decoded } });
+
   //part of the scroll function
   const scrollToSection = (autoScroll) => {
     const element = autoScroll.current;
@@ -60,7 +59,8 @@ function ChatBox() {
   }
   function connectSocket(){
     socket = socketIoClient("http://localhost:3030")
-    
+      //sending the decoded variable to the socket server
+    socket.emit("sendMessage", { message: { decoded: decoded } });
     socket.on("receiveMessage", (data) => {
       setConversation((prevConversation) => [
         ...prevConversation,

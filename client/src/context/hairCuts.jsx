@@ -12,7 +12,7 @@ function HairCutsProvider(props) {
   const { children } = props;
   let decoded
   const token = localStorage.getItem('token') ?localStorage.getItem('token'):undefined
-  decoded = token? jwt_decode(token):null;
+  decoded = token? jwt_decode(token):undefined;
   
    const[pageState,setPageState]=useState("chooseHairCut")
     const [chooseTime,setChooseTime]=useState()

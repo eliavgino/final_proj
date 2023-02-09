@@ -187,7 +187,7 @@ io.on("connection", (socket) => {
         (data.message.toLowerCase() === "confirm" && scheduleFollowUp) ||
         (data.message.toLowerCase() === "yes" && scheduleFollowUp)
       ) {
-        if (decoded.decoded._id == undefined) {
+        if (decoded.decoded == undefined) {
           setTimeout(() => {
             scheduleFollowUp = 0;
             socket.emit("receiveMessage", {
