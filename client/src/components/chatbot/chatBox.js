@@ -5,19 +5,24 @@ import { HairCutsContext } from "../../context/hairCuts";
 import chatImage from "./helpers/message.png";
 import barberImg from "./helpers/barber.png";
 import userImg from "./helpers/user.png";
+import minimize from "./helpers/minimize-icon.png";
+import chatIcom from "./helpers/chatIcom.png"
 
-const socket = socketIoClient("http://localhost:3030");
+
+
+let socket = socketIoClient("http://");
 
 function ChatBox() {
   const [dateData, setDateData] = useState(10);
   const [input, setInput] = useState("");
+  const[boxVisable,setBoxVisable]=useState("none")
+  const[iconVisable,setIconVisable]=useState("")
   const [conversation, setConversation] = useState([]);
   const autoScroll = useRef(null);
   const { decoded, token, appointments, activeHaircuts } =
     useContext(HairCutsContext);
   let chosenBarber;
-  //sending the decoded variable to the socket server
-  socket.emit("sendMessage", { message: { decoded: decoded } });
+
   //part of the scroll function
   const scrollToSection = (autoScroll) => {
     const element = autoScroll.current;
@@ -27,7 +32,21 @@ function ChatBox() {
       inline: "nearest",
     });
   };
+  function handleDivVisability(){
+    if (boxVisable=="none"){
+      setBoxVisable("block")
+      setIconVisable("none")
+      setConversation([])
+      connectSocket()
+    }
 
+    else{
+      setBoxVisable("none")
+      setIconVisable("block")
+      
+    }
+    
+  }
   //date format change function
   function formatDate(inputDate) {
     const date = new Date(inputDate);
@@ -38,8 +57,10 @@ function ChatBox() {
 
     return `${dayOfMonth}/${month}/${year} ${day}`;
   }
-
-  useEffect(() => {
+  function connectSocket(){
+    socket = socketIoClient("http://localhost:3030")
+      //sending the decoded variable to the socket server
+    socket.emit("sendMessage", { message: { decoded: decoded } });
     socket.on("receiveMessage", (data) => {
       setConversation((prevConversation) => [
         ...prevConversation,
@@ -126,7 +147,7 @@ function ChatBox() {
     return () => {
       socket.off("receiveMessage");
     };
-  }, [conversation]);
+  };
 
   const sendMessage = () => {
     if (!input) return;
@@ -156,9 +177,15 @@ function ChatBox() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="card">
+        <div  style={{
+  display: boxVisable,
+  opacity: boxVisable === "block" ? 1 : 0,
+  transition: 'opacity 1500ms ease-in-out'}}
+  
+ className="card">
           <div className="chat-header">
-            Chat <img src={chatImage} className="chat-image" />
+           <div> Chat <img src={chatImage} className="chat-image" /></div>
+           <div id="minimizebtn"><img style ={{height:"25px",width:"25px"}}src={minimize} onClick={()=>{handleDivVisability()}} /></div>
           </div>
 
           <div className="chat-window">
@@ -195,7 +222,9 @@ function ChatBox() {
             ></button>
           </div>
         </div>
+        <div onClick={()=>{handleDivVisability()}} id="chatbtn" style={{display: iconVisable, position: "fixed", bottom: "3rem", right: "3rem" }}><img stlye={{height:"30px",width:"30px"}}src={chatIcom} /></div>
       </header>
+      
     </div>
   );
 }

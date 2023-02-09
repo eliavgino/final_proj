@@ -24,7 +24,7 @@ const HaircutCard = (props) => {
 
     return (
     <div class="box">
-        <div class="card">
+        <div class="card1">
           <div class="imgBx" style={{bottom:`${bottomClick}px`}}>
           <img   onClick={chooseHairCut ? ()=>{handlClick2(haircut)}: ()=>{handlClick(haircut)}} src={background} alt="images"/>
           </div>

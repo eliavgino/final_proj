@@ -76,12 +76,17 @@ io.on("connection", (socket) => {
   getAllBarbers();
   getUpcomingHairCuts();
   console.log("client connected on " + socket.id);
+  setTimeout(() => {
+  socket.emit("receiveMessage", {
+    message: "Welcome to our barbershop chatbot! How can I help you today?"
+  });}, 3000);
 
   socket.on("sendMessage", (data) => {
     console.log(data.message);
     if (typeof data.message == "object") {
       decoded = data.message;
     } else {
+      
       let haircutsCode = haircuts.map((haircut) => {
         if (
           data.message
@@ -182,7 +187,7 @@ io.on("connection", (socket) => {
         (data.message.toLowerCase() === "confirm" && scheduleFollowUp) ||
         (data.message.toLowerCase() === "yes" && scheduleFollowUp)
       ) {
-        if (decoded.decoded._id == undefined) {
+        if (decoded.decoded == undefined) {
           setTimeout(() => {
             scheduleFollowUp = 0;
             socket.emit("receiveMessage", {
