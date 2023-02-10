@@ -1,7 +1,13 @@
 import { Box } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { PagenationContext } from '../context/pagenation';
+
 
 function SiteHeader() {
+    const { setDis}=useContext(PagenationContext);
+    const navigate=useNavigate();
   return (
     <div className='siteHeaderContainer'>
 
@@ -11,9 +17,9 @@ function SiteHeader() {
             </div>
         </Box>
         <Box sx={{width:{lg:'70vw',xs:'100vw'}}} className='logoHalf'>
-            {/* <Box className='logoContainer'>
-                <Box component={'img'} sx={{right:{lg:'10vw'},width:{lg:'150%',sm:'100%'}}} className='logo' src="/images/logo.png" alt="error" />
-            </Box> */}
+            
+           <button onClick={()=>{navigate('/schedule');setDis('none')}} className='bookBtn' >Book Appointment!</button>
+           
         </Box>
 
     </div>

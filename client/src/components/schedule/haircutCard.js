@@ -1,6 +1,6 @@
 import React from 'react';
 import "./haircutsCard.css"
-import background from "./helpers/DALL·E 2023-02-05 15.46.50 - create an image with  a face with beard, make it suitable for barbershop website.png"
+import background from "./helpers/barbershop-logo_1415-666.avif"
 import { useState } from 'react';
 
 const HaircutCard = (props) => {

@@ -1,14 +1,14 @@
-.container {
-  height: 90%;
-  width: 90%;
+.container2 {
+ 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   flex-wrap: nowrap;
   margin: auto;
+  margin-top: 10%;
   position: relative;
+  color: white;
 }
 
 .chooseHairDresser {

@@ -1,4 +1,4 @@
-body { color: #ccc }
+/* body { color: #ccc } */
 .footer-widget p {
     margin-bottom: 27px;
 }
@@ -136,7 +136,7 @@ p {
       background-color: #B7242A; }
 
 .footer-awarad {
-  margin-top: 285px;
+  margin-top: 277px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

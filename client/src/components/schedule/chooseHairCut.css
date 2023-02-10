@@ -1,4 +1,4 @@
-.container{
+.container1{
     height: 90%;
     width: 90%;
     align-items: center;
@@ -7,10 +7,12 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin: auto;
+    margin-top: 10rem;
     position: relative;
     
 }
 .selectHaircut{
     height: 50px;
     width: 50px;
+    margin-left: 49%;
 }

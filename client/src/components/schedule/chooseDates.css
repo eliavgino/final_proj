@@ -1,14 +1,4 @@
-.body {
-  margin: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
 
-  flex-wrap: wrap;
-}
 .dateContainer {
   width: 70vw;
   height: 70vh;
@@ -17,6 +7,7 @@
   -webkit-perspective: 1000;
   left: calc(50% - (70vw / 2));
   top: calc(50vh - (70vh / 2));
+  margin-bottom: 13%;
 }
 .datecard {
   width: 100%;
@@ -135,10 +126,9 @@
 }
 #nextBtn {
   float: right;
-  font-size: 20px;
-  color: #232227;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 1000;
+ 
+ 
+  
 
   align-items: center;
   text-align: center;
@@ -156,10 +146,11 @@
 }
 .datemonth {
   height: 100%;
-  width: 70%;
+  width: 66%;
   float: left;
   padding: 20px 30px;
   box-sizing: border-box;
+  margin-left: 2rem;
 }
 .datemonth table {
   width: 100%;

@@ -6,6 +6,8 @@ import ChooseDate from "./chooseDate"
 import ChooseHairCut from './chooseHairCut';
 import ChooseHairDresser from "./chooseHairDresser"
 import axios from 'axios'
+import "./scheduleMain.css"
+import Details from './../details';
 
 
 const ScheduleMain = () => {
@@ -22,11 +24,12 @@ const ScheduleMain = () => {
     
     return (
         
-            <div style={{ padding: "1rem", maxWidth: "80%" ,justifyContent:'center'}}>
+            <div className="schedule-container">
                 {pageState==='chooseHairCut'&& <ChooseHairCut/>}
                 {pageState==='chooseDate'&& <ChooseDate/>}
                 {pageState==='confirm'&& <Confirm/>}
                 {pageState==='chooseHairDresser'&& <ChooseHairDresser/>}
+                <Details/>
                 
                 
             </div>
