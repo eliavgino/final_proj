@@ -2,7 +2,7 @@ import React from 'react'
 import Box from '@mui/joy/Box'
 import { Button } from '@mui/joy';
 import { useNavigate } from 'react-router-dom';
-import { PagenationContext } from '../context/pagenation';
+import { PagenationContext } from '../../context/pagenation';
 import { useContext } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 

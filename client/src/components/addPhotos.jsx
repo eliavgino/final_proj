@@ -21,7 +21,7 @@ const AddPhotos = () => {
 
   const { addNewphoto } = useContext(PhotosContext);
 
-  const {addPhotoDis,setAddPhotoDis}=useContext(PagenationContext);
+  const {addPhotoDis,setAddPhotoDis,setScissorsLoadingDis,setAddDescDis,setPickPhotoDis}=useContext(PagenationContext);
   
   const {cerruntBarberId}=useContext(BarbersContext);
 
@@ -29,24 +29,44 @@ const AddPhotos = () => {
   const [imageToUploade, setimageToUploade] = useState();
   const [description, setdescription] = useState({});
 
+  const handleSubmit=(e)=>{
+
+    e.preventDefault();
+    uploadImage()
+    setdescription('')
+    e.target.reset();
+
+  }
+
   const uploadImage = () => {
     const formData = new FormData();
     formData.append("file", imageToUploade);
     formData.append("upload_preset", "barbers");
+    setAddPhotoDis('none')
+    setScissorsLoadingDis('')
+    setTimeout(() => {
+      setScissorsLoadingDis('none')
+    }, 1100);
 
     axios
       .post("https://api.cloudinary.com/v1_1/ddwsr6uth/image/upload", formData)
       .then((res) => {
         console.log(res.data.secure_url);
         console.log(cerruntBarberId);
-        addNewphoto({
+        let result=addNewphoto({
           barber: cerruntBarberId,
           photo: res.data.secure_url,
           description: description,
         });
+        result.then(result=>{
+            if(result==='no')
+              setAddDescDis('')
+          })
+      
       })
       .catch((err) => {
         console.log(err);
+        setPickPhotoDis('')
       });
   };
   return (
@@ -124,7 +144,7 @@ const AddPhotos = () => {
         <Typography fontSize="lg">
           Add a photo and description about the type of your haircut
         </Typography>
-
+        <form onSubmit={handleSubmit}>
         <CardOverflow sx={{ p: "var(--Card-padding)", display: "flex" }}>
           <label
             htmlFor="upload-photo"
@@ -157,11 +177,12 @@ const AddPhotos = () => {
             variant="plain"
             color="neutral"
             sx={{ ml: -1 }}
-            onClick={uploadImage}
+            type="submit"
           >
             <SendIcon />
           </IconButton>
         </CardOverflow>
+          </form>
       </Card>
     </div>
   );

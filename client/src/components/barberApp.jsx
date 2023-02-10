@@ -7,14 +7,17 @@ import SignUp from './signUp';
 import BarberProfile from './barberProfile';
 import { BrowserRouter,Route,Router,Routes, useNavigate } from "react-router-dom";
 import UserProfile from './userProfile';
-import MustLogIn from './MustLogIn';
-import BarCant from './barCant';
+import MustLogIn from './error cards/MustLogIn';
+import BarCant from './error cards/barCant';
 import AddPhotos from './addPhotos';
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { PagenationContext } from '../context/pagenation';
 import { RoleContext } from '../context/role';
 import ScheduleMain from './schedule/scheduleMain';
+import ScissorsLoading from './scissorsLoading';
+import AddDesc from './error cards/addDescription';
+import PickPhoto from './error cards/pickPhoto';
 
 function BarberApp() {
 
@@ -54,6 +57,12 @@ function BarberApp() {
           </Routes>
 
         <div style={{display:dis}}>
+
+          <AddDesc/>
+
+          <PickPhoto/>
+
+          <ScissorsLoading/>
 
           <MustLogIn/>
 

@@ -56,7 +56,7 @@ const Login = () => {
 
         <SignUp/>
 
-        <Box component="div" className="LogInContainer">
+        <Box sx={{border:'0.1vw solid black'}} component="div" className="LogInContainer">
           <Container component="main" maxWidth="xs">
             <Box
               sx={{

@@ -232,7 +232,7 @@ body {
   margin-top: 6rem;
   left: 2vw;
   position: relative;
-  top: -13vh;
+  top: -2vh;
 }
 .ourResultCard {
   height: 45vh;
@@ -256,12 +256,10 @@ body {
   position: absolute;
   bottom: 7vh;
   left: 7.5vw;
-  
 }
 .storieImage {
-  position:static;
-  width: 95%;
-  
+  position: relative;
+  width: 100%;
 }
 /* //////////creativeTeam */
 .creativeTeamContainer {
@@ -459,9 +457,8 @@ body {
 .logInContainer{
 
   position: relative;
-  border: 0.1vw solid rgba(0, 0, 0, 0.267);
+  border: 0.1vw solid rgba(0, 0, 0, 0.404);
   height: 75vh;
-  background-color: #918d8d2d;
 
 }
 .logInImageContainer{
@@ -478,7 +475,7 @@ body {
 .SignUpContainer{
 
   position: relative;
-  border: 0.1vw solid rgba(109, 108, 108, 0.452);
+  border: 0.1vw solid rgb(0, 0, 0);
 
 }
 .logInParagraph{
@@ -527,7 +524,7 @@ body {
 @keyframes imageLogAni {
 0%{
 
-  left: 52vw;
+  left: 49vw;
 
 }  
 }
@@ -574,6 +571,7 @@ body {
   font-family: mySecondFont;
   margin: 1vw;
   font-size: 1.2vw;
+  color: #000000;
 
 }
 .mustLogInPar{
@@ -675,6 +673,89 @@ body {
 }
 
 
+/* ///////////scissors loading */
+.scissorsLoadingContainer{
 
+  width: 100vw;
+  height: 100vh;  
+  background-color: #00000075;
+  position: fixed;
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 
+}
+.scissorsLoading{
 
+  animation: loading 1s linear infinite;
+
+}
+@-webkit-keyframes loading {
+  0%  {-webkit-transform: rotate(0deg);}
+  100% {-webkit-transform: rotate(360deg);}   
+}
+/* //////////add description */
+.addDescContainer{
+
+  width: 100vw;
+  height: 100vh;  
+  background-color: #00000075;
+  position: fixed;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 999999;
+
+}
+.addDescCardContainer{
+  width: 27vw;
+  height: 32vh;
+  background-color: #dad5d5;
+  border-top: 0.3vw solid rgba(255, 0, 0, 0.5);
+  border-radius: 2em;
+  box-shadow: 0.4vw 0.4vw 0.3vw 0.1vw rgba(0, 0, 0, 0.384);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.addDescPar{
+  
+  font-family: mySecondFont;
+  margin: 1vw;
+  font-size: 1.2vw;
+  color: #000000;
+
+}
+/* /////////pick photo */
+.pickPhotoContainer{
+  
+  width: 100vw;
+  height: 100vh;  
+  background-color: #00000075;
+  position: fixed;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 999999;
+
+}
+.pickPhotoCardContainer{
+  width: 27vw;
+  height: 32vh;
+  background-color: #dad5d5;
+  border-top: 0.3vw solid rgba(255, 0, 0, 0.5);
+  border-radius: 2em;
+  box-shadow: 0.4vw 0.4vw 0.3vw 0.1vw rgba(0, 0, 0, 0.384);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.pickPhotoPar{
+  font-family: mySecondFont;
+  margin: 1vw;
+  font-size: 1.2vw;
+  color: #000000;
+}
