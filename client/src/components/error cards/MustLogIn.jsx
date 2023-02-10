@@ -16,12 +16,12 @@ function MustLogIn() {
   return (
     <Box style={{display:mustLogDis}} className="mustLogInContainer">
 
-      <Box className="mustLogInCardContainer">
+      <Box sx={{width:{lg:"27vw",xs:"70vw"}}} className="mustLogInCardContainer">
 
-      <CloseIcon onClick={()=>{setMustLogIn('none')}} sx={{position:'absolute',zIndex:'999',right:0,margin:'0.4vw'}}/>  
+      <CloseIcon onClick={()=>{setMustLogIn('none')}} sx={{position:'absolute',zIndex:'999',right:0,margin:{lg:'0.4vw',xs:"2vw"}}}/>  
       
-      <Box component="p" className="oopsPar">OOPS!</Box>
-      <Box component="p" className="mustLogInPar">You must log in to complete this action!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="oopsPar">OOPS!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="mustLogInPar">You must log in to complete this action!</Box>
 
       <Button className='mustLogInButton' onClick={()=>{setMustLogIn('none');navigate('/logIn');setDis('none')}} >Log in</Button>
 

@@ -1,12 +1,3 @@
-/* body {
-	height: 100%;
-  height: 100%;
-	display: flex;
-  align-items: center;
-  justify-content: center;
-  
-	
-} */
 
 html {
   height: 100%;
@@ -36,7 +27,6 @@ html {
   --olive-8: #161600;
   --olive-8: #121200;
 
-  /* background-color: var(--lether-1); */
 }
 @import "react-alice-carousel/lib/alice-carousel.css";
 @font-face {
@@ -51,6 +41,9 @@ html {
 }
 .mainBodyHome {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 99.5vw;
   top: 5vh;
 }
@@ -143,7 +136,6 @@ body {
   position: relative;
   display: flex;
   right: 2vw;
-  height: 100%;
 }
 .navBarButton {
   color: rgb(240, 255, 219);
@@ -195,13 +187,11 @@ body {
   font-family: myFirstFont;
   margin: 0;
   position: absolute;
-  top: 15vh;
   left: 2vw;
   right: 2vw;
   font-family: myFirstFont;
   word-spacing: 0.5rem;
    line-height: 2.3rem;
-   font-size: 2rem;
    text-align: left;
    text-shadow: 2px 2px 4px #989797;
    width: 70%;
@@ -209,7 +199,7 @@ body {
 /* //////////stories */
 .storiesContainer {
   height: 70vh;
-  width: 100vw;
+  width: 90vw;
   background-color: rgb(27, 27, 27);
   position: relative;
   text-align: center;
@@ -229,9 +219,9 @@ body {
 }
 .cardsContainer {
   margin-top: 6rem;
-  left: 2vw;
+  left: 6vw;
   position: relative;
-  top: -2vh;
+  
 }
 .ourResultCard {
   height: 45vh;
@@ -262,7 +252,6 @@ body {
 }
 /* //////////creativeTeam */
 .creativeTeamContainer {
-  height: 80vh;
   width: 100vw;
   background-image: url("../public//images/yearone-2y4qGxu-4Do-unsplash\ \(1\).jpg");
   background-repeat: no-repeat;
@@ -270,6 +259,7 @@ body {
   position: relative;
   text-align: center;
   margin-top: 0.5vh;
+  overflow-y: scroll;
 }
 .creativeTeamHeader {
   color: whitesmoke;
@@ -283,19 +273,20 @@ body {
   font-size: 4rem;
 }
 .creativeTeamCardsContainer{
+
   margin-top: 6rem;
   left: 2vw;
   position: relative;
   top: 10rem;
   border-top: 0.2rem solid rgb(247, 244, 244);
-  
+  height: fit-content;
 
 }
 .cardBottom{
   border-bottom: 0.2rem solid rgb(247, 244, 244);
-  
   border-left: 0.2rem solid rgb(247, 244, 244);
   border-radius: 5px;
+  background-color: #000000;
 
 
 
@@ -304,6 +295,7 @@ body {
 .detailsContainer {
  
   margin-top: 0.5vh;
+  width: 100vw;
 }
 
 /* /////////profile */
@@ -355,44 +347,135 @@ body {
 
 }
 /* ///////// barber profile */
-.profileAvatarB {
+.barberProfileContainer{
+
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  position: absolute;
+  width: 100vw;
+  align-items: center;
+  top: 7vh;
+  color: white;
+  background-color: #0c0c0ce7;
+
+}
+.barberProfileAvatar {
+
   position: relative;
   top: 5vh;
+  font-size: 2vw;
+  
+
 }
 .profileUserNameB {
   position: relative;
 }
-.profileHeaderBackgroundB {
+.barberProfileHeaderBackground {
   width: 100%;
   height: 14vh;
   position: absolute;
   background-color: #ffffff;
   border-bottom: 0.1vw solid rgba(0, 0, 0, 0.356);
 }
-.profileUserDetailsB {
+.barberProfileDetailsContainer {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
-.profileUserHairCutsB {
-  position: relative;
-  border-radius: 1em;
-  background-color: rgb(247, 244, 244);
-  border: 1.5vw solid rgb(247, 244, 244);
-}
-.profileLastHairCutsB{
+.barberProfileDetails{
 
-  position: relative;
-  border-radius: 1em;
-  background-color: rgb(247, 244, 244);
-  border: 1.5vw solid rgb(247, 244, 244);
+  display: flex;
+  justify-content: center;
+  border-right: 0.1vw solid black;
 
 }
-.profileHairCutsContainerB {
-  position: relative;
+.barberProfileHairCutsContainer{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5vh;
+
 }
-.profileContainerB {
+.barberProfileHairCuts{
+
+  height:50vh;
+  display: flex;
+  justify-content: center;
   position: relative;
-  height: 75vh;
-  background-color: #ebebe1;
+  overflow-y: scroll;
+
+}
+.barberProfileTable{
+
+  text-align: center;
+  color: white;
+  position: relative;
+
+}
+.barberProfileTableRow{
+
+  
+
+}
+.barberProfileHairCutsHeader{
+
+  width: fit-content;
+  background-color:rgb(15, 13, 13);
+  border-radius: 2em;
+  border: 0.5vw solid rgb(15, 13, 13) ;
+
+}
+.barberProfilePhotosContainer{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5vh;
+
+}
+.barberProfilePhotosHeader{
+
+  width: fit-content;
+  background-color:rgb(15, 13, 13);
+  border-radius: 2em;
+  border: 0.5vw solid rgb(15, 13, 13) ;
+
+
+}
+.barberProfilePhotos{
+
+  position: relative;
+
+}
+.barberProfileCommentsContainer{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3vh;
+  gap: 4vh;
+  
+
+
+}
+.barberProfileCommentsHeader{
+
+  width: fit-content;
+  background-color:rgb(15, 13, 13);
+  border-radius: 2em;
+  border: 0.5vw solid rgb(15, 13, 13) ;
+
+
+}
+.barberProfileComments{
+
+  color: #000000;
+  
 }
 /* ///////////userHairCuts */
 .userHairCutsContainer {
@@ -552,7 +635,7 @@ body {
 }
 .mustLogInCardContainer{
 
-  width: 27vw;
+  
   height: 32vh;
   background-color: #dad5d5;
   border-top: 0.3vw solid rgba(255, 0, 0, 0.5);
@@ -568,7 +651,6 @@ body {
 .oopsPar{
 
   font-family: mySecondFont;
-  margin: 1vw;
   font-size: 1.2vw;
   color: #000000;
 
@@ -605,7 +687,6 @@ body {
 }
 .barCantCardContainer{
 
-  width: 27vw;
   height: 32vh;
   background-color: #dad5d5;
   border-top: 0.3vw solid rgba(255, 0, 0, 0.5);
@@ -619,8 +700,6 @@ body {
 .barCantPar{
 
   font-family: mySecondFont;
-  margin: 1vw;
-  font-size: 1.2vw;
 
 }
 .barCantButton{
@@ -636,16 +715,16 @@ body {
 /* ////////add photo icon */
 .addPhotoIcon{
 
-  top: 8vh;
+  top: 10vh;
   right:1vw;
   transition: 0.5s;
 
 }
 .addPhotoIcon:hover{
 
-  font-size: 5vw;
-  top: 7vh;
-  right: 0.5vw;
+  font-size:font-size+2vw;
+  top: 10.3vh;
+  right: 1vw;
   color: white;
   background-color: #121200;
   border:1vw solid #121200;
@@ -672,15 +751,6 @@ body {
   align-items: center;
   display: flex;
 
-}
-.scissorsLoading{
-
-  animation: loading 1s linear infinite;
-
-}
-@-webkit-keyframes loading {
-  0%  {-webkit-transform: rotate(0deg);}
-  100% {-webkit-transform: rotate(360deg);}   
 }
 /* //////////add description */
 .addDescContainer{

@@ -16,12 +16,12 @@ function PickPhoto() {
   return (
     <Box style={{display:pickPhotoDis}} className="pickPhotoContainer">
 
-      <Box className="pickPhotoCardContainer">
+      <Box sx={{width:{lg:"27vw",xs:"70vw"}}} className="pickPhotoCardContainer">
 
-      <CloseIcon onClick={()=>{setPickPhotoDis('none')}} sx={{color:"black",position:'absolute',zIndex:'999',right:0,margin:'0.4vw'}}/>  
+      <CloseIcon onClick={()=>{setPickPhotoDis('none')}} sx={{position:'absolute',zIndex:'999',right:0,margin:{lg:'0.4vw',xs:"2vw"}}}/>  
       
-      <Box component="p" className="oopsPar">OOPS!</Box>
-      <Box component="p" className="pickPhotoPar">You must pick a photo!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="oopsPar">OOPS!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="pickPhotoPar">You must pick a photo!</Box>
 
       </Box>
 

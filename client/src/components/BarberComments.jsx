@@ -46,7 +46,7 @@ const BarberComments = () => {
     page = (
       <div>
       
-        <Box sx={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }}>
+        <Box sx={{ display: "grid", gridTemplateColumns:{lg: "repeat(3,1fr)", xs:"repeat(1,1fr)" }}}>
           {barberComments.map((val) => (
             <Card
               variant="outlined"
@@ -120,7 +120,7 @@ const BarberComments = () => {
           sx={{
             marginRight: 5,
             marginLeft: 5,
-            bgcolor: "white",
+            bgcolor: " #8d8b80;",
             minWidth: 300,
             "--Card-radius": (theme) => theme.vars.radius.xs,
           }}

@@ -19,7 +19,7 @@ function ScissorsLoading() {
       "100%": {
         transform: "rotate(0deg)",
       },
-    },fontSize:"2.5vw"
+    },fontSize:{lg:"2.5vw",xs:"10vw"}
   }}
  className='scissorsLoading'/>
     </Box>

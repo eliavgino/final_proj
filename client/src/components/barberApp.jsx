@@ -20,7 +20,7 @@ import PickPhoto from './error cards/pickPhoto';
 
 function BarberApp() {
 
-  const {addPhotoDis,setAddPhotoDis,dis,setDis}=useContext(PagenationContext);
+  const {addPhotoDis,setAddPhotoDis,dis,setDis,page}=useContext(PagenationContext);
 
   const {role,setRole}=useContext(RoleContext);
 
@@ -42,7 +42,7 @@ function BarberApp() {
   return (
     <>
         <NavBar/>
-      
+        
           <Routes>
 
             <Route element={<HomePage/>} path="/"/>
@@ -69,7 +69,7 @@ function BarberApp() {
 
           <AddPhotos/>
 
-          <AddAPhotoIcon className='addPhotoIcon' onClick={handleClick} sx={{display:role==='barber'?'':'none',transition:'0.5s', position:"fixed", fontSize:'4vw', zIndex:999, bgcolor:'white',borderRadius:'0.4em' ,border:'1vw solid white' }}/>
+          <AddAPhotoIcon className='addPhotoIcon' onClick={handleClick} sx={{display:role==='barber'?'':'none',transition:'0.5s', position:"fixed", fontSize:{lg:'4vw',xs:"12vw"}, zIndex:999, bgcolor:'white',borderRadius:'0.4em' ,border:'1vw solid white' }}/>
 
           </div>  
         

@@ -15,12 +15,12 @@ function AddDesc() {
   return (
     <Box style={{display:addDescDis}} className="addDescContainer">
 
-      <Box className="addDescCardContainer">
+      <Box sx={{width:{lg:"27vw",xs:"70vw"}}} className="addDescCardContainer">
 
-      <CloseIcon onClick={()=>{setAddDescDis('none')}} sx={{color:"black",position:'absolute',zIndex:'999',right:0,margin:'0.4vw'}}/>  
+      <CloseIcon onClick={()=>{setAddDescDis('none')}} sx={{position:'absolute',zIndex:'999',right:0,margin:{lg:'0.4vw',xs:"2vw"}}}/>  
       
-      <Box component="p" className="oopsPar">OOPS!</Box>
-      <Box component="p" className="addDescPar">You must add Description!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="oopsPar">OOPS!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="addDescPar">You must add Description!</Box>
 
       </Box>
 

@@ -9,6 +9,7 @@ import Details from "./details";
 import UserProfile from "./userProfile";
 import { useContext } from 'react';
 import { PagenationContext } from '../context/pagenation';
+import { Container } from "@mui/material";
 
 function HomePage() {
 
@@ -19,6 +20,7 @@ function HomePage() {
       <div className="mainBodyHome">
       <Box id="home"/>
         <SiteHeader />
+       
         <Box id="about"/>
         <AboutUs />
         <Box id="results"/>
@@ -26,6 +28,7 @@ function HomePage() {
         <Box id="team"/>
         <OurCreativeTeam/>
         <Details />
+        
       </div>
     </>
   );

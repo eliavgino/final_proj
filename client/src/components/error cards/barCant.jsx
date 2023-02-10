@@ -16,12 +16,12 @@ function BarCant() {
   return (
     <Box style={{display:barCantDis}} className="barCantContainer">
 
-      <Box className="barCantCardContainer">
+      <Box sx={{width:{lg:"27vw",xs:"70vw"}}}  className="barCantCardContainer">
 
-      <CloseIcon onClick={()=>{setBarCantDis('none')}} sx={{position:'absolute',zIndex:'999',right:0,margin:'0.4vw'}}/>  
+      <CloseIcon onClick={()=>{setBarCantDis('none')}} sx={{position:'absolute',zIndex:'999',right:0,margin:{lg:'0.4vw',xs:"2vw"}}}/>  
       
-      <Box component="p" className="oopsPar">OOPS!</Box>
-      <Box component="p" className="barCantPar">Barbers cant leave comments!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="oopsPar">OOPS!</Box>
+      <Box sx={{fontSize: {lg:"1.2vw",xs:"4vw"},margin: {lg:"1vw",xs:"2vw"}}} component="p" className="barCantPar">Barbers cant leave comments!</Box>
 
       </Box>
 

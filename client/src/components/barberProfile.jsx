@@ -28,152 +28,131 @@ function BarberProfile() {
 
   return (
     <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "4vh",
-        width: "100vw",
-        height: "100vh",
-        position:"absolute"
-      }}
+      sx={{gap:{lg:"15vh",xs:"20vh"}}}
+      className="barberProfileContainer"
+      component="div"
     >
-      <Box className="profileHeaderBackgroundB" sx={{ bgcolor: "black" }}></Box>
+      <Box className="barberProfileHeaderBackground" sx={{ bgcolor: "black" }}></Box>
+
       <Avatar
-        className="profileAvatarB"
+
+        className="barberProfileAvatar"
         src={barber["profilePhoto"]}
-        sx={{
-          height: { lg: "14vh", xs: "15vh" },
-          width: { lg: "7vw", xs: "22vw" },
-          marginLeft: { lg: "45vw", xs: "10vw" },
-        }}
+        sx={{height:{lg:"16vh",xs:"16vh"}, width:{lg:"8vw",xs:"27vw"}}}
       ></Avatar>
 
       <Box
-        className="profileUserDetailsB"
+        className="barberProfileDetailsContainer"
         component="div"
-        sx={{
-          minHeight: "20vh",
-          left: { lg: "34vw", xs: "13vw" },
-          top: { lg: "4vh", xs: "8vh" },
-          display: "flex",
-          height: "20%",
-          width: { lg: "30vw", xs: "75vw" },
-        }}
       >
-        <Box
-          sx={{
-            textAlign: "center",
-            width: "33%",
-            borderRight: "0.01vw solid black",
-            height: "20%",
-          }}
-        >
+
+        <Box sx={{width:{lg:"15vw",xs:"25vw"}}} className="barberProfileDetails">
           <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
             {barber.barber_Name}
           </Typography>
         </Box>
-        <Box
-          sx={{
-            textAlign: "center",
-            width: "33%",
-            borderRight: "0.01vw solid black",
-            height: "20%",
-          }}
-        >
+
+        <Box sx={{width:{lg:"15vw",xs:"35vw"}}} className="barberProfileDetails">
           <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
             {barber.email}
           </Typography>
         </Box>
-        <Box sx={{ textAlign: "center", width: "33%", height: "20%" }}>
+
+        <Box sx={{width:{lg:"15vw",xs:"35vw"},border:"0vw"}} className="barberProfileDetails">
           <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
             {barber.phoneNumber}
           </Typography>
         </Box>
       </Box>
-      {console.log(cerruntBarberId)}
+
       {cerruntBarberId===barberId?
-      <>
-      {console.log(barberId)}
-      <Typography
-        component="p"
-        className="profileLastHairCutsB"
-        sx={{
-          width: { lg: "fit-content", xs: "30vw" },
-          fontSize: { lg: "2vw", xs: "5vw" },
-          left: { lg: "43vw", xs: "35vw" },
-        }}
-      >
-        Last haircuts
-      </Typography>
-      <Box
-        component="div"
-        className="photos"
-        sx={{
-          position: "relative",
-          minHeight: "80vh",
-          width: "80vw",
-          height: "20vh",
-          left: "18vh",
-        }}
-      >
-        <BarberHairCuts />
+      <Box sx={{}} component="div" className="barberProfileHairCutsContainer">
+
+        <Box className="barberProfileHairCutsHeader">
+          <Typography
+            component="p"
+            sx={{
+              fontSize:{lg:"2vw",xs:"6vw"}
+            }}
+          >
+            Last haircuts
+          </Typography>
+        </Box>
+        <Box
+          component="div"
+          className="barberProfileHairCuts"
+          sx={{
+            position: "relative",
+            width: "80vw",
+          }}
+        >
+          <BarberHairCuts />
+        </Box>
+
       </Box>
-      </>
       :
       null}
 
-      <Typography
-        component="p"
-        className="profileUserHairCutsB"
-        sx={{
-          width: { lg: "fit-content", xs: "30vw" },
-          fontSize: { lg: "2vw", xs: "5vw" },
-          left: { lg: "43vw", xs: "35vw" },
-        }}
-      >
-        My haircuts
-      </Typography>
-      <Box
-        component="div"
-        className="photos"
-        sx={{
-          position: "relative",
-          minHeight: "80vh",
-          width: "80vw",
-          height: "20vh",
-          left: "18vh",
-        }}
-      >
-        <BarberPhotos />
+      <Box className="barberProfilePhotosContainer">
+
+        <Box component="div" className="barberProfilePhotosHeader">
+          
+          <Typography
+            component="p"
+            sx={{
+
+             fontSize:{lg:"2vw",xs:"6vw"}
+              
+            }}
+          >
+            My haircuts
+          </Typography>
+        </Box>
+        <Box
+          component="div"
+          className="barberProfilePhotos"
+          sx={{
+
+            left:{lg:"6vh",xs:"1vw"},
+            width:{lg:"60vw",xs:"100vw"},
+            height: "20vh",
+            
+          }}
+        >
+          <BarberPhotos />
+        </Box>
+
       </Box>
 
-      <Typography
-        component="p"
-        className="profileUserHairCutsB"
-        sx={{
-          width: { lg: "fit-content", xs: "30vw" },
-          fontSize: { lg: "2vw", xs: "5vw" },
-          marginTop: "5vh",
-          left: { lg: "43vw", xs: "35vw" },
-        }}
-      >
-        Comments
-      </Typography>
+      <Box className="barberProfileCommentsContainer">
 
-      <Box
-        component="div"
-        className="comments"
-        sx={{
-          position: "relative",
-          minHeight: "80vh",
-          width: "80vw",
+        <Box className="barberProfileCommentsHeader">
+          <Typography
+            component="p"
+            sx={{
+              fontSize: { lg: "2vw", xs: "6vw" },
+            }}
+          >
+            Comments
+        </Typography>
+        </Box>
+        <Box
+          component="div"
+          className="barberProfileComments"
+          sx={{
+            position: "relative",
+           
+            width: "80vw",
 
-          height: "20vh",
-          left: "18vh",
-        }}
-      >
-        <BarberComments />
+            
+            
+          }}
+        >
+          <BarberComments />
+        </Box>
+
       </Box>
+
     </Box>
   );
 }

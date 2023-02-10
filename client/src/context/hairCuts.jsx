@@ -1,14 +1,15 @@
 
 import axios from "axios";
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react";
 import jwt_decode from 'jwt-decode';
-
-
+import { RoleContext } from "./role";
 
 export const HairCutsContext = createContext();
 
-
 function HairCutsProvider(props) {
+
+  const {role}=useContext(RoleContext)
+
   const { children } = props;
   let decoded
   const token = localStorage.getItem('token') ?localStorage.getItem('token'):undefined
@@ -44,6 +45,7 @@ function HairCutsProvider(props) {
         const response = await axios.post("http://localhost:4000/api/v1/hairCut/getHairCutByUser",{id});
         
         setUserHairCuts(response.data)
+        console.log(response.data)
         
       } catch (error) {
         console.error(error);
@@ -88,7 +90,8 @@ function HairCutsProvider(props) {
       getUpcomingHairCuts();
       if(localStorage.getItem('token')&&jwt_decode(localStorage.getItem('token')).role==='client')
       getHairCutsByUserId(jwt_decode(localStorage.getItem('token'))._id);
-    }, []);
+    },[role]);
+
     console.log(activeHaircuts)
     console.log(chooseBarber._id)
     let filteredHaircuts= activeHaircuts.filter(hairCut=>hairCut.barber._id===chooseBarber._id)

@@ -11,14 +11,16 @@ import jwtDecode from "jwt-decode";
 
 function UserProfile() {
 
-  const {decoded,userHairCuts}=useContext(HairCutsContext);
+  const {userHairCuts}=useContext(HairCutsContext);
+
+  
+  const {userProfileDis, setUserProfileDis,page}=useContext(PagenationContext);
 
   useEffect(() => {
-    
-  }, [])
+    console.log('kk')
+  }, [userProfileDis])
   
 
-  const {userProfileDis, setUserProfileDis}=useContext(PagenationContext);
 
   return (
     <Box className="profileContainer" sx={{display:userProfileDis}}>
