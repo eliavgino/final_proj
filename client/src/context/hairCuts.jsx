@@ -97,7 +97,7 @@ function HairCutsProvider(props) {
     let filteredHaircuts= activeHaircuts.filter(hairCut=>hairCut.barber._id===chooseBarber._id)
     console.log(filteredHaircuts)
     let id=0
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i <28; i++) {
       const date = new Date(currentDate);
       date.setDate(currentDate.getDate() + i);
        

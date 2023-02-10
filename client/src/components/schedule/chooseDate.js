@@ -21,7 +21,7 @@ function CalendarCard() {
     appointments,
     chooseTime,
     setChooseTime,
-    activeHaircuts,setChooseHaircut
+    setChooseBarber
   } = useContext(HairCutsContext)
   const startTime = () => {
     let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -58,9 +58,10 @@ function CalendarCard() {
 
   const handleClick = (e) => {
     const currentDate = new Date();
-    let day= currentDate.getDate()
+    let today= currentDate.getDate()
+    let day= e.target.textContent
     console.log(day)
-    if(e.target.textContent<day)
+    if(day<today)
         setDateData( undefined );
         
     else
@@ -76,11 +77,11 @@ function CalendarCard() {
 
 function handleBack(){
   setPageState("chooseHairDresser")
-  setChooseHaircut(null)
+  setChooseBarber({_id:"a"})
 }
 
   return (
-    <body className="body" onLoad={startTime}>
+    <div onLoad={startTime}>
       <div className="dateContainer">
         <div className="datecard" ref={cardElement} onClick={flip}>
           <div className="datefront">
@@ -149,15 +150,10 @@ function handleBack(){
               <div id="day"></div>
               <div id="month"></div>
               <h2 id="selected" hidden={chooseTime?false:true}>Date Selected</h2>
-              <div id="nextBtn">
-              <button style={{fontSize:"20px",
-     color:"#232227",
-     fontFamily: 'Montserrat',
-     fontWeight:1000}} onClick={() => setPageState("confirm")}  hidden={chooseTime?false:true}>Next</button>
-              <button style={{fontSize:"20px",
-     color:"#232227",
-     fontFamily: 'Montserrat',
-     fontWeight:1000}} onClick={() => handleBack()} >Back</button>
+              <div style={{marginTop:"10%",marginRight:"10%"}} >
+              <button  className="navigateBtns" onClick={() => handleBack()} >Back</button>
+              <button  className="navigateBtns" onClick={() => setPageState("confirm")}  hidden={chooseTime?false:true}>Next</button>
+              
               <i class="fa fa-pencil edit" aria-hidden="true"></i>
             </div></div>
           </div>
@@ -166,6 +162,7 @@ function handleBack(){
       <div class="back">
         <div class="contentback">
           <div class="backcontainer">
+           { console.log(appointments[0].day)}
           {appointments
             .filter(appointment => appointment.day == dateData)
             .map(appointment => (
@@ -184,7 +181,7 @@ function handleBack(){
       </div>
     </div>
   </div>
-</body>
+</div>
         
     );
 }

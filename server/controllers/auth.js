@@ -44,7 +44,7 @@ exports.auth = async (req, res) => {
   if(tokenUserId)
       res.status(200).send(tokenUserId);
       else
-      console.log('error')
+      res.status(400).send(console.error())
       
   } catch (err) {
     console.log(err)

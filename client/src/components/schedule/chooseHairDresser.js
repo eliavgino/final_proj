@@ -6,10 +6,10 @@ import "./chooseHairDresser.css";
 import "./chooseDates.css";
 
 const ChooseHairCut = () => {
-  const { setPageState, barbers, chooseBarber, pageState, setChooseBarber } =
+  const { setPageState, barbers, chooseBarber, pageState, setChooseBarber,setChooseHairCut } =
     useContext(HairCutsContext);
   const [buttonState, setButtonState] = useState("");
-
+  
   function handleClick(selectedBarber) {
     let randomIndex = Math.floor(Math.random() * barbers.length);
     setChooseBarber(selectedBarber ? selectedBarber : barbers[randomIndex]);
@@ -21,47 +21,54 @@ const ChooseHairCut = () => {
   }
 
   return (
-    <div className="body">
-      <div className="dateContainer">
-        <div
-          style={{
-            justifyContent: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <div className="container">
-            {barbers.map((barber) => (
-              <button
-                disabled={buttonState === barber.barber_Name}
-                onClick={() => handleClick(barber)}
-                value={barber}
-                key={barber.barber_Name}
-                className={`chooseHairDresser ${
-                  buttonState === barber.barber_Name ? "clicked-button" : ""
-                }`}
-              >
-                {" "}
-                {barber.barber_Name}
-              </button>
-            ))}
-            <div>
-              <button
-                onClick={() => handleClick()}
-                key={barbers[0].barber_Name}
-                className={`chooseHairDresser ${
-                  buttonState === barbers[0].barber_Name ? "clicked-button" : ""
-                }`}
-              >
-                I dont care
-              </button>
-            </div>
-          </div>
-          <div style={{justifyContent:'center',display:'flex',flexDirection:'row',alignItems:'center'} }>
-              <button id="nextBtn"   onClick={()=>{setPageState("chooseHairCut")}}>Back</button>
-              <button id="nextBtn" disabled={chooseBarber ? false : true}  onClick={()=>{setPageState("chooseDate")}}>Next</button>
-          </div>
+    <div>
+      <div className="container2">
+        <h2 style={{ marginBottom: "3rem" }}>choose Barber:</h2>
+        {barbers.map((barber) => (
+          <button
+            disabled={buttonState === barber.barber_Name}
+            onClick={() => handleClick(barber)}
+            value={barber}
+            key={barber.barber_Name}
+            className={`chooseHairDresser ${
+              buttonState === barber.barber_Name ? "clicked-button" : ""
+            }`}
+          >
+            {barber.barber_Name}
+          </button>
+        ))}
+        <div>
+          <button
+            onClick={() => handleClick()}
+            key={barbers[0].barber_Name}
+            className={`chooseHairDresser ${
+              buttonState === barbers[0].barber_Name ? "clicked-button" : ""
+            }`}
+          >
+            I dont care
+          </button>
+        </div>
+
+        <div>
+          <button
+            id="nextBtn"
+            className="navigateBtns"
+            disabled={chooseBarber._id=="a" ? true : false}
+            onClick={() => {
+              setPageState("chooseDate");
+            }}
+          >
+            Next
+          </button>
+          <button
+          className="navigateBtns"
+            id="nextBtn"
+            onClick={() => {
+              setPageState("chooseHairCut");setChooseHairCut(null)
+            }}
+          >
+            Back
+          </button>
         </div>
       </div>
     </div>

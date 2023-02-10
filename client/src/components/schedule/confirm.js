@@ -12,6 +12,7 @@ import { Button } from "@mui/joy";
 const Confirm = () => {
   const { chooseTime, chooseHairCut, chooseBarber, decoded, token } =
     useContext(HairCutsContext);
+    const [message,setMessage]=useState("")
   async function addNewHaircut() {
     try {
       const res = await axios.post("http://localhost:4000/api/v1/haircut", {
@@ -27,16 +28,22 @@ const Confirm = () => {
       throw error;
     }
   }
-  function handleConfirm() {
-    console.log(
-      chooseHairCut._id,
-      chooseTime.date,
-      chooseTime.time,
-      chooseBarber._id,
-      decoded
-    );
-    addNewHaircut();
-  }
+  async function handleConfirm() {
+    if (token) {
+        try {
+            await addNewHaircut();
+            setMessage("Your Booking has been confirmed!");
+        } catch (error) {
+            setMessage(`Error: ${error.message}`);
+        }
+   
+    } 
+    else if(message=="You need to login first!"){
+      alert("You must login first!")
+    }else  {
+        setMessage("You need to login first!");
+    }
+}
   return (
     <div
       style={{
@@ -47,34 +54,29 @@ const Confirm = () => {
         minWidth: "100vw",
       }}
     >
-      {console.log("chooseTime")}
-      {console.log(chooseTime)}
-      {console.log("chooseHairCut")}
-      {console.log(chooseHairCut)}
-      {console.log("chooseBarber")}
-      {console.log(chooseBarber)}
+     
       <Card variant="outlined" sx={{ width: 320 }}>
         <CardOverflow>
           <AspectRatio ratio="2">
             <img
-              src="https://www.history.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTU3ODc4NjAzNTIyOTc1NDU1/ask-history-why-is-barber-pole-red-white-blue-istock_000017032172large-2.jpg"
+              src="https://nationalbarbers.org/wp-content/uploads/2020/01/BARBER-STAND-OUT-768x432.png"
               loading="lazy"
               alt=""
             />
           </AspectRatio>
         </CardOverflow>
         <Typography level="h2" sx={{ fontSize: "lg", mt: 2 }}>
-          Date deatailes:
+          Booking details:
         </Typography>
         <Typography level="body2" sx={{ mt: 0.5 }}>
-          date: {chooseTime.day}/{chooseTime.date[5]}
+          Date: {chooseTime.day}/{chooseTime.date[5]}
           {chooseTime.date[6]}/{chooseTime.date[0]}
           {chooseTime.date[1]}
           {chooseTime.date[2]}
           {chooseTime.date[3]}
         </Typography>
         <Typography level="body2" sx={{ mb: 2 }}>
-          houer: {chooseTime.time}
+          Time: {chooseTime.time}
         </Typography>
         <Typography level="h2" sx={{ fontSize: "lg" }}>
           Barber name:
@@ -83,7 +85,7 @@ const Confirm = () => {
           {chooseBarber.barber_Name}
         </Typography>
         <Typography level="h2" sx={{ fontSize: "lg", mt: 2 }}>
-          Hair cut type :
+          Haircut type :
         </Typography>
         <Typography level="body2" sx={{ mt: 0.5 }}>
           {chooseHairCut.product_name}
@@ -99,13 +101,11 @@ const Confirm = () => {
             bgcolor: "background.level1",
           }}
         >
-          <Button onClick={handleConfirm} sx={{ bgcolor: "green" }}>
-            confirm
-          </Button>
-
+          <Button sx={{ bgcolor: "grey" }}>Cancel</Button>
           <Divider orientation="vertical" />
-          <Button sx={{ bgcolor: "red" }}>cancle</Button>
+          <Button onClick={handleConfirm} sx={{ bgcolor: "white" ,color:"black"}}>Confirm </Button>
         </CardOverflow>
+        {message}
       </Card>
     </div>
   );

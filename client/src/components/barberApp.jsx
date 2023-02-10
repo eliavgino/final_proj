@@ -14,6 +14,7 @@ import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { PagenationContext } from '../context/pagenation';
 import { RoleContext } from '../context/role';
+import ScheduleMain from './schedule/scheduleMain';
 import ScissorsLoading from './scissorsLoading';
 import AddDesc from './error cards/addDescription';
 import PickPhoto from './error cards/pickPhoto';
@@ -50,6 +51,8 @@ function BarberApp() {
             <Route element={<Login/>} path="/logIn"/>
             
             <Route element={<BarberProfile/>} path="/barberProfile"/>
+
+            <Route element={<ScheduleMain/>} path="/schedule"/>
 
           </Routes>
 
