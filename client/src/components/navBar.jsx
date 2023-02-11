@@ -46,7 +46,7 @@ export default function NavBar() {
     
   return (
     <Box className='navBarContainer' sx={{color:'black', flexGrow: 1 }} >
-        <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="p" className="navBarName" onClick={()=>{navigate('/');setPage('home')}}>Barber</Box>
+        <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="p" className="navBarName" onClick={()=>{navigate('/');setPage('home');setDis('')}}>Barber</Box>
         <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="div" className="navBarButtonsContainer">
 
             <Box sx={{display:page!=='home'?'none':''}}>

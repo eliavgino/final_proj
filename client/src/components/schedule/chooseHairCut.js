@@ -16,7 +16,7 @@ const ChooseHairCut = () => {
             
         <div className='container1'>
             {haircuts.map(haircut => (
-                <HaircutCard chooseHairCut={chooseHairCut} setChooseHairCut={setChooseHairCut} haircut={haircut} key={haircut.id} />
+                <HaircutCard  chooseHairCut={chooseHairCut} setChooseHairCut={setChooseHairCut} haircut={haircut} key={haircut.id} />
              ))}
               
         </div>

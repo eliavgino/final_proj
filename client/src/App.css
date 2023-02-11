@@ -199,12 +199,13 @@ body {
 }
 /* //////////stories */
 .storiesContainer {
-  height: 70vh;
-  width: 90vw;
+  height: 80vh;
+  width: 99.5vw;
   background-color: rgb(27, 27, 27);
   position: relative;
   text-align: center;
   margin-top: 0.5vh;
+  justify-content: center;
 }
 .storiesHeader {
   text-align: left;
@@ -218,7 +219,7 @@ body {
 }
 .cardsContainer {
   margin-top: 6rem;
-  left: 6vw;
+  left: auto;
   position: relative;
   
 }
@@ -251,14 +252,17 @@ body {
 }
 /* //////////creativeTeam */
 .creativeTeamContainer {
-  width: 100vw;
+  height: 80vh;
+  width: 99.5vw;
   background-image: url("../public//images/yearone-2y4qGxu-4Do-unsplash\ \(1\).jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   text-align: center;
   margin-top: 0.5vh;
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  
 }
 .creativeTeamHeader {
   color: whitesmoke;
@@ -269,21 +273,29 @@ body {
   bottom: -5vh;
   text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
   text-align: left;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 .creativeTeamCardsContainer{
-
-  margin-top: 6rem;
+  min-height: 65vh;
+  height: auto;
+  width: 100%;
   position: relative;
-  top: 10rem;
+  top: 7%;
   border-top: 0.2rem solid rgb(247, 244, 244);
-  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  left:auto
 
 }
 .cardBottom{
   border-bottom: 0.2rem solid rgb(247, 244, 244);
   border-left: 0.2rem solid rgb(247, 244, 244);
   border-radius: 5px;
+  height: 2rem;
+  width: 102%;
   background-color: #000000;
 
 
@@ -330,6 +342,8 @@ body {
   height: 75vh;
   background-color: #ebebe1; 
   overflow: hidden;
+  border-radius: 10px;
+  border: 0.2vw solid rgb(61, 61, 61);
   
 }
 .profileContainer{
@@ -341,6 +355,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999999;
+  
 
 }
 /* ///////// barber profile */
@@ -478,6 +494,8 @@ body {
 .userHairCutsContainer {
   background-color: #ebebe2;
   width: 30.5vw;
+  min-height: auto;
+  margin-bottom: 5rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -733,10 +751,12 @@ body {
   background-color: rgb(247, 44, 44);
   font-weight: 500;
   font-size: 1.2rem;
+  width: auto;
+  height: auto;
   color: white;
   border-radius: 5px;
   border-color: white;
-  margin-left: 75%;
+  margin-left: 65%;
   margin-bottom: 20%;
 
 }

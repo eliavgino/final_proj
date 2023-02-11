@@ -1,6 +1,8 @@
+
+
 .schedule-container{
-    height: 100vh;
-    width: 99vw;
+    height: auto;
+    width: auto;
     align-items: center;
     justify-content: center;
     padding-top: 10px;

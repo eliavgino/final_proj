@@ -1,6 +1,9 @@
 .footer-widget p {
     margin-bottom: 27px;
 }
+.container5{
+  width: 99.5vw;
+}
 
    .animate-border {
   position: relative;
@@ -73,6 +76,7 @@
     width: 80%; } } 
 
 .dk-footer {
+  
   padding: 75px 0 0;
   background-color: #151414;
   position: relative;
@@ -92,6 +96,7 @@
     color:#007bff; }
 
 .dk-footer-box-info {
+  
   position: absolute;
   top: 0;
  

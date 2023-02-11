@@ -7,7 +7,8 @@ function Details() {
     <Box className="detailsContainer">
       
 <footer id="dk-footer" class="dk-footer">
-        <div class="container">
+        <div class="container5">
+        <div >
             <div class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="dk-footer-box-info">
@@ -175,7 +176,7 @@ function Details() {
             
         </div>
         
-        
+        </div>
         
         
 </footer>
