@@ -125,7 +125,7 @@ io.on("connection", (socket) => {
         let matchingHaircut = haircuts.find((haircut) =>
           data.message
             .toLowerCase()
-            .includes(haircut.product_name.toLowerCase())
+            .includes(haircut.product_name.toLowerCase()).substring(0, 4)
         );
         if (matchingHaircut) {
           selectedHaircut = matchingHaircut;
@@ -148,7 +148,8 @@ io.on("connection", (socket) => {
         }
       } else if (selectedBarber === null && scheduleFollowUp == 2) {
         let matchingBarber = barbers.find((barber) =>
-          data.message.toLowerCase().includes(barber.barber_Name.toLowerCase())
+        data.message.toLowerCase().includes(barber.barber_Name.toLowerCase().substring(0, 3))
+
         );
         if (matchingBarber) {
           selectedBarber = matchingBarber;

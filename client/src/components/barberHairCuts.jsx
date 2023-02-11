@@ -15,7 +15,7 @@ function BarberHairCuts() {
     }, [])
 
   return (
-    <Box sx={{textAlign:"center", width:{lg:"70vw",xs:"130vw"},mr:{lg:"6vw",xs:"0vw"}}} component="table"  class="barberProfileTable">
+    <Box sx={{textAlign:"center", width:{lg:"70vw",xs:"130vw"},mr:{lg:"3vw",xs:"0vw"}}} component="table"  class="barberProfileTable">
     <thead>
       <tr>
         <th scope="col">Date</th>

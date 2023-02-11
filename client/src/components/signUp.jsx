@@ -47,7 +47,7 @@ function SignUp() {
 
   return (
 
-    <Box sx={{overflow:"hidden"}} className="SignUpContainer">
+    <Box sx={{overflow:"hidden",marginTop:"3%"}} className="SignUpContainer">
 
       <Container component="main" maxWidth="xs">
         <CssBaseline />

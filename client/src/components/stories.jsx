@@ -33,7 +33,7 @@ function Stories() {
   return (
     
     <Box className="storiesContainer">
-      {console.log("photos")}
+     
       
       <Box
         component="p"
@@ -69,9 +69,7 @@ function Stories() {
                 </Box>
               </Box>
 
-              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile');setDis('')}} sx={{left:{lg:'7.5vw',xs:'28vw'},width:{lg:'5vw',xs:'23vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
-
-                <Image cloudName="ddwsr6uth" publicId={photo.barber["profilePhoto"]}></Image>
+              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile');setDis('')}} src={photo.barber["profilePhoto"]} sx={{height:{lg:"7vw",xs:"25vw"}, width:{lg:"7vw",xs:"25vw"}}} className='cardAvatar'>
 
               </Avatar>
             </>

@@ -32,7 +32,7 @@ export default function OurCreativeTeam() {
 
   return (
     <Box className="creativeTeamContainer">
-      <Box sx={{fontSize:{lg:'5vw',xs:'11vw'}}} component="p" className="creativeTeamHeader">Our creative team</Box>
+      <Box  component="p" className="creativeTeamHeader">Our creative team</Box>
       <Grid container sx={{width:"100%",height:"25%",display:"flex",flexDirection:"row",flexWrap:"wrap",justifyContent:"space-evenly",}}  className="creativeTeamCardsContainer">
       
         {barbers.map((val) => (

@@ -65,7 +65,11 @@ html {
 }
 .zitataHalf {
   width: 30vw;
-  background-color: rgb(35, 35, 35);
+  /* background-color: rgb(35, 35, 35); */
+  background: rgba(58, 57, 57, 0.7)
+    url("../public/images/barberanimation.gif");
+  overflow: hidden;
+  background-size: cover;
 }
 .zitatatContainer {
   display: flex;
@@ -206,6 +210,7 @@ body {
   text-align: center;
   margin-top: 0.5vh;
   justify-content: center;
+  
 }
 .storiesHeader {
   text-align: left;
@@ -221,6 +226,7 @@ body {
   margin-top: 6rem;
   left: auto;
   position: relative;
+  margin-left: 2%;
   
 }
 .ourResultCard {
@@ -245,6 +251,7 @@ body {
   position: absolute;
   bottom: 7vh;
   left: 7.5vw;
+  font-size: 2vw;
 }
 .storieImage {
   position: relative;
@@ -278,7 +285,7 @@ body {
 .creativeTeamCardsContainer{
   min-height: 65vh;
   height: auto;
-  width: 100%;
+  width: auto;
   position: relative;
   top: 7%;
   border-top: 0.2rem solid rgb(247, 244, 244);
@@ -287,14 +294,14 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   overflow-y: scroll;
-  left:auto
+  left:0
 
 }
 .cardBottom{
   border-bottom: 0.2rem solid rgb(247, 244, 244);
   border-left: 0.2rem solid rgb(247, 244, 244);
   border-radius: 5px;
-  height: 2rem;
+  height: 3rem;
   width: 102%;
   background-color: #000000;
 
@@ -409,7 +416,8 @@ body {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  gap: 5vh;
+  gap: 3vh;
+  border: 0.3rem solid rgb(15, 13, 13) ;
 
 }
 .barberProfileHairCuts{
@@ -426,6 +434,7 @@ body {
   text-align: center;
   color: white;
   position: relative;
+  
 
 }
 .barberProfileTableRow{
@@ -436,9 +445,9 @@ body {
 .barberProfileHairCutsHeader{
 
   width: fit-content;
-  background-color:rgb(15, 13, 13);
-  border-radius: 2em;
-  border: 0.5vw solid rgb(15, 13, 13) ;
+  background-color:transparent;
+  border-radius: 0.2em;
+  border-bottom: 0.2vw solid rgb(15, 13, 13) ;
 
 }
 .barberProfilePhotosContainer{
@@ -453,9 +462,9 @@ body {
 .barberProfilePhotosHeader{
 
   width: fit-content;
-  background-color:rgb(15, 13, 13);
-  border-radius: 2em;
-  border: 0.5vw solid rgb(15, 13, 13) ;
+  background-color:transparent;
+  border-radius: 0.2em;
+  border-bottom: 0.2vw solid rgb(15, 13, 13) ;
 
 
 }
@@ -479,9 +488,10 @@ body {
 .barberProfileCommentsHeader{
 
   width: fit-content;
-  background-color:rgb(15, 13, 13);
-  border-radius: 2em;
-  border: 0.5vw solid rgb(15, 13, 13) ;
+  background-color:transparent;
+  border-radius: 0.2em;
+  border-bottom: 0.2vw solid rgb(15, 13, 13) ;
+  margin-top: 5rem;
 
 
 }
@@ -541,19 +551,23 @@ body {
 }
 /* ////////log in */
 .logSignPageContainer{
-
+  background-color: #151414;
   display: flex;
   position: relative;
   justify-content: center;
   justify-items: center;
-  top: 10vh;
+  top: 9.5vh;
   overflow: hidden;
+  height: 100%;
+  
   
 }
 .logInContainer{
+  background-color: white;
 
   position: relative;
   border: 0.1vw solid rgba(0, 0, 0, 0.404);
+  
 
 }
 .logInImageContainer{
@@ -565,9 +579,12 @@ body {
   z-index: 998;
   display: flex;
   transition: 1s;
+  
 
 }
 .SignUpContainer{
+  background-color: white;
+
 
   position: relative;
   border: 0.1vw solid rgb(0, 0, 0);

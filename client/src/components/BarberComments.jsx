@@ -156,7 +156,7 @@ const BarberComments = () => {
           </Box>
 
           <Typography fontSize="sm">
-            write a comment about the barber
+            Rate The barber , Share Your Experience:
           </Typography>
 
           <CardOverflow sx={{ p: "var(--Card-padding)", display: "flex" }}>

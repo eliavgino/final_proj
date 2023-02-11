@@ -8,9 +8,12 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import Divider from "@mui/joy/Divider";
 import Typography from "@mui/joy/Typography";
 import { Button } from "@mui/joy";
+import { useNavigate } from "react-router-dom";
+
 
 const Confirm = () => {
-  const { chooseTime, chooseHairCut, chooseBarber, decoded, token } =
+  const navigate=useNavigate()
+  const { chooseTime, chooseHairCut, chooseBarber, decoded, token ,setPageState} =
     useContext(HairCutsContext);
     const [message,setMessage]=useState("")
   async function addNewHaircut() {
@@ -55,7 +58,7 @@ const Confirm = () => {
       }}
     >
      
-      <Card variant="outlined" sx={{ width: 320 }}>
+      <Card variant="outlined" sx={{ width: 320 ,backgroundColor:"lightGrey"}}>
         <CardOverflow>
           <AspectRatio ratio="2">
             <img
@@ -101,7 +104,7 @@ const Confirm = () => {
             bgcolor: "background.level1",
           }}
         >
-          <Button sx={{ bgcolor: "grey" }}>Cancel</Button>
+          <Button onClick={()=>{navigate('/');setPageState("chooseHairCut")}} sx={{ bgcolor: "grey" }}>Cancel</Button>
           <Divider orientation="vertical" />
           <Button onClick={handleConfirm} sx={{ bgcolor: "white" ,color:"black"}}>Confirm </Button>
         </CardOverflow>

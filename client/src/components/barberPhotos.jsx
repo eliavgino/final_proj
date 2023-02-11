@@ -51,7 +51,7 @@ export default function BarberPhoto() {
             <Card
               className="stort_card"
               variant="outlined"
-              sx={{
+              sx={{backgroundColor:"white",
                 width: {lg:250,xs:300},
                 
                 "--Card-radius": (theme) => theme.vars.radius.xs,
