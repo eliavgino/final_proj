@@ -214,8 +214,6 @@ body {
   position: relative;
   padding: 2rem;
   text-shadow: 2px 2px 4px #989797;
-  font-size: 4rem;
-  
   text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
 }
 .cardsContainer {
@@ -276,7 +274,6 @@ body {
 .creativeTeamCardsContainer{
 
   margin-top: 6rem;
-  left: 2vw;
   position: relative;
   top: 10rem;
   border-top: 0.2rem solid rgb(247, 244, 244);
@@ -298,7 +295,6 @@ body {
   margin-top: 0.5vh;
   width: 100vw;
 }
-
 /* /////////profile */
 .profileAvatar {
   position: relative;
@@ -533,7 +529,6 @@ body {
   justify-content: center;
   justify-items: center;
   top: 10vh;
-  height: 75vh;
   overflow: hidden;
   
 }
@@ -541,7 +536,6 @@ body {
 
   position: relative;
   border: 0.1vw solid rgba(0, 0, 0, 0.404);
-  height: 75vh;
 
 }
 .logInImageContainer{
@@ -750,8 +744,6 @@ body {
   opacity:0.7 ;
   transition: 0.5s ;
 }
-
-
 /* ///////////scissors loading */
 .scissorsLoadingContainer{
 

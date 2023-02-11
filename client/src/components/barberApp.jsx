@@ -72,7 +72,7 @@ function BarberApp() {
 
           <AddPhotos/>
 
-          <AddAPhotoIcon className='addPhotoIcon' onClick={handleClick} sx={{display:role==='barber'?'':'none',transition:'0.5s', position:"fixed", fontSize:{lg:'4vw',xs:"12vw"}, zIndex:999, bgcolor:'white',borderRadius:'0.4em' ,border:'1vw solid white' }}/>
+          <AddAPhotoIcon className='addPhotoIcon' onClick={handleClick} sx={{display:role==='barber'?'':'none',transition:'0.5s', position:{lg:"fixed",xs:'absolute'}, fontSize:{lg:'4vw',xs:"12vw"}, zIndex:9999, bgcolor:'white',borderRadius:'0.4em' ,border:'1vw solid white' }}/>
 
           </div>  
         

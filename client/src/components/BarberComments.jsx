@@ -51,8 +51,8 @@ const BarberComments = () => {
             <Card
               variant="outlined"
               sx={{
-                bgcolor: "white",
-                margin: 5,
+                bgcolor: "#8d8b80;",
+                margin:1,
                 minWidth: 300,
                 "--Card-radius": (theme) => theme.vars.radius.xs,
               }}
@@ -118,9 +118,9 @@ const BarberComments = () => {
         <Card
           variant="outlined"
           sx={{
-            marginRight: 5,
-            marginLeft: 5,
-            bgcolor: " #8d8b80;",
+            m:1,
+            
+            bgcolor: " #8d8b80",
             minWidth: 300,
             "--Card-radius": (theme) => theme.vars.radius.xs,
           }}
@@ -217,7 +217,7 @@ const BarberComments = () => {
           sx={{
             marginRight: 5,
             marginLeft: 5,
-            bgcolor: "white",
+            bgcolor: "black",
             minWidth: 300,
             "--Card-radius": (theme) => theme.vars.radius.xs,
           }}

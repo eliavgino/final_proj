@@ -52,7 +52,7 @@ const Login = () => {
   }
 
   return (
-      <Box component="div" className="logSignPageContainer">
+      <Box sx={{height:{lg:"75vh",xs:"87vh"}}} component="div" className="logSignPageContainer">
 
         <SignUp/>
 
@@ -143,7 +143,7 @@ const Login = () => {
 
         </Box>
 
-        <Box sx={{width:{lg:'30vw',xs:"51vw"},left:{lg:'24vw',xs:'0vw'}}} component="div" className={`logInImageContainer ${imageAni}`}>
+        <Box sx={{backgroundPosition:{xs:"-20vw"}, width:{lg:'30vw',xs:"51vw"},left:{lg:'24vw',xs:'0vw'},height:{lg:"75vh",xs:"87vh"}}} component="div" className={`logInImageContainer ${imageAni}`}>
 
           <Box component="div" className={`logInParagraph ${parAni}`}>
 

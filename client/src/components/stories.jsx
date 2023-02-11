@@ -37,8 +37,8 @@ function Stories() {
       
       <Box
         component="p"
-       
         className="storiesHeader"
+        sx={{fontSize:"320%"}}
       >
         Latest works
       </Box>
@@ -69,7 +69,7 @@ function Stories() {
                 </Box>
               </Box>
 
-              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile');setDis('')}} sx={{left:{lg:'7.5vw',xs:'30vw'},width:{lg:'5vw',xs:'18vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
+              <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile');setDis('')}} sx={{left:{lg:'7.5vw',xs:'28vw'},width:{lg:'5vw',xs:'23vw'},height:{lg:'10vh',xs:'12vh'}}} className='cardAvatar'>
 
                 <Image cloudName="ddwsr6uth" publicId={photo.barber["profilePhoto"]}></Image>
 

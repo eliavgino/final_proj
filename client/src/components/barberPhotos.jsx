@@ -40,7 +40,7 @@ export default function BarberPhoto() {
     <>
       <Box className="photosContainer" component="div">
         <AliceCarousel
-          responsive={{ 0: { items: 2 }, 1300: { items: 4 } }}
+          responsive={{ 0: { items: 1 }, 1300: { items: 4 } }}
           autoPlayInterval="3000"
           autoPlay="true"
           disableDotsControls="true"
@@ -52,8 +52,8 @@ export default function BarberPhoto() {
               className="stort_card"
               variant="outlined"
               sx={{
-                width: {lg:250,xs:220},
-
+                width: {lg:250,xs:300},
+                
                 "--Card-radius": (theme) => theme.vars.radius.xs,
               }}
             >

@@ -33,10 +33,10 @@ export default function OurCreativeTeam() {
   return (
     <Box className="creativeTeamContainer">
       <Box sx={{fontSize:{lg:'5vw',xs:'11vw'}}} component="p" className="creativeTeamHeader">Our creative team</Box>
-      <Grid container  spacing={8} sx={{width:"100vw",minHeight:{lg:"55vw",xs:"500vw"}}} className="creativeTeamCardsContainer">
+      <Grid container  spacing={8} sx={{left:{lg:"3vw"}, width:"99vw",minHeight:{lg:"55vw",xs:"500vw"}}} className="creativeTeamCardsContainer">
       
         {barbers.map((val) => (
-          <Grid  item xs={9} lg={3} sx={{position:"relative", left:{lg:"0vw",xs:"7vw"}}}>
+          <Grid  item xs={9} lg={3} sx={{position:"relative", left:{lg:"0vw",xs:"5vw"}}}>
             <Card
               onClick={() =>{ setBarberId(val._id);navigate('/barberProfile');setPage('barberProfile');setDis('')}}
               sx={{

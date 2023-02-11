@@ -28,7 +28,7 @@ function BarberProfile() {
 
   return (
     <Box
-      sx={{gap:{lg:"15vh",xs:"20vh"}}}
+      sx={{gap:{lg:"15vh",xs:"30vh"}}}
       className="barberProfileContainer"
       component="div"
     >
@@ -38,7 +38,7 @@ function BarberProfile() {
 
         className="barberProfileAvatar"
         src={barber["profilePhoto"]}
-        sx={{height:{lg:"16vh",xs:"16vh"}, width:{lg:"8vw",xs:"27vw"}}}
+        sx={{height:{lg:"8vw",xs:"27vw"}, width:{lg:"8vw",xs:"27vw"}}}
       ></Avatar>
 
       <Box
@@ -113,7 +113,7 @@ function BarberProfile() {
           className="barberProfilePhotos"
           sx={{
 
-            left:{lg:"6vh",xs:"1vw"},
+            left:{lg:"6vh",xs:"12vw"},
             width:{lg:"60vw",xs:"100vw"},
             height: "20vh",
             

@@ -30,11 +30,11 @@ export default function NavBar() {
 
         setBarberId(jwtDecode(localStorage.getItem('token'))._id);
         navigate('/barberProfile');
+        setPage('barberProfile')
 
     }
     const UserProfile=()=>{
 
-        setPage('home');
         setUserProfileDis('')
 
     }
