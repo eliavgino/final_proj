@@ -60,16 +60,19 @@ function Stories() {
                 className="ourResultCard"
                 component="div"
               >
-                <Box component="div">
+                
                   <Image
+                  
+
                     className="storieImage"
                     cloudName="ddwsr6uth"
                     publicId={photo.photo}
                   ></Image>
-                </Box>
+                
               </Box>
 
               <Avatar onClick={()=>{setPage('barberProfile');setBarberId(photo.barber["_id"]);navigate('/barberProfile');setDis('')}} src={photo.barber["profilePhoto"]} sx={{height:{lg:"7vw",xs:"25vw"}, width:{lg:"7vw",xs:"25vw"}}} className='cardAvatar'>
+
 
               </Avatar>
             </>

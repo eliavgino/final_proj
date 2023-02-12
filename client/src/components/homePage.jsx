@@ -20,7 +20,6 @@ function HomePage() {
       <div className="mainBodyHome">
       <Box id="home"/>
         <SiteHeader />
-       
         <Box id="about"/>
         <AboutUs />
         <Box id="results"/>

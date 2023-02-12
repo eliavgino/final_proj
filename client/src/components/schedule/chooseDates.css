@@ -26,7 +26,29 @@
   overflow-x: auto;
 }
 
-  
+@media only screen and (max-width: 767px) {
+  .dateContainer {
+    width: 95%;
+    height: 60vh;
+    left: 0;
+    top: 0;
+    margin-bottom: 13%;
+    overflow-x: auto;
+    margin-top: 10vh;
+  }
+
+  .datecard {
+    height: auto;
+  }
+
+  .date {
+    width: 40rem;
+    margin-right: 30%;
+    justify-content: center;
+  }
+th{}
+ 
+}
 
 .datecard {
   width: 100%;

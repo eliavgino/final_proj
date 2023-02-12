@@ -125,7 +125,7 @@ io.on("connection", (socket) => {
         let matchingHaircut = haircuts.find((haircut) =>
           data.message
             .toLowerCase()
-            .includes(haircut.product_name.toLowerCase()).substring(0, 4)
+            .includes(haircut.product_name.toLowerCase().substring(0, 4))
         );
         if (matchingHaircut) {
           selectedHaircut = matchingHaircut;
