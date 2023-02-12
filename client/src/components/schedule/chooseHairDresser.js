@@ -49,7 +49,7 @@ const ChooseHairCut = () => {
           </button>
         </div>
 
-        <div>
+        
           <button
             id="nextBtn"
             className="navigateBtns"
@@ -60,7 +60,7 @@ const ChooseHairCut = () => {
           >
             Next
           </button>
-          <button
+          <button style={{marginTop:"-4.6rem"}}
           className="navigateBtns"
             id="nextBtn"
             onClick={() => {
@@ -69,7 +69,7 @@ const ChooseHairCut = () => {
           >
             Back
           </button>
-        </div>
+        
       </div>
     </div>
   );

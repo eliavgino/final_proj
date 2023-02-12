@@ -32,18 +32,20 @@ export default function OurCreativeTeam() {
 
   return (
     <Box className="creativeTeamContainer">
-      <Box sx={{fontSize:{lg:'5vw',xs:'11vw'}}} component="p" className="creativeTeamHeader">Our creative team</Box>
-      <Grid container  spacing={8} sx={{left:{lg:"3vw"}, width:"99vw",minHeight:{lg:"55vw",xs:"500vw"}}} className="creativeTeamCardsContainer">
+      <Box  component="p" className="creativeTeamHeader">Our creative team</Box>
+      <Grid container sx={{width:"100%",height:"25%",display:"flex",flexDirection:"row",flexWrap:"wrap",justifyContent:"space-evenly",}}  className="creativeTeamCardsContainer">
       
         {barbers.map((val) => (
-          <Grid  item xs={9} lg={3} sx={{position:"relative", left:{lg:"0vw",xs:"5vw"}}}>
+          <Grid className="creativeTeamCard" item xs={9} lg={3} sx={{position:"relative",marginLeft:"2rem",width:"100%"}}>
             <Card
               onClick={() =>{ setBarberId(val._id);navigate('/barberProfile');setPage('barberProfile');setDis('')}}
               sx={{
-                width: 350,
+                
+                width: "20rem",
                 bgcolor: "initial",
                 boxShadow: "none",
-                "--Card-padding": "0px",
+                "--Card-padding": "1rem",
+                
               }}
             >
               <Box sx={{ position: "relative" }} onClick={()=>{console.log();}}>
@@ -62,6 +64,7 @@ export default function OurCreativeTeam() {
                   sx={{
                     "&:hover, &:focus-within": {
                       opacity: 1,
+                      
                     },
                     opacity: 0,
                     transition: "0.1s ease-in",

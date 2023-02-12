@@ -51,7 +51,7 @@ export default function BarberPhoto() {
             <Card
               className="stort_card"
               variant="outlined"
-              sx={{
+              sx={{backgroundColor:"#232227;",
                 width: {lg:250,xs:300},
                 
                 "--Card-radius": (theme) => theme.vars.radius.xs,
@@ -85,9 +85,9 @@ export default function BarberPhoto() {
                   <Avatar size="sm" src={photo.photo} />
                 </Box>
               </Box>
-              <CardOverflow>
+              <CardOverflow sx={{objectFit:"contain"}}>
                 <AspectRatio>
-                  <img src={photo.photo} alt="" loading="lazy" />
+                  <img  src={photo.photo} alt="" loading="lazy" />
                 </AspectRatio>
               </CardOverflow>
               <Box

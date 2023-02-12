@@ -82,6 +82,7 @@ function BarberProfile() {
           component="div"
           className="barberProfileHairCuts"
           sx={{
+            backgroundColor:"transparent",
             position: "relative",
             width: "80vw",
           }}
@@ -100,7 +101,7 @@ function BarberProfile() {
           <Typography
             component="p"
             sx={{
-
+              
              fontSize:{lg:"2vw",xs:"6vw"}
               
             }}
@@ -112,9 +113,9 @@ function BarberProfile() {
           component="div"
           className="barberProfilePhotos"
           sx={{
-
+            
             left:{lg:"6vh",xs:"12vw"},
-            width:{lg:"60vw",xs:"100vw"},
+            width:{lg:"80vw",xs:"100vw"},
             height: "20vh",
             
           }}

@@ -6,8 +6,9 @@ function Details() {
   return (
     <Box className="detailsContainer">
       
-<footer id="dk-footer" class="dk-footer">
-        <div class="container">
+<footer style={{marginRight:"5%"}} id="dk-footer" class="dk-footer">
+        <div class="container5">
+        <div >
             <div class="row">
                 <div class="col-md-12 col-lg-4">
                     <div class="dk-footer-box-info">
@@ -47,14 +48,11 @@ function Details() {
                        
                     </div>
                     
-                    <div class="footer-awarad">
-                        <img src="images/icon/best.png" alt=""/>
-                        <p>invisable</p>
-                    </div>
+                   
                 </div>
                 
                 <div class="col-md-12 col-lg-8">
-                    <div class="row">
+                    <div style={{marginLeft:"10%"}} class="row">
                         <div class="col-md-6">
                             <div class="contact-us">
                                 <div class="contact-icon">
@@ -87,7 +85,7 @@ function Details() {
                         
                     </div>
                    
-                    <div class="row">
+                    <div style={{marginLeft:"10%"}}class="row">
                         <div class="col-md-12 col-lg-6">
                             <div class="footer-widget footer-left-widget">
                                 <div class="section-heading">
@@ -113,7 +111,7 @@ function Details() {
                            
                         </div>
                         
-                        <div class="col-md-12 col-lg-6">
+                        <div style={{width:"20rem"}}class="col-md-12 col-lg-6">
                             <div class="footer-widget">
                                 <div class="section-heading">
                                     <h3>Subscribe</h3>
@@ -175,7 +173,7 @@ function Details() {
             
         </div>
         
-        
+        </div>
         
         
 </footer>

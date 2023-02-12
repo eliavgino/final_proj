@@ -1,6 +1,20 @@
+/* .test123 {
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+} */
 
 .dateContainer {
-  width: 70vw;
+  width: 60%;
   height: 70vh;
   position: relative;
   perspective: 1000;
@@ -8,7 +22,34 @@
   left: calc(50% - (70vw / 2));
   top: calc(50vh - (70vh / 2));
   margin-bottom: 13%;
+  flex-wrap: wrap;
+  overflow-x: auto;
 }
+
+@media only screen and (max-width: 767px) {
+  .dateContainer {
+    width: 95%;
+    height: 60vh;
+    left: 0;
+    top: 0;
+    margin-bottom: 13%;
+    overflow-x: auto;
+    margin-top: 10vh;
+  }
+
+  .datecard {
+    height: auto;
+  }
+
+  .date {
+    width: 40rem;
+    margin-right: 30%;
+    justify-content: center;
+  }
+th{}
+ 
+}
+
 .datecard {
   width: 100%;
   height: 100%;
@@ -31,7 +72,7 @@
   -webkit-backface-visibility: hidden;
 }
 .datecontentfront {
-  width: 100%;
+  width: 80%;
   height: 100%;
   float: left;
   transform: translatez(60px);
@@ -74,16 +115,19 @@
 }
 .date {
   height: 100%;
-  width: 30%;
+  width: 25%;
   float: right;
+  right: -9rem;
   background-color: #e76642;
   border-radius: 0 6px 6px 0;
   text-align: right;
-  padding: 10px 30px;
+  padding: 1rem 3rem;
   box-sizing: border-box;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
+  position: absolute;
 }
+
 .datecont {
   height: 100%;
   transform: translatez(60px) scale(0.9);
@@ -146,11 +190,12 @@
 }
 .datemonth {
   height: 100%;
-  width: 66%;
+  width: 60%;
   float: left;
   padding: 20px 30px;
   box-sizing: border-box;
   margin-left: 2rem;
+  position: absolute;
 }
 .datemonth table {
   width: 100%;

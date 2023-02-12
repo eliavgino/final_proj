@@ -9,7 +9,7 @@ function UserHairCuts () {
   const {userHairCuts}=useContext(HairCutsContext);
 
   return (
-    <Box sx={{left:{lg:'2vw',xs:'25vw'},top:{lg:'0vw',xs:'7vh'}}} component="div" className='userHairCutsContainer'> 
+    <Box sx={{left:{lg:'2vw',xs:'25vw'},top:{lg:'0vw',xs:'7vh'},bottom:"3rem"}} component="div" className='userHairCutsContainer'> 
     
       <Box sx={{width:{lg:'27.5vw',xs:"61vw"}}} className='hairCutRow' component="div">
 
@@ -19,7 +19,7 @@ function UserHairCuts () {
 
       </Box>
     
-      <Box sx={{width:{xs:"57vw",lg:"26vw"},gap:{xs:"",lg:""}}} component="div" className='userHairCutsTable'>
+      <Box sx={{width:{xs:"57vw",lg:"26vw"},gap:{xs:"",lg:""},padding:"1rem"}} component="div" className='userHairCutsTable'>
 
       {userHairCuts.map((hairCut)=>
       
@@ -27,7 +27,7 @@ function UserHairCuts () {
 
           <Box component="div" className='userProfileTableCell'><Typography sx={{fontSize:{lg:'1.3vw',xs:'4vw'}}} >{hairCut.barber.barber_Name}</Typography></Box>
           <Box component="div" className='userProfileTableCell'><Typography sx={{fontSize:{lg:'1.3vw',xs:'4vw'}}}>{hairCut.hairCut.product_name}</Typography></Box>
-          <Box component="div" className='userProfileTableCell'><Typography sx={{fontSize:{lg:'1.3vw',xs:'4vw'}}}>{(hairCut.date).slice(8,10)}</Typography></Box>
+          <Box component="div" className='userProfileTableCell'><Typography sx={{fontSize:{lg:'1.3vw',xs:'4vw'}}}>{(hairCut.date).slice(0,10)}</Typography></Box>
 
         </Box>
       )}

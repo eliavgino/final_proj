@@ -1,10 +1,10 @@
 .container2 {
- 
+ height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   margin: auto;
   margin-top: 10%;
   position: relative;

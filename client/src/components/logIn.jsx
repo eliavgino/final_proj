@@ -52,11 +52,11 @@ const Login = () => {
   }
 
   return (
-      <Box sx={{height:{lg:"75vh",xs:"87vh"}}} component="div" className="logSignPageContainer">
+      <Box  component="div" className="logSignPageContainer">
 
         <SignUp/>
 
-        <Box sx={{border:'0.1vw solid black'}} component="div" className="LogInContainer">
+        <Box sx={{border:'0.1vw solid black',backgroundColor:"white",marginTop:"3%"}} component="div" className="LogInContainer">
           <Container component="main" maxWidth="xs">
             <Box
               sx={{
@@ -125,7 +125,7 @@ const Login = () => {
                     type="submit"
                     fullWidth
                     variant="contained"
-                    sx={{ mt: 3, mb: 2 }}
+                    sx={{ mt: 17, mb: 2 }}
                   >
                     Log in
                   </Button>
@@ -143,7 +143,7 @@ const Login = () => {
 
         </Box>
 
-        <Box sx={{backgroundPosition:{xs:"-20vw"}, width:{lg:'30vw',xs:"51vw"},left:{lg:'24vw',xs:'0vw'},height:{lg:"75vh",xs:"87vh"}}} component="div" className={`logInImageContainer ${imageAni}`}>
+        <Box sx={{backgroundPosition:{xs:"-7.3vw"}, width:{lg:'30vw',xs:"51vw"},left:{lg:'20.8vw',xs:'0vw'},height:{lg:"100%",xs:"87vh"},marginTop:"3%"}} component="div" className={`logInImageContainer ${imageAni}`}>
 
           <Box component="div" className={`logInParagraph ${parAni}`}>
 

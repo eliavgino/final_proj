@@ -53,9 +53,9 @@ function UserProfile() {
                 </Box>
         </Box>
       
-        <Typography component="p" className='profileUserHairCuts' sx={{width:{lg:'fit-content',xs:'30vw'},fontSize:{lg:'2vw',xs:'5vw'}, fontFamily:'myThirdFont' ,left:{lg:'11vw',xs:'26vw'} ,top:{lg:'-2.5vh',xs:'3.5vh'}}}>Last HairCuts</Typography>
+        <Typography component="p" className='profileUserHairCuts' sx={{width:{lg:'fit-content',xs:'30vw'},fontSize:{lg:'2vw',xs:'5vw'} ,left:{lg:'10vw',xs:'26vw'} ,top:{lg:'-2.9vh',xs:'3.5vh'}}}>Last HairCuts</Typography>
       
-        <Box sx={{top:{xs:'-3vh'}}} component="div" className='profileHairCutsContainer'>
+        <Box sx={{top:{xs:'-5vh'}}} component="div" className='profileHairCutsContainer'>
       
           <UserHairCuts/>
       

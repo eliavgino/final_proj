@@ -18,7 +18,7 @@ function SiteHeader() {
 
         <Box sx={{display:{lg:'block',xs:'none'}}} className='zitataHalf'>
             <div className='zitatatContainer'>
-                <p className='zitata' >"Barbeing is the best thing a barber can do"</p>
+                <p className='zitata' ></p>
             </div>
         </Box>
         <Box sx={{width:{lg:'70vw',xs:'100vw'}}} className='logoHalf'>
