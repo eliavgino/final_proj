@@ -25,12 +25,13 @@ let haircuts;
 let barbers = [];
 let pattern = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
 let decoded;
+let url="https://chat-bot-server-b9n0.onrender.com"
 
 ///AXIOS FUNCTIONS
 ///GET ALL HAIRCUTS PRICES: Will be used with useEffect when page is loaded
 async function getAllHaircutsPrice() {
   try {
-    const response = await axios.get("http://localhost:4000/api/v1/product");
+    const response = await axios.get(url+"/api/v1/product");
     haircuts = response.data.filter(
       (product) => product.product_type === "haircuts"
     );
@@ -40,7 +41,7 @@ async function getAllHaircutsPrice() {
 }
 async function getAllBarbers() {
   try {
-    const response = await axios.get("http://localhost:4000/api/v1/barber");
+    const response = await axios.get(url+"/api/v1/barber");
     barbers = response.data;
   } catch (error) {
     console.error(error);
@@ -49,7 +50,7 @@ async function getAllBarbers() {
 }
 async function getUpcomingHairCuts() {
   try {
-    const response = await axios.get("http://localhost:4000/api/v1/haircut");
+    const response = await axios.get(url+"/api/v1/haircut");
     activeHaircuts = response.data.filter((hairCut) => hairCut.active === true);
   } catch (error) {
     console.error(error);
@@ -58,7 +59,7 @@ async function getUpcomingHairCuts() {
 
 async function addNewHaircut(user, barber, hour, date, haircut) {
   try {
-    const res = await axios.post("http://localhost:4000/api/v1/haircut", {
+    const res = await axios.post(url+"/api/v1/haircut", {
       user: user,
       barber: barber,
       hour: hour,
@@ -293,4 +294,5 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3030, () => console.log("server RUNS"));
+const port = process.env.PORT || 4000;
+server.listen(port, () => console.log("server RUNS"+port));

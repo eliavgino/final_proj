@@ -222,7 +222,7 @@ function ChatBox() {
             ></button>
           </div>
         </div>
-        <div onClick={()=>{handleDivVisability()}} id="chatbtn" style={{display: iconVisable, position: "fixed", bottom: "3rem", right: "3rem" ,zIndex:9999}}><img stlye={{height:"30px",width:"30px"}}src={chatIcom} /></div>
+        <div onClick={()=>{handleDivVisability()}} id="chatbtn" style={{display: iconVisable, position: "fixed", bottom: "1.5rem", right: "1.5rem" ,zIndex:9999}}><img stlye={{height:"30px",width:"30px"}}src={chatIcom} /></div>
       </header>
       
     </div>

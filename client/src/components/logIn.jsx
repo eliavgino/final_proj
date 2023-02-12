@@ -143,11 +143,11 @@ const Login = () => {
 
         </Box>
 
-        <Box sx={{backgroundPosition:{xs:"-7.3vw"}, width:{lg:'30vw',xs:"51vw"},left:{lg:'20.8vw',xs:'0vw'},height:{lg:"100%",xs:"87vh"},marginTop:"3%"}} component="div" className={`logInImageContainer ${imageAni}`}>
+        <Box sx={{backgroundPosition:{xs:"-7.3vw"}, width:{lg:'33vw',xs:"51vw"},left:{lg:'24.4vw',xs:'0vw'},height:{lg:"100%",xs:"100vh"},marginTop:"3%"}} component="div" className={`logInImageContainer ${imageAni}`}>
 
           <Box component="div" className={`logInParagraph ${parAni}`}>
 
-              {imageAni==='imageSignAni'?<Box sx={{fontSize:{lg:'1.8vw',xs:'3.54vw'}}}  component="p">Don't have a user? Sign Up! </Box>:<Box sx={{fontSize:{lg:'1.8vw',xs:'3.6vw'}}} component="p">Already signed up? Log in!</Box>}
+              {imageAni==='imageSignAni'?<Box sx={{fontSize:{lg:'1.8vw',xs:'7vw'}}}  component="p">Don't have a user? Sign Up! </Box>:<Box sx={{fontSize:{lg:'1.8vw',xs:'7vw'}}} component="p">Already signed up? Log in!</Box>}
               {imageAni==='imageSignAni'?<Button className="logSignButton" sx={{color:"white",bgcolor:"black"}}  onClick={()=>{setImageAni('imageLogAni');setParAni('parLogAni')}}>Log In</Button>:<Button   sx={{color:"white",bgcolor:"black"}} onClick={()=>{setImageAni('imageSignAni');setParAni('parSignAni');}}>Sign up</Button>}
 
           </Box>
