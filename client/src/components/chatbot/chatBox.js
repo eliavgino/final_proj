@@ -10,7 +10,7 @@ import chatIcom from "./helpers/chatIcom.png"
 
 
 
-let socket = socketIoClient("http://");
+let socket = socketIoClient("https://chat-bot-server-b9n0.onrender.com");
 
 function ChatBox() {
   const [dateData, setDateData] = useState(10);
