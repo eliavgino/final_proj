@@ -6,7 +6,7 @@ export const CommentContext = createContext();
 
 function CommentProvider(props) {
   const { children } = props;
-  const url = "http://localhost:4000/api/v1/barber";
+  const url = "https://final-project-server-dbar.onrender.com/api/v1/barber";
   const [comments, setComments] = useState([]);
   const [barberComments, setBarberComments] = useState();
   const [errorMsg, setErrorMsg] = useState(null);
@@ -15,7 +15,7 @@ function CommentProvider(props) {
   const addCommentToBarber = async (commentObj) => {
     try {
       const comment = await axios.post(
-        "http://localhost:4000/api/v1/barber/addCommentToBarber",
+        "https://final-project-server-dbar.onrender.com/api/v1/barber/addCommentToBarber",
         commentObj,
         {}
       );
@@ -29,7 +29,7 @@ function CommentProvider(props) {
   const getCommentByBarberId = async (barberId) => {
     try {
       let response = await axios.post(
-        "http://localhost:4000/api/v1/barber/getCommentByBarberId",
+        "https://final-project-server-dbar.onrender.com/api/v1/barber/getCommentByBarberId",
         barberId,
         {}
       );

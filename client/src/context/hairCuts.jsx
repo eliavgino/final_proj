@@ -30,7 +30,7 @@ function HairCutsProvider(props) {
 
     async function getHairCutsByBarberId(id){
       try {
-        const response = await axios.post("http://localhost:4000/api/v1/hairCut/getHairCutByBarberId",{id});
+        const response = await axios.post("https://final-project-server-dbar.onrender.com/api/v1/hairCut/getHairCutByBarberId",{id});
         setBarberHairCuts(response.data)
         if(!response){
           console.log("this is empty")
@@ -42,7 +42,7 @@ function HairCutsProvider(props) {
 
     async function getHairCutsByUserId (id){
       try {
-        const response = await axios.post("http://localhost:4000/api/v1/hairCut/getHairCutByUser",{id});
+        const response = await axios.post("https://final-project-server-dbar.onrender.com/api/v1/hairCut/getHairCutByUser",{id});
         
         setUserHairCuts(response.data)
         console.log(response.data)
@@ -54,7 +54,7 @@ function HairCutsProvider(props) {
 
    async function getAllHaircutsPrice() {
       try {
-          const response = await axios.get("http://localhost:4000/api/v1/product");
+          const response = await axios.get("https://final-project-server-dbar.onrender.com/api/v1/product");
           let haircuts1 = response.data.filter(product => product.product_type === "haircuts");
           setHaircuts(haircuts1)
           if(!response){
@@ -66,7 +66,7 @@ function HairCutsProvider(props) {
     }
  async function getAllBarbers() {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/barber");
+        const response = await axios.get("https://final-project-server-dbar.onrender.com/api/v1/barber");
         setBarbers(response.data);
         console.log(barbers)
       } catch (error) {
@@ -76,7 +76,7 @@ function HairCutsProvider(props) {
     };
   async function getUpcomingHairCuts (){
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/haircut");
+        const response = await axios.get("https://final-project-server-dbar.onrender.com/api/v1/haircut");
         console.log(chooseBarber)
         setActiveHaircuts((response.data.filter(hairCut => hairCut.active === true)));
         

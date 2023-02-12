@@ -14,7 +14,7 @@ function BarberProvider(props) {
   
 
   const { children } = props;
-  const url = "http://localhost:4000/api/v1/barber";
+  const url = "https://final-project-server-dbar.onrender.com/api/v1/barber";
   const [barberId, setBarberId] = useState();
   const [cerruntBarberId,setCerruntBarberId]=useState('');
   const [barbers, setBarbers] = useState([]);
@@ -41,7 +41,7 @@ function BarberProvider(props) {
   const getbarberById = async (barberId) => {
     try {
       let response = await axios.post(
-        "http://localhost:4000/api/v1/barber/barberprofile",
+        "https://final-project-server-dbar.onrender.com/api/v1/barber/barberprofile",
         barberId,
         {}
       );
