@@ -58,7 +58,7 @@ function ChatBox() {
     return `${dayOfMonth}/${month}/${year} ${day}`;
   }
   function connectSocket(){
-    socket = socketIoClient("http://localhost:3030")
+    socket = socketIoClient("https://chat-bot-server-b9n0.onrender.com")
       //sending the decoded variable to the socket server
     socket.emit("sendMessage", { message: { decoded: decoded } });
     socket.on("receiveMessage", (data) => {
