@@ -28,12 +28,15 @@ function UserProvider(props) {
       localStorage.setItem("token", response.headers["x-auth-token"]);
       const token = localStorage.getItem("token");
       setUsername(jwt_decode(token).name);
-      setRole(jwt_decode(token).role);
-      setPage('home')
+      setPage('home');
       setDis('');
-      if(jwt_decode(token).role==='barber')
+      if(jwt_decode(token).role===('barber')||jwt_decode(token).role===('admin')){
       setCerruntBarberId(jwt_decode(token)._id)
-   
+      setRole('barber');
+      }
+      else
+      setRole('client');
+
     } catch (error) {
       console.log(error);
       alert(error.response.data);
