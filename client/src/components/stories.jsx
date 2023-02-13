@@ -43,7 +43,7 @@ function Stories() {
         Latest works
       </Box>
 
-      <Box sx={{top: {lg:"-12vh",xs:"-15vh"}}} className="cardsContainer" component="div">
+      <Box sx={{top: {lg:"-12vh",xs:"-15vh"},marginLeft:{lg:"3%",xs:"9%"}}} className="cardsContainer" component="div">
       
         <AliceCarousel
           responsive={{ 0: { items: 1 }, 1024: { items: 4 } }}

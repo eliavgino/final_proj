@@ -44,22 +44,23 @@ function BarberProfile() {
       <Box
         className="barberProfileDetailsContainer"
         component="div"
+        sx={{flexDirection:{xs:'column'},gap:{xs:"4vh"}}}
       >
 
-        <Box sx={{width:{lg:"15vw",xs:"25vw"}}} className="barberProfileDetails">
-          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
+        <Box sx={{width:{lg:"20vw",xs:"50vw"}, borderRight:{xs:0,lg:"0.1vw solid black"}}} className="barberProfileDetails">
+          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "6vw" } }}>
             {barber.barber_Name}
           </Typography>
         </Box>
 
-        <Box sx={{width:{lg:"15vw",xs:"35vw"}}} className="barberProfileDetails">
-          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
+        <Box  sx={{width:{lg:"20vw",xs:"50vw"}, borderRight:{xs:0,lg:"0.1vw solid black"}}} className="barberProfileDetails">
+          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "6vw" } }}>
             {barber.email}
           </Typography>
         </Box>
 
-        <Box sx={{width:{lg:"15vw",xs:"35vw"},border:"0vw"}} className="barberProfileDetails">
-          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "4vw" } }}>
+        <Box  sx={{width:{lg:"20vw",xs:"50vw"}, borderRight:{xs:0,lg:"0.1vw solid black"}}} className="barberProfileDetails">
+          <Typography sx={{ fontSize: { lg: "1.5vw", xs: "6vw" } }}>
             {barber.phoneNumber}
           </Typography>
         </Box>

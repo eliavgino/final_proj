@@ -10,7 +10,7 @@ import chatIcom from "./helpers/chatIcom.png"
 
 
 
-let socket = socketIoClient("http://");
+let socket = socketIoClient("https://chat-bot-server-b9n0.onrender.com");
 
 function ChatBox() {
   const [dateData, setDateData] = useState(10);
@@ -58,7 +58,7 @@ function ChatBox() {
     return `${dayOfMonth}/${month}/${year} ${day}`;
   }
   function connectSocket(){
-    socket = socketIoClient("http://localhost:3030")
+    socket = socketIoClient("https://chat-bot-server-b9n0.onrender.com")
       //sending the decoded variable to the socket server
     socket.emit("sendMessage", { message: { decoded: decoded } });
     socket.on("receiveMessage", (data) => {
@@ -222,7 +222,7 @@ function ChatBox() {
             ></button>
           </div>
         </div>
-        <div onClick={()=>{handleDivVisability()}} id="chatbtn" style={{display: iconVisable, position: "fixed", bottom: "3rem", right: "3rem" ,zIndex:9999}}><img stlye={{height:"30px",width:"30px"}}src={chatIcom} /></div>
+        <div onClick={()=>{handleDivVisability()}} id="chatbtn" style={{display: iconVisable, position: "fixed", bottom: "1.5rem", right: "1.5rem" ,zIndex:9999}}><img stlye={{height:"30px",width:"30px"}}src={chatIcom} /></div>
       </header>
       
     </div>

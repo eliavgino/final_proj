@@ -28,7 +28,7 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     minlength: 2,
     maxlength: 1024,
-    enum: ["haircuts", "cosmetics", "logistics", "other"],
+    enum: ["haircuts", "cosmetics", "logistics", "salary", "other"],
   },
 });
 

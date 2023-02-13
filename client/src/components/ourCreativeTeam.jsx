@@ -36,7 +36,7 @@ export default function OurCreativeTeam() {
       <Grid container sx={{width:"100%",height:"25%",display:"flex",flexDirection:"row",flexWrap:"wrap",justifyContent:"space-evenly",}}  className="creativeTeamCardsContainer">
       
         {barbers.map((val) => (
-          <Grid className="creativeTeamCard" item xs={9} lg={3} sx={{position:"relative",marginLeft:"2rem",width:"100%"}}>
+          <Grid className="creativeTeamCard" item xs={9} lg={3} sx={{position:"relative",marginLeft:{lg:"2rem",xs:"0"},width:"100%"}}>
             <Card
               onClick={() =>{ setBarberId(val._id);navigate('/barberProfile');setPage('barberProfile');setDis('')}}
               sx={{

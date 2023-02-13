@@ -9,7 +9,7 @@ export const UserContext = createContext();
 
 function UserProvider(props) {
   const { children } = props;
-  const url = "http://localhost:4000/api/v1/user";
+  const url = "https://final-project-server-dbar.onrender.com/api/v1/user";
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
@@ -43,7 +43,7 @@ function UserProvider(props) {
   const authUser = async (userObj) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/auth",
+        "https://final-project-server-dbar.onrender.com/api/v1/auth",
         userObj,
         {}
       );

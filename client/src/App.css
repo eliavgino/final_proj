@@ -227,7 +227,7 @@ body {
   margin-top: 6rem;
   left: auto;
   position: relative;
-  margin-left: 2%;
+  margin-left: 10%;
   
 }
 .ourResultCard {
@@ -411,7 +411,6 @@ body {
 
   display: flex;
   justify-content: center;
-  border-right: 0.1vw solid black;
 
 }
 .barberProfileHairCutsContainer{
@@ -564,11 +563,9 @@ body {
   overflow: hidden;
   height: 100%;
   
-  
 }
 .logInContainer{
   background-color: white;
-
   position: relative;
   border: 0.1vw solid rgba(0, 0, 0, 0.404);
   
@@ -583,7 +580,7 @@ body {
   z-index: 998;
   display: flex;
   transition: 1s;
-  
+  background-size: cover;
 
 }
 .SignUpContainer{
@@ -596,7 +593,6 @@ body {
 }
 .logInParagraph{
 
-  
   font-weight: 600;
   color: #dad5d5;
   display: flex;

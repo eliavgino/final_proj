@@ -13,6 +13,101 @@ exports.getHairCuts = async (req, res) => {
     res.status(400).send(err);
   }
 };
+//get all haircuts by month year and barber name
+exports.getHairCutsDistintsByMonthAndYearAndBarber = async (req, res) => {
+  try {
+    const haircuts = await HairCut.aggregate([
+      {
+        $lookup: {
+          from: "barbers",
+          localField: "barber",
+          foreignField: "_id",
+          as: "barber",
+        },
+      },
+      {
+        $unwind: "$barber",
+      },
+      {
+        $group: {
+          _id: {
+            month: { $month: "$date" },
+            year: { $year: "$date" },
+            barberName: "$barber.barber_Name",
+          },
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $sort: {
+          "_id.year": 1,
+          "_id.month": 1,
+        },
+      },
+    ]);
+
+    res.status(200).send(haircuts);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).send(err);
+  }
+};
+
+//get haircut by month and how match are in this moth
+exports.getHairCutsDistints = async (req, res) => {
+  try {
+    const haircuts = await HairCut.aggregate([
+      {
+        $group: {
+          _id: {
+            month: { $month: "$date" },
+            year: { $year: "$date" },
+          },
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $sort: { "_id.year": 1, "_id.month": 1 },
+      },
+    ]);
+    res.status(200).send(haircuts);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).send(err);
+  }
+};
+//get haircut by month and amouthsum
+exports.getHairCutsDistintsAndAmouthSum = async (req, res) => {
+  try {
+    const hairCuts = await HairCut.aggregate([
+      {
+        $lookup: {
+          from: "products",
+          localField: "hairCut",
+          foreignField: "_id",
+          as: "product",
+        },
+      },
+      {
+        $unwind: "$product",
+      },
+      {
+        $group: {
+          _id: {
+            year: { $year: "$date" },
+            month: { $month: "$date" },
+          },
+          totalAmount: { $sum: "$product.product_price" },
+        },
+      },
+    ]);
+
+    res.status(200).send(hairCuts);
+  } catch (err) {
+    console.log(err.message);
+    res.status(400).send(err);
+  }
+};
 //get all hair cuts date
 /////////////////////////////////////////////////////////////////////////////////////
 exports.getHairCutsDate = async (req, res) => {

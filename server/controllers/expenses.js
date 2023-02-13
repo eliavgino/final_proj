@@ -9,6 +9,66 @@ exports.getAllExpOrInc = async (req, res) => {
   }
 };
 
+///get the resulte of total expenses per moth
+exports.getAll = async (req, res) => {
+  try {
+    const expenses = await Expenses.aggregate([
+      {
+        $group: {
+          _id: {
+            month: "$date_month",
+            year: "$date_year",
+            productType: "$product.product_type",
+          },
+          totalPrice: { $sum: "$amountPrice" },
+        },
+      },
+    ]);
+
+    const results = expenses.map((expense) => {
+      return {
+        productType: expense._id.productType,
+        totalPrice: expense.totalPrice,
+        month: expense._id.month,
+        year: expense._id.year,
+      };
+    });
+
+    res.status(200).send(results);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};
+exports.getAllbyProductType = async (req, res) => {
+  try {
+    const expenses = await Expenses.aggregate([
+      {
+        $lookup: {
+          from: "products",
+          localField: "product",
+          foreignField: "_id",
+          as: "product_data",
+        },
+      },
+      {
+        $unwind: "$product_data",
+      },
+      {
+        $group: {
+          _id: "$product_data.product_type",
+          totalAmountPrice: { $sum: "$amountPrice" },
+          months: { $addToSet: "$date_month" },
+          years: { $addToSet: "$date_year" },
+        },
+      },
+    ]);
+
+    res.status(200).send(expenses);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};
+
 exports.getExpOrIncByProduct = async (req, res) => {
   try {
     const product = req.body.product_name;
