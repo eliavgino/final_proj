@@ -9,12 +9,7 @@ app.use(cors());
 
 const server = http.createServer(app);
 
-const io = new Server(server, {
-  cors: {
-    origin: "https://cozy-crumble-26254b.netlify.app/",
-    methods: ["GET", "POST"],
-  },
-});
+const io = new Server(server);
 let scheduleFollowUp = 0;
 let priceFollowUp = false;
 let selectedHaircut = null;

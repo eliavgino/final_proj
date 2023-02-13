@@ -564,20 +564,6 @@ body {
   height: 100%;
   
 }
-.hrefLogIn{
-
-  position:"absolute";
-  right:"2vw";
-  top:"1vw";
-  color:grey;
-  text-decoration:"none";
-
-}
-.hrefLogIn:hover{
- 
-  color:rgb(170, 168, 168);
-
-}
 .logInContainer{
   background-color: white;
   position: relative;
