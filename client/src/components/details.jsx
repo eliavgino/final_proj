@@ -17,33 +17,17 @@ function Details() {
                         A premier barbershop offering expert haircuts, shaves and grooming services in a welcoming atmosphere.                        </p>
                         <div class="footer-social-link">
                             <h3>Follow us</h3>
-                            <ul>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-google-plus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
+                           
+
+                            <ul style={{color:"white"}}>Dor Shlush: <a href="https://www.linkedin.com/in/dor-shlush-104662257/">
                                         <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                                    </a> </ul>
+                            <ul style={{color:"white"}}>Eliav Gino: <a href="https://www.linkedin.com/in/eliav-gino-24a196258/">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a> </ul>
+                            <ul style={{color:"white"}}>Yarden Yosefzon: <a href="https://www.linkedin.com/in/yarden-yosefzon-92aa08257/">
+                                        <i class="fa fa-linkedin"></i>
+                                    </a> </ul>
                         </div>
                        
                     </div>
@@ -52,7 +36,7 @@ function Details() {
                 </div>
                 
                 <div class="col-md-12 col-lg-8">
-                    <div style={{marginLeft:"10%"}} class="row">
+                    <div style={{marginLeft:"10%",marginTop:"7%"}} class="row">
                         <div class="col-md-6">
                             <div class="contact-us">
                                 <div class="contact-icon">
@@ -96,9 +80,7 @@ function Details() {
                                     <li>
                                         <a href=""><Link  to="about" spy={true} smooth={true}> About us</Link></a>
                                     </li>
-                                    <li>
-                                    <a href="">Contact us</a>
-                                    </li>
+                                   
                                     <li>
                                         <a href=""><Link  to="results" spy={true} smooth={true}>Our Results</Link></a>
                                     </li>
@@ -119,16 +101,7 @@ function Details() {
                                 </div>
                                 <p>
                                 Reference site about Lorem Ipsum, giving information on its origins, as well.</p>
-                                <form action="">
-                                    <div class="form-row">
-                                        <div class="col dk-footer-form">
-                                            <input type="email" class="form-control" placeholder="Email Address"/>
-                                            <button type="submit">
-                                                <i class="fa fa-send"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
+                                
                                
                             </div>
                             
@@ -178,7 +151,7 @@ function Details() {
         
 </footer>
 
-        {/* <Box component="p" sx={{fontSize:{lg:'5vw',xs:'12vw'}}} className='detailsHeader'>Details</Box> */}
+       
 
     </Box>
   )
