@@ -130,7 +130,7 @@ body {
   
 }
 .navBarName {
-  font-family: mySecondFont;
+  font-weight: 700;
   position: absolute;
   margin: 0;
   color: rgb(240, 255, 219);
@@ -146,7 +146,7 @@ body {
   color: rgb(240, 255, 219);
   background-color: #151414;
   border: none;
-  font-family: mySecondFont;
+  font-weight: 700;
   height: 65%;
   transition: linear 0.3s;
   position: relative;
@@ -159,15 +159,13 @@ body {
 }
 /* /////////////aboutUs */
 .aboutUsContainer {
-  background-image: url('../public/images/backGroundTest.jpg');
-  background-repeat: no-repeat;
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(25,118,159,1) 0%, rgba(251,251,251,1) 0%);
   background-size: cover;
-  
   height: 50vh;
   width: 99.5vw;
   background-color: white;
   position: relative;
-  
   margin-top: 0.5vh;
   align-items: center;
   text-align: left;
@@ -176,13 +174,15 @@ body {
   
 }
 .aboutUsHeader {
-  color: whitesmoke;
+
+  color: rgb(0, 0, 0);
   font-family: myFirstFont;
   margin: 0;
+  /* margin-left: 35%; */
   position: relative;
   bottom: 5vh;
-  text-shadow: 2px 2px 4px #989797;
-  text-align: left;
+  text-shadow: 2px 2px 4px #656565;
+  text-align: center;
   font-size: 4rem;
   top:-4rem;
   
@@ -190,14 +190,16 @@ body {
 .aboutUsContent {
   color: white(0, 0, 0);
   margin: 0;
+  margin-left: 13%;
   position: absolute;
   left: 2vw;
   right: 2vw;
   word-spacing: 0.5rem;
-   line-height: 2.3rem;
-   text-align: left;
+   line-height: 2.5rem;
+   text-align: center;
    text-shadow: 2px 2px 4px #989797;
    width: 70%;
+
 }
 /* //////////stories */
 .storiesContainer {
@@ -211,10 +213,11 @@ body {
   
 }
 .storiesHeader {
-  text-align: left;
+  text-align: center;
   color: whitesmoke;
   font-family: myFirstFont;
   margin: 0;
+ 
   position: relative;
   padding: 2rem;
   text-shadow: 2px 2px 4px #989797;
@@ -229,7 +232,8 @@ body {
 }
 .ourResultCard {
   height: 45vh;
-  background-color: rgb(247, 247, 247);
+  
+  background-color:transparent;
   border: 0.1vw solid black;
   justify-content: center;
   align-items: end;
@@ -275,11 +279,11 @@ body {
   color: whitesmoke;
   font-family: myFirstFont;
   margin: 0;
-  margin-left: 2rem;
+  
   position: relative;
   bottom: -5vh;
   text-shadow: 1vh 1vh rgba(255, 255, 255, 0.062);
-  text-align: left;
+  text-align: center;
   font-size: 3rem;
 }
 .creativeTeamCardsContainer{
@@ -287,7 +291,7 @@ body {
   height: auto;
   width: auto;
   position: relative;
-  top: 7%;
+  top: 10%;
   border-top: 0.2rem solid rgb(247, 244, 244);
   display: flex;
   flex-direction: row;
@@ -765,24 +769,25 @@ body {
 /* /////////add photo component */
 .bookBtn{
   z-index: 99;
-  background-color: rgb(247, 44, 44);
+  background-color: rgb(60, 10, 10);
   font-weight: 500;
   font-size: 1.2rem;
   width: auto;
   height: auto;
   color: white;
-  border-radius: 5px;
+  border-radius: 7px;
   border-color: white;
   margin-left: 65%;
   margin-bottom: 20%;
   width: 11rem;
   height: 4rem;
+  transition: 0.8s ;
 
 }
 .bookBtn:hover{
   opacity:0.7 ;
-  transition: 0.5s ;
 }
+
 /* ///////////scissors loading */
 .scissorsLoadingContainer{
 

@@ -14,11 +14,16 @@ import { useNavigate } from 'react-router-dom';
 import { RoleContext } from '../context/role';
 import { BarbersContext } from '../context/barbers';
 import jwtDecode from 'jwt-decode';
+import { HairCutsContext } from './../context/hairCuts';
 
 
 export default function NavBar() {
     
     const {page, setPage, setUserProfileDis, setDis}=useContext(PagenationContext);
+    const {setPageState,
+        setChooseTime,
+        setChooseHairCut,
+        setChooseBarber}=useContext(HairCutsContext)
 
     const {logOut,userName}=useContext(UserContext);
 
@@ -33,6 +38,16 @@ export default function NavBar() {
         setPage('barberProfile')
 
     }
+
+    function resetHaircutSchedule(x,y){
+        setPageState("chooseHairCut")
+        setChooseTime(null)
+        setChooseHairCut(null)
+        setChooseBarber({_id:"a"})
+        navigate(y);
+        setPage(x);
+        setDis('')
+    }
     const UserProfile=()=>{
 
         setUserProfileDis('')
@@ -46,7 +61,7 @@ export default function NavBar() {
     
   return (
     <Box className='navBarContainer' sx={{color:'black', flexGrow: 1 }} >
-        <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="p" className="navBarName" onClick={()=>{navigate('/');setPage('home');setDis('')}}>Barber</Box>
+        <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="p" className="navBarName" onClick={()=>{resetHaircutSchedule("home","/")}}>Barber</Box>
         <Box sx={{fontSize:{lg:'2vw',xs:'6vw'}}} component="div" className="navBarButtonsContainer">
 
             <Box sx={{display:page!=='home'?'none':''}}>
@@ -62,7 +77,7 @@ export default function NavBar() {
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'none':''}} >
-                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton'><Link  to="home" spy={true} smooth={true} onClick={()=>{navigate('/logIn');setPage('logIn');setDis('none')}}>Log in / Sign up</Link></Box>
+                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton'><Link  to="home" spy={true} smooth={true} onClick={()=>{resetHaircutSchedule("logIn",'/logIn')}}>Log in / Sign up</Link></Box>
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'':'none'}}>

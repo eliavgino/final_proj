@@ -13,6 +13,7 @@ const product = require("./routes/product");
 const auth = require("./routes/auth");
 const income=require('./routes/income');
 
+
 dotenv.config();
 connectDb();
 
@@ -26,6 +27,7 @@ app.use(process.env.EXPENSES_URL, expenses);
 app.use(process.env.PRODUCT_URL, product);
 app.use(process.env.auth_URL, auth);
 app.use(process.env.INCOME_URL, income)
+
 
 const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`active on ${port}`));
