@@ -54,6 +54,8 @@ const Login = () => {
   return (
       <Box  component="div" className="logSignPageContainer">
 
+        <a href="https://nimble-sunburst-089ef9.netlify.app/" style={{position:"absolute",right:"2vw",top:"1vw",color:"grey",textDecoration:"none"}}>Log in as admin</a>
+
         <SignUp/>
 
         <Box sx={{border:'0.1vw solid black',backgroundColor:"white",marginTop:"3%"}} component="div" className="LogInContainer">
