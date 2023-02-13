@@ -18,7 +18,7 @@ const Confirm = () => {
     const [message,setMessage]=useState("")
   async function addNewHaircut() {
     try {
-      const res = await axios.post("http://localhost:4000/api/v1/haircut", {
+      const res = await axios.post("https://final-project-server-dbar.onrender.com/api/v1/haircut", {
         user: decoded._id,
         barber: chooseBarber,
         hour: chooseTime.time,

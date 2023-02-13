@@ -25,7 +25,8 @@ let haircuts;
 let barbers = [];
 let pattern = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
 let decoded;
-let url="https://chat-bot-server-b9n0.onrender.com"
+let url="https://final-project-server-dbar.onrender.com";
+
 
 ///AXIOS FUNCTIONS
 ///GET ALL HAIRCUTS PRICES: Will be used with useEffect when page is loaded
