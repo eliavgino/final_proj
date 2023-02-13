@@ -10,6 +10,15 @@ exports.getAllProducts = async (req, res) => {
     res.status(400).send(err);
   }
 };
+//get all barbers products type salray
+exports.getAllProductsofsalary = async (req, res) => {
+  try {
+    const result = await Product.find({ product_type: "salary" });
+    res.status(200).send(result);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 //add new product

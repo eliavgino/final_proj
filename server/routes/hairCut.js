@@ -10,10 +10,20 @@ const {
   getHairCutByUser,
   getHairCutByBarberId,
   getHairCutsDate,
+  getHairCutsDistintsByMonthAndYearAndBarber,
+  getHairCutsDistints,
+  getHairCutsDistintsAndAmouthSum,
 } = require("../controllers/hairCuts");
 
 router.route("/").get(getHairCuts).post(addHairCuts);
 router.route("/getHairCutsDate").get(getHairCutsDate);
+router.route("/getHairCutsDistints").get(getHairCutsDistints);
+router
+  .route("/getHairCutsDistintsByMonthAndYearAndBarber")
+  .get(getHairCutsDistintsByMonthAndYearAndBarber);
+router
+  .route("/getHairCutsDistintsAndAmouthSum")
+  .get(getHairCutsDistintsAndAmouthSum);
 router.route("/deleteHairCut").post(removeHairCut);
 router.route("/getHairCutByUser").post(getHairCutByUser);
 router.route("/getHairCutByBarber").post(getHairCutByBarber);
