@@ -52,13 +52,13 @@ const Login = () => {
   }
 
   return (
-      <Box  component="div" className="logSignPageContainer">
+      <Box sx={{height:"90.5vh"}}  component="div" className="logSignPageContainer">
 
-        <a href="https://nimble-sunburst-089ef9.netlify.app/" className="hrefLogIn" style={{position:"absolute",right:"2vw",top:"1vw",color:"grey",textDecoration:"none"}}>Log in as admin</a>
+        <a href="https://nimble-sunburst-089ef9.netlify.app/" className="hrefLogIn" style={{position:"absolute",right:"2vw",top:"2.5vw",color:"grey",textDecoration:"none"}}>Log in as admin</a>
 
         <SignUp/>
 
-        <Box sx={{border:'0.1vw solid black',backgroundColor:"white",marginTop:"3%"}} component="div" className="LogInContainer">
+        <Box sx={{border:'0.1vw solid black',backgroundColor:"white",marginTop:"3%",height:{xs:"100vh",lg:"75vh"}}} component="div" className="LogInContainer">
           <Container component="main" maxWidth="xs">
             <Box
               sx={{
@@ -145,7 +145,7 @@ const Login = () => {
 
         </Box>
 
-        <Box sx={{backgroundPosition:{xs:"-7.3vw"}, width:{lg:'33vw',xs:"51vw"},left:{lg:'24.4vw',xs:'0vw'},height:{lg:"100%",xs:"100vh"},marginTop:"3%"}} component="div" className={`logInImageContainer ${imageAni}`}>
+        <Box sx={{backgroundPosition:{xs:"-7.3vw"}, width:{lg:'33vw',xs:"51vw"},left:{lg:'24.4vw',xs:'0vw'},height:{lg:"75vh",xs:"100vh"},marginTop:"3%"}} component="div" className={`logInImageContainer ${imageAni}`}>
 
           <Box component="div" className={`logInParagraph ${parAni}`}>
 
