@@ -77,7 +77,7 @@ export default function NavBar() {
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'none':''}} >
-                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton'><Link  to="home" spy={true} smooth={true} onClick={()=>{resetHaircutSchedule("logIn",'/logIn')}}>Log in / Sign up</Link></Box>
+                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton'><Link  to="home" spy={true} smooth={true} onClick={()=>{resetHaircutSchedule("logIn",'/logIn');setDis("none")}}>Log in / Sign up</Link></Box>
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'':'none'}}>
