@@ -71,4 +71,5 @@ function validateComment(comment) {
   return Joi.validate(comment, schema);
 }
 
+
 module.exports = { validateBarber, Barber, validateComment };
