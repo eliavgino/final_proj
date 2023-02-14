@@ -33,9 +33,9 @@ function UserProfile() {
         <Avatar className='profileAvatar' sx={{height:{lg:'14vh',xs:'15vh'},width:{lg:'7vw',xs:'22vw'},marginLeft:{lg:'4vw',xs:'10vw'}}}>
         </Avatar>
       
-        <Typography className='profileUserName' sx={{fontSize:{lg:'2vw',xs:'5vw'} ,left:{lg:'17vw',xs:'41vw'} ,top:{lg:'-5vh',xs:'-5vh'}}}>{localStorage.getItem('token')?jwtDecode(localStorage.getItem('token')).name:null}</Typography>
+        <Typography className='profileUserName' sx={{fontSize:{lg:'2vw',xs:'5vw'} ,left:{lg:'14.5vw',xs:'41vw'} ,top:{lg:'-5vh',xs:'-5vh'},color:"white"}}>{localStorage.getItem('token')?jwtDecode(localStorage.getItem('token')).name:null}</Typography>
       
-        <Box className='profileUserDetails' component="div" sx={{left:{lg:'2vw',xs:'3vw'},top:{lg:'4vh',xs:'8vh'},display:'flex', height:'20%',minWidth:{lg:'30vw',xs:'75vw'},width:"fit-content"}}>
+        <Box className='profileUserDetails' component="div" sx={{left:{lg:'2vw',xs:'3vw'},top:{lg:'2.5vh',xs:'8vh'},display:'flex', height:'12%',minWidth:{lg:'30vw',xs:'75vw'},width:"fit-content"}}>
 
                 <Box sx={{textAlign:'center', width:'30%',borderRight:'0.01vw solid black',height:'35%'}}>
                   <Typography sx={{fontSize:{lg:'1vw',xs:'2.3vw'}}}>Phone number</Typography>
@@ -53,7 +53,7 @@ function UserProfile() {
                 </Box>
         </Box>
       
-        <Typography component="p" className='profileUserHairCuts' sx={{width:{lg:'fit-content',xs:'30vw'},fontSize:{lg:'2vw',xs:'5vw'} ,left:{lg:'10vw',xs:'26vw'} ,top:{lg:'-2.9vh',xs:'3.5vh'}}}>Last HairCuts</Typography>
+        <Typography component="p" className='profileUserHairCuts' sx={{width:{lg:'fit-content',xs:'30vw'},fontSize:{lg:'2vw',xs:'5vw'} ,left:{lg:'10vw',xs:'26vw'} ,top:{lg:'-0.8vh',xs:'3.5vh'},color:"white"}}>Last HairCuts</Typography>
       
         <Box sx={{top:{xs:'-5vh'}}} component="div" className='profileHairCutsContainer'>
       

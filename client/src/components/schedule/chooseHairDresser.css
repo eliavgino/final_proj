@@ -22,11 +22,15 @@
   margin: 0.5rem 0.5rem;
   text-align: center;
   font-size: 1rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .chooseHairDresser:hover {
   background-color: gray;
   cursor: pointer;
+  min-width: 162px;
+  min-height: 36px;
+  max-width: 162px;
+  max-height: 36px;
 }
 .clicked-button {
   background-color: gray;

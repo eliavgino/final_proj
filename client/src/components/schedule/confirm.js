@@ -33,9 +33,15 @@ const Confirm = () => {
   }
   async function handleConfirm() {
     if (token) {
-        try {
+        try {if(message!="Your Booking has been confirmed!"){
             await addNewHaircut();
             setMessage("Your Booking has been confirmed!");
+            
+             
+            }
+            else{
+              window.location.reload()
+            }
         } catch (error) {
             setMessage(`Error: ${error.message}`);
         }

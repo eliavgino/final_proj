@@ -40,10 +40,10 @@ function BarberProvider(props) {
   };
   const getbarberById = async (barberId) => {
     try {
-      
+    
       let response = await axios.post(
         "https://final-project-server-dbar.onrender.com/api/v1/barber/barberprofile",
-        {id:barberId._id},
+        {id: barberId._id},
         {}
       );
      
