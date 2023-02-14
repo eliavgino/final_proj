@@ -49,6 +49,7 @@ function BarberProfile() {
 
         <Box sx={{width:{lg:"20vw",xs:"50vw"}, borderRight:{xs:0,lg:"0.1vw solid black"}}} className="barberProfileDetails">
           <Typography sx={{ fontSize: { lg: "1.5vw", xs: "6vw" } }}>
+            {console.log(barber)}
             {barber.barber_Name}
           </Typography>
         </Box>
