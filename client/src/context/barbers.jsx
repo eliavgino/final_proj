@@ -40,11 +40,13 @@ function BarberProvider(props) {
   };
   const getbarberById = async (barberId) => {
     try {
+      
       let response = await axios.post(
         "https://final-project-server-dbar.onrender.com/api/v1/barber/barberprofile",
-        barberId,
+        {id:barberId._id},
         {}
       );
+     
       setBarber(response.data);
     } catch (err) {
       console.log(err);

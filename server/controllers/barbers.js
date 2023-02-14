@@ -15,8 +15,10 @@ exports.getAllBarbers = async (req, res) => {
 //find barber by id
 exports.getBarberByID = async (req, res) => {
   try {
+  
     const id = req.body.id;
     const result = await Barber.findById(id);
+    
     res.status(200).send(result);
   } catch (err) {
     res.status(400).send(err);

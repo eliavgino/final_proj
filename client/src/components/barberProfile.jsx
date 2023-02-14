@@ -21,11 +21,13 @@ function BarberProfile() {
   useEffect(() => {
 
     const get=async()=>{
-     await getbarberById({ _id: barberId });
+      console.log(barberId)
+      getbarberById({ _id: barberId });
+      console.log(barber)
     }
     get()
   }, [barberId]);
-
+  {console.log(barber["profilePhoto"])}
   return (
     <Box
       sx={{gap:{lg:"15vh",xs:"30vh"}}}
