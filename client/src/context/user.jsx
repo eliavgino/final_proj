@@ -82,7 +82,6 @@ function UserProvider(props) {
     localStorage.removeItem('token');
     setUsername('')
     setRole('')
-    window.location.href = "https://cozy-crumble-26254b.netlify.app/";
   };
   //   const resetPassword = async (userObj) => {
   //     try {
