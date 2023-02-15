@@ -85,7 +85,7 @@ export default function NavBar() {
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'':'none'}}>
-                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton' onClick={()=>{logOut();navigate('/');setPage('home')}}><a style={{textDecoration:'none',color:'inherit'}} href='http://localhost:3000'> Log out </a></Box>
+                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton' onClick={()=>{logOut();navigate('/');setPage('home')}}><a style={{textDecoration:'none',color:'inherit'}}> Log out </a></Box>
             </Box>
             
         </Box>
