@@ -12,6 +12,7 @@ const expenses = require("./routes/expense");
 const product = require("./routes/product");
 const auth = require("./routes/auth");
 const income=require('./routes/income');
+const event=require('./routes/event');
 
 
 dotenv.config();
@@ -27,6 +28,7 @@ app.use(process.env.EXPENSES_URL, expenses);
 app.use(process.env.PRODUCT_URL, product);
 app.use(process.env.auth_URL, auth);
 app.use(process.env.INCOME_URL, income)
+app.use(process.env.EVENT_URL, event)
 
 
 const port = process.env.PORT || 4000;

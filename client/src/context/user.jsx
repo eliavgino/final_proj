@@ -9,7 +9,6 @@ export const UserContext = createContext();
 
 function UserProvider(props) {
   const { children } = props;
-  const url = "https://final-project-server-dbar.onrender.com/api/v1/user";
   const [errorMsg, setErrorMsg] = useState(null);
   const [userName, setUsername] = useState("");
 
@@ -21,7 +20,7 @@ function UserProvider(props) {
 
   const addNewUser = async (userObj) => {
     try {
-      const response = await axios.post(url, userObj, {});
+      const response = await axios.post(process.env.REACT_APP_RENDER_URL+"/user", userObj, {});
 
       //storge user deatails into token
       let user = response.data;
@@ -46,7 +45,7 @@ function UserProvider(props) {
   const authUser = async (userObj) => {
     try {
       const response = await axios.post(
-        "https://final-project-server-dbar.onrender.com/api/v1/auth",
+        process.env.REACT_APP_RENDER_URL+"/auth",
         userObj,
         {}
       );
@@ -71,7 +70,7 @@ function UserProvider(props) {
   //get
   const getAllUsers = async () => {
     try {
-      const response = await axios.get(url, {});
+      const response = await axios.get(process.env.REACT_APP_RENDER_URL+"/user", {});
     } catch (error) {
       setErrorMsg(error);
       alert(error.message);
@@ -83,24 +82,6 @@ function UserProvider(props) {
     setUsername('')
     setRole('')
   };
-  //   const resetPassword = async (userObj) => {
-  //     try {
-  //       if (userObj.password == userObj.newPassword) {
-  //         const userToSend = { password: userObj.password, email: userObj.email };
-  //         const response = await axios.post(
-  //           "http://localhost:4000/api/v1/user/resetPassword",
-  //           userToSend,
-  //           {}
-  //         );
-  //         console.log("update password");
-  //         alert("password update succesfuly");
-  //       } else {
-  //         alert("check your passwords");
-  //       }
-  //     } catch (error) {
-  //       setErrorMsg(error);
-  //     }
-  //   };
 
   return (
     <div>

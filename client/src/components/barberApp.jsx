@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import HomePage from './homePage'
 import NavBar from './navBar'
 import { useContext } from 'react';
-import Login from './logIn';
-import SignUp from './signUp';
+import LogOrSign from './log or sign/logOrSign';
+import SignUp from './log or sign/signUp';
 import BarberProfile from './barberProfile';
 import { BrowserRouter,Route,Router,Routes, useNavigate } from "react-router-dom";
 import UserProfile from './userProfile';
@@ -48,7 +48,7 @@ function BarberApp() {
 
             <Route element={<HomePage/>} path="/"/>
             
-            <Route element={<Login/>} path="/logIn"/>
+            <Route element={<LogOrSign/>} path="/logSign"/>
             
             <Route element={<BarberProfile/>} path="/barberProfile"/>
 

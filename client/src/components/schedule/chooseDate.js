@@ -9,6 +9,7 @@ function CalendarCard() {
   useEffect(() => {
     startTime();
   }, []);
+
   const [dateData, setDateData] = useState();
   const [buttonState, setButtonState] = useState("")
 
@@ -18,11 +19,12 @@ function CalendarCard() {
   const {
     pageState,
     setPageState,
-    appointments,
     chooseTime,
     setChooseTime,
-    setChooseBarber
+    setChooseBarber,
+    rAppointments
   } = useContext(HairCutsContext)
+ console.log(rAppointments)
   const startTime = () => {
     let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let month = [
@@ -163,8 +165,8 @@ function handleBack(){
       <div class="back">
         <div class="contentback">
           <div class="backcontainer">
-           { console.log(appointments[0].day)}
-          {appointments
+           { console.log(rAppointments[0].day)}
+          {rAppointments
             .filter(appointment => appointment.day == dateData)
             .map(appointment => (
               <button

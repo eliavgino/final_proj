@@ -171,6 +171,7 @@ exports.getHairCutByBarber = async (req, res) => {
 exports.addHairCuts = async (req, res) => {
   try {
     let body = req.body;
+    console.log(body);
     const { error } = validateHairCut(body);
     //valide hair cuts deatails are ok
     if (error) return res.status(400).send(error.details[0].message);
@@ -199,3 +200,4 @@ exports.removeHairCut = async (req, res) => {
     res.status(400).send(err.message);
   }
 };
+/////////////////////////////////////////////////////////////////////////////////////////////////

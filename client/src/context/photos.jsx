@@ -8,7 +8,6 @@ export const PhotosContext = createContext();
 function PhotosProvider(props) {
 
   const { children } = props;
-  const url = "https://final-project-server-dbar.onrender.com/api/v1/photo";
   const [photos, setphotos] = useState([]);
   const [barberPhotos, setbarberPhotos] = useState([]);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -16,7 +15,7 @@ function PhotosProvider(props) {
 
   const getAllPhotos = async () => {
     try {
-      const photo = (await axios.get(url)).data;
+      const photo = (await axios.get(process.env.REACT_APP_RENDER_URL+"/photo")).data;
 
       //array of all the photos
       setphotos(photo);
@@ -30,7 +29,7 @@ function PhotosProvider(props) {
 
   const addNewphoto = async (photoObj) => {
     try {
-      await axios.post(url, photoObj, {});
+      await axios.post(process.env.REACT_APP_RENDER_URL+"/photo", photoObj, {});
       
       //taking all photos include the new photo
       getAllPhotos();
@@ -43,7 +42,7 @@ function PhotosProvider(props) {
   const getPhotosByBarberId = async (barberIdobj) => {
     try {
       const barber = await axios.post(
-        url+"/getphotobyid",
+        process.env.REACT_APP_RENDER_URL+"/photo"+"/getphotobyid",
         barberIdobj,
         {}
       );

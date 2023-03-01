@@ -20,11 +20,12 @@ function PagenationProvider(props) {
     const [scissorsLoadingDis,setScissorsLoadingDis]=useState('none');
     const [pickPhotoDis,setPickPhotoDis]=useState('none')
     const [addDescDis,setAddDescDis]=useState('none')
+    const [logOrSign,setLogOrSign]=useState('log')
     const [dis,setDis]=useState('');
 
   return (
     <>
-      <PagenationContext.Provider value={{page,setPage,userProfileDis,setUserProfileDis,mustLogDis,setMustLogIn,barCantDis,setBarCantDis, addPhotoDis,setAddPhotoDis,dis,setDis,scissorsLoadingDis,setScissorsLoadingDis,pickPhotoDis,setPickPhotoDis,addDescDis,setAddDescDis}}>
+      <PagenationContext.Provider value={{logOrSign,setLogOrSign,page,setPage,userProfileDis,setUserProfileDis,mustLogDis,setMustLogIn,barCantDis,setBarCantDis, addPhotoDis,setAddPhotoDis,dis,setDis,scissorsLoadingDis,setScissorsLoadingDis,pickPhotoDis,setPickPhotoDis,addDescDis,setAddDescDis}}>
         {children}
       </PagenationContext.Provider>
     </>

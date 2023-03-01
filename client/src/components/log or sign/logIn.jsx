@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../context/user";
+import { UserContext } from "../../context/user";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -13,14 +13,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { PagenationContext } from '../context/pagenation';
+import { PagenationContext } from '../../context/pagenation';
 import SignUp from "./signUp";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const LogIn = () => {
 
   const { authUser, users } = useContext(UserContext);
-  const {setLogSignDisplay}=useContext(PagenationContext);
+  const {setLogOrSign}=useContext(PagenationContext);
 
   const navigate=useNavigate();
 
@@ -28,10 +28,6 @@ const Login = () => {
     email: null,
     password: null,
   });
-
-  const [imageAni,setImageAni]=useState('imageLogAni')
-  const [parAni,setParAni]=useState('parLogAni')
-
 
   function Copyright(props) {
     return (
@@ -52,13 +48,10 @@ const Login = () => {
   }
 
   return (
-      <Box sx={{height:"90.5vh"}}  component="div" className="logSignPageContainer">
-
+    <>
         <a href="https://nimble-sunburst-089ef9.netlify.app/" className="hrefLogIn" style={{position:"absolute",right:"2vw",top:"2.5vw",color:"grey",textDecoration:"none"}}>Log in as admin</a>
 
-        <SignUp/>
-
-        <Box sx={{border:'0.1vw solid black',backgroundColor:"white",marginTop:"3%",height:{xs:"100vh",lg:"75vh"}}} component="div" className="LogInContainer">
+        <Box sx={{border:'0.1vw solid black',backgroundColor:"white",marginTop:"3%",height:{xs:"80vh",lg:"75vh"}, width:{xs:"90vw",lg:'30vw'}}} component="div" className="LogInContainer">
           <Container component="main" maxWidth="xs">
             <Box
               sx={{
@@ -113,13 +106,8 @@ const Login = () => {
                         }
                       />
                     </Grid>
-                    <Grid item xs={12}>
-                      <FormControlLabel
-                        control={
-                          <Checkbox value="allowExtraEmails" color="primary" />
-                        }
-                        label="I want to receive inspiration, marketing promotions and updates via email."
-                      />
+                    <Grid sx={{display:{xs:"block",lg:"none"}}} item xs={12}>
+                        <a style={{color:"blue", textDecoration:"underline"}} onClick={()=>{setLogOrSign('sign')}}>Don't have a user? Sign Up!</a>
                     </Grid>
                   </Grid>
 
@@ -145,18 +133,20 @@ const Login = () => {
 
         </Box>
 
-        <Box sx={{backgroundPosition:{xs:"-7.3vw"}, width:{lg:'33vw',xs:"51vw"},left:{lg:'24.4vw',xs:'0vw'},height:{lg:"75vh",xs:"100vh"},marginTop:"3%"}} component="div" className={`logInImageContainer ${imageAni}`}>
+        <Box sx={{display:{xs:"none",lg:'block'}, width:{lg:'30vw'},height:{lg:"75vh",},marginTop:"3%"}} component="div" className={`logInImageContainer`}>
 
-          <Box component="div" className={`logInParagraph ${parAni}`}>
+          <Box component="div" className={`logInParagraph`}>
 
-              {imageAni==='imageSignAni'?<Box sx={{fontSize:{lg:'1.8vw',xs:'7vw'}}}  component="p">Don't have a user? Sign Up! </Box>:<Box sx={{fontSize:{lg:'1.8vw',xs:'7vw'}}} component="p">Already signed up? Log in!</Box>}
-              {imageAni==='imageSignAni'?<Button className="logSignButton" sx={{color:"white",bgcolor:"black"}}  onClick={()=>{setImageAni('imageLogAni');setParAni('parLogAni')}}>Log In</Button>:<Button   sx={{color:"white",bgcolor:"black"}} onClick={()=>{setImageAni('imageSignAni');setParAni('parSignAni');}}>Sign up</Button>}
+              <Box sx={{fontSize:{lg:'1.8vw',xs:'7vw'}}}  component="p">Don't have a user? Sign Up! </Box>
+              <Button   sx={{color:"white",bgcolor:"black"}} onClick={()=>{setLogOrSign('sign')}}>Sign up</Button>
 
           </Box>
 
         </Box>
-      </Box>  
+
+    </>
+    
   );
 };
 
-export default Login;
+export default LogIn;

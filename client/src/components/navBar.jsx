@@ -19,7 +19,7 @@ import { HairCutsContext } from './../context/hairCuts';
 
 export default function NavBar() {
     
-    const {page, setPage, setUserProfileDis, setDis}=useContext(PagenationContext);
+    const {page, setPage, setUserProfileDis, setDis, setLogOrSign}=useContext(PagenationContext);
     const {setPageState,
         setChooseTime,
         setChooseHairCut,
@@ -77,7 +77,7 @@ export default function NavBar() {
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'none':''}} >
-                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton'><Link  to="home" spy={true} smooth={true} onClick={()=>{resetHaircutSchedule("logIn",'/logIn');setDis("none")}}>Log in / Sign up</Link></Box>
+                <Box sx={{height:{lg:"100%",xs:"100%"},fontSize:{lg:'1vw',xs:'2.5vw'}}}  component="button" className='navBarButton'><Link  to="home" spy={true} smooth={true} onClick={()=>{resetHaircutSchedule("logIn",'/logSign');setDis("none");setLogOrSign('log')}}>Log in / Sign up</Link></Box>
             </Box>
 
             <Box sx={{display:localStorage.getItem('token')?'':'none'}}>

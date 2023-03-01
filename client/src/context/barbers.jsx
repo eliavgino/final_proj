@@ -9,7 +9,7 @@ function BarberProvider(props) {
   useEffect(() => {
    if(localStorage.getItem('token'))
     setCerruntBarberId(jwt_decode(localStorage.getItem('token'))._id)
-
+    console.log(process.env.REACT_APP_RENDER_URL)
   }, [])
   
 
@@ -29,7 +29,7 @@ function BarberProvider(props) {
 
   const getAllBarbers = async () => {
     try {
-      let response = await axios.get(url, {});
+      let response = await axios.get(process.env.REACT_APP_RENDER_URL+'/barber', {});
       const barber = response.data;
       //adding the barber into arry of barbers
       setBarbers(barber);
@@ -42,7 +42,7 @@ function BarberProvider(props) {
     try {
     
       let response = await axios.post(
-        "https://final-project-server-dbar.onrender.com/api/v1/barber/barberprofile",
+        process.env.REACT_APP_RENDER_URL+"/barber/barberprofile",
         {id: barberId._id},
         {}
       );

@@ -24,13 +24,14 @@ function HairCutsProvider(props) {
     const [haircuts,setHaircuts]=useState([])
     const [barbers,setBarbers]=useState([])
     const[activeHaircuts,setActiveHaircuts]=useState([])
-    const appointments = [];
+    const appointments=[]
+    const [rAppointments,setRAppointments]=useState([])
     const currentDate = new Date();
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     async function getHairCutsByBarberId(id){
       try {
-        const response = await axios.post("https://final-project-server-dbar.onrender.com/api/v1/hairCut/getHairCutByBarberId",{id});
+        const response = await axios.post(process.env.REACT_APP_RENDER_URL+"/hairCut/getHairCutByBarberId",{id});
         setBarberHairCuts(response.data)
         if(!response){
           console.log("this is empty")
@@ -42,7 +43,7 @@ function HairCutsProvider(props) {
 
     async function getHairCutsByUserId (id){
       try {
-        const response = await axios.post("https://final-project-server-dbar.onrender.com/api/v1/hairCut/getHairCutByUser",{id});
+        const response = await axios.post(process.env.REACT_APP_RENDER_URL+"/hairCut/getHairCutByUser",{id});
         
         setUserHairCuts(response.data)
         console.log(response.data)
@@ -54,7 +55,7 @@ function HairCutsProvider(props) {
 
    async function getAllHaircutsPrice() {
       try {
-          const response = await axios.get("https://final-project-server-dbar.onrender.com/api/v1/product");
+          const response = await axios.get(process.env.REACT_APP_RENDER_URL+"/product");
           let haircuts1 = response.data.filter(product => product.product_type === "haircuts");
           setHaircuts(haircuts1)
           if(!response){
@@ -66,9 +67,8 @@ function HairCutsProvider(props) {
     }
  async function getAllBarbers() {
       try {
-        const response = await axios.get("https://final-project-server-dbar.onrender.com/api/v1/barber");
+        const response = await axios.get(process.env.REACT_APP_RENDER_URL+"/barber");
         setBarbers(response.data);
-        console.log(barbers)
       } catch (error) {
         console.error(error);
         return error;
@@ -76,7 +76,7 @@ function HairCutsProvider(props) {
     };
   async function getUpcomingHairCuts (){
       try {
-        const response = await axios.get("https://final-project-server-dbar.onrender.com/api/v1/haircut");
+        const response = await axios.get(process.env.REACT_APP_RENDER_URL+"/haircut");
         console.log(chooseBarber)
         setActiveHaircuts((response.data.filter(hairCut => hairCut.active === true)));
         
@@ -85,47 +85,129 @@ function HairCutsProvider(props) {
         console.error(error);
       }
     };
+  async function getDayScheduleHairCuts (){
+      try {
+        let filteredHaircuts= activeHaircuts.filter(hairCut=>hairCut.barber._id===chooseBarber._id)
+        
+        let id=0
+        
+        let nextDaysWithEvents=[];
+
+        let eventsCounter=0;
+        
+
+        const response = await axios.get("http://localhost:4000/api/v1/event");
+    
+          for(let i = 0; i <response.data.length; i++){
+
+            for (let j = 0; j <28; j++) {
+
+              const date = new Date(currentDate);
+              date.setDate(currentDate.getDate() + j);
+              date.setHours(2)
+              date.setMinutes(0)
+              date.setSeconds(0)
+              date.setMilliseconds(0)   
+       
+              if((new Date(date)).toISOString()===(new Date(response.data[i].date).toISOString())){
+
+                let start=parseInt(response.data[i].hours.slice(0,2));
+                let end=parseInt(response.data[i].hours.slice(6,8));
+                let duration=end-start;
+                let halfStart=response.data[i].hours.slice(3,4)==='3'
+                let halfEnd=response.data[i].hours.slice(9,10)==='3'
+                nextDaysWithEvents.push({j,details:{duration,start,end,halfStart,halfEnd}});
+                
+              }
+
+            }
+          }
+
+          for (let i = 0; i <28; i++) {
+            const date = new Date(currentDate);
+            date.setDate(currentDate.getDate() + i);
+                  
+            let iDayEvents=nextDaysWithEvents.filter(day=>day['j']===i)
+            
+            iDayEvents.sort((a,b)=>{
+              if (a.details.start>b.details.start) {
+                return 1;
+              }
+              if (a.details.start<b.details.start) {
+                return -1;
+              }
+              return 0;
+              });;
+              
+            for (let hour = 9; hour < 18; hour++) {
+
+              if(iDayEvents[eventsCounter]&&iDayEvents[eventsCounter]['details']['halfStart']!==true&&iDayEvents[eventsCounter]['details']['start']===hour){
+                
+                hour+=iDayEvents[eventsCounter].details.duration-1;              
+                if(iDayEvents[eventsCounter]['details']['halfEnd']===false)            
+                    eventsCounter++;   
+
+              }
+              
+              else{
+
+                for (let minute = 0; minute < 60; minute += 30) {
+
+                  let hourV=hour
+
+                  if(iDayEvents[eventsCounter]&&iDayEvents[eventsCounter]['details']['halfStart']===true&&iDayEvents[eventsCounter]['details']['start']===hour&&minute===30){
+
+                    hour+=iDayEvents[eventsCounter].details.duration-1;
+                    if(iDayEvents[eventsCounter]['details']['halfEnd']===false)            
+                      eventsCounter++; 
+                    break 
+    
+                  }
+
+                  else if(iDayEvents[eventsCounter]&&iDayEvents[eventsCounter]['details']['halfEnd']===true&&iDayEvents[eventsCounter]['details']['end']===hour){
+
+                    minute=30;
+                    eventsCounter++; 
+
+                  }
+
+                  const endHour = (minute + 30 >= 60) ? (hourV + 1)  : hourV;
+                  const endMinute = (minute + 30) % 60;
+                  
+                  let obj={
+                    day: date.getDate(),
+                    date:`${date.getFullYear()}-${("0" + (date.getMonth() + 1)).slice(-2)}-${("0" + date.getDate()).slice(-2)}T00:00:00.000Z`,
+                    time: `${hourV}:${minute.toString().padStart(2, "0")}-${endHour}:${endMinute.toString().padStart(2, "0")}`,
+                    id:id++}
+                    
+                  if(!(filteredHaircuts.some(item => (item.date)=== obj.date && item.hourV === obj.time))){
+          
+                    appointments.push( obj );
+
+                  }}
+                }
+            }
+          }
+          appointments.length=502
+          console.log(appointments)
+          setRAppointments(appointments)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
 
     useEffect(() => {
       getUpcomingHairCuts();
       if(localStorage.getItem('token')&&jwt_decode(localStorage.getItem('token')).role==='client')
       getHairCutsByUserId(jwt_decode(localStorage.getItem('token'))._id);
+      getDayScheduleHairCuts();
     },[role]);
-
-    console.log(activeHaircuts)
-    console.log(chooseBarber._id)
-    let filteredHaircuts= activeHaircuts.filter(hairCut=>hairCut.barber._id===chooseBarber._id)
-    console.log(filteredHaircuts)
-    let id=0
-    for (let i = 0; i <28; i++) {
-      const date = new Date(currentDate);
-      date.setDate(currentDate.getDate() + i);
-       
-            
-      for (let hour = 9; hour < 18; hour++) {
-        for (let minute = 0; minute < 60; minute += 30) {
-          
-          const endHour = (minute + 30 >= 60) ? (hour + 1)  : hour;
-          const endMinute = (minute + 30) % 60;
-           
-          let obj={
-            day: date.getDate(),
-            date:`${date.getFullYear()}-${("0" + (date.getMonth() + 1)).slice(-2)}-${("0" + date.getDate()).slice(-2)}T21:00:00.000Z`,
-            time: `${hour}:${minute.toString().padStart(2, "0")}-${endHour}:${endMinute.toString().padStart(2, "0")}`,
-            id:id++}
-            
-          if(!(filteredHaircuts.some(item => (item.date)=== obj.date && item.hour === obj.time))){
-            
-            appointments.push(obj)
-           }}
-      }
-    }
-    
     
   return (
     <div>
       <HairCutsContext.Provider
-        value={{getHairCutsByBarberId,barberHairCuts,setBarberHairCuts,currentDate,pageState,setPageState,appointments, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token,userHairCuts,setUserHairCuts }}
+        value={{rAppointments, getHairCutsByBarberId,barberHairCuts,setBarberHairCuts,currentDate,pageState,setPageState, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token,userHairCuts,setUserHairCuts }}
       >
         {children}
       </HairCutsContext.Provider>

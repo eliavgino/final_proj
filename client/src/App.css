@@ -564,26 +564,26 @@ body {
 
 }
 /* ////////log in */
-.logSignPageContainer{
+.logInPageContainer{
+
   background-color: #151414;
   display: flex;
   position: relative;
   justify-content: center;
-  justify-items: center;
-  top: 9.5vh;
+  align-items: center;
   overflow: hidden;
   
 }
 .logInContainer{
+
   background-color: white;
   position: relative;
   border: 0.1vw solid rgba(0, 0, 0, 0.404);
-  
 
 }
 .logInImageContainer{
 
-  position: absolute;
+  position: relative;
   background-image: url('../public/images/logIn\ background.jpeg');
   background-repeat: no-repeat;
   height: 75vh;
@@ -594,9 +594,8 @@ body {
 
 }
 .SignUpContainer{
+
   background-color: white;
-
-
   position: relative;
   border: 0.1vw solid rgb(0, 0, 0);
 
@@ -609,56 +608,11 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 40vh;
+  width: 100%;
 
 }
 .logSignButton{
 
-}
-.imageSignAni{
-
- animation: log 0.5s forwards;
-
-}
-@keyframes log {
-  
-100%{
-
-  left:49VW ;
-
-}
-}
-.parSignAni{
-  animation: parSignAni 1s forwards;
-}
-@keyframes parSignAni {
-  
-  100%{
-
-    margin-left: 2.5vw
-
-  }
-}
-.imageLogAni{
-
- animation: imageLogAni 0.5s forwards;
-
-}
-@keyframes imageLogAni {
-0%{
-
-  left: 49vw;
-
-}  
-}
-.parLogAni{
-  animation: parLogAni 1s forwards;
-}
-@keyframes parLogAni {
-  0%{
-
-    margin-left: 2vw;
-
-  }
 }
 /* //////////log in alert */
 .mustLogInContainer{
@@ -870,4 +824,60 @@ body {
   margin: 1vw;
   font-size: 1.2vw;
   color: #000000;
+}
+/* /////////////////////////admin event */
+.adminEventContainer{
+
+  width: 100vw;
+  height: 100vh;  
+  background-color: #00000075;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+}
+.adminEventCardContainer{
+
+  width: 50vw;
+  height: 60vh;
+  background-color: #dad5d5;
+  box-shadow: 0.4vw 0.4vw 0.3vw 0.1vw rgba(0, 0, 0, 0.384);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-direction: row;
+
+}
+.adminEventHoursContainer{
+
+  border-left: 0.1vw solid black;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5vw;
+  overflow-y: scroll;
+  background-color: #ede6e6;
+  row-gap: 0;
+
+}
+.adminEventHours{
+
+  border: 0.1vw solid black;
+
+}
+.green{
+
+  background-color: green;
+
+}
+.green:hover{
+
+  background-color: green;
+
+}
+.adminEventInputContainer{
+
+  margin: 2vw;
+
 }
