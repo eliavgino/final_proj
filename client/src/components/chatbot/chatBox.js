@@ -71,7 +71,6 @@ function ChatBox() {
       }, 10);
 
       //choosing date
-      console.log(first)
       if (data.message.includes(". now you need to choose the Date:")) {
         setTimeout(() => {
           const uniqueDates = new Set();
