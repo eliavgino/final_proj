@@ -23,7 +23,6 @@ import { BrowserRouter } from "react-router-dom";
 import RoleProvider from "./context/role";
 import ChatBox from './components/chatbot/chatBox'
 import Login from './components/log or sign/logIn';
-import AdminEvent from "./components/admin events/adminEvent";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -38,9 +37,9 @@ root.render(
                 <CommentProvider>
                   
                       
-                        {/* <BarberApp/>
-                        <ChatBox/> */}
-                        <AdminEvent/>
+                        <BarberApp/>
+                        <ChatBox/> 
+                       
                       
                   
                 </CommentProvider>
