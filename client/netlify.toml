@@ -2,7 +2,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  [build]
-  environment = {
-    REACT_APP_RENDER_URL="https://final-project-server-dbar.onrender.com/api/v1"
-  }
