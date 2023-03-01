@@ -19,7 +19,7 @@ function ChatBox() {
   const[iconVisable,setIconVisable]=useState("")
   const [conversation, setConversation] = useState([]);
   const autoScroll = useRef(null);
-  const { decoded, token, arAppointments , activeHaircuts } =
+  const { decoded, token, rAppointments , activeHaircuts } =
     useContext(HairCutsContext);
   let chosenBarber;
 
@@ -71,10 +71,11 @@ function ChatBox() {
       }, 10);
 
       //choosing date
+      console.log(first)
       if (data.message.includes(". now you need to choose the Date:")) {
         setTimeout(() => {
           const uniqueDates = new Set();
-          arAppointments
+          rAppointments
             .filter((appointment) => appointment.date)
             .forEach((appointment) => uniqueDates.add(appointment.date));
           setConversation((prevConversation) => [
@@ -121,7 +122,7 @@ function ChatBox() {
         setConversation((prevConversation) => [
           ...prevConversation,
           {
-            message: arAppointments
+            message: rAppointments
               .filter((appointment) => appointment.day == dateData)
               .filter((appointment) =>
                 filteredHaircuts.every((cut) => cut.hour !== appointment.time)

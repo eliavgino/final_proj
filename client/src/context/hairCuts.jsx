@@ -190,7 +190,6 @@ function HairCutsProvider(props) {
             }
           }
           appointments.length=502
-          console.log(appointments)
           setRAppointments(appointments)
       } catch (error) {
         console.error(error);
@@ -207,7 +206,7 @@ function HairCutsProvider(props) {
   return (
     <div>
       <HairCutsContext.Provider
-        value={{ rAppointments, getHairCutsByBarberId,barberHairCuts,setBarberHairCuts,currentDate,pageState,setPageState, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token,userHairCuts,setUserHairCuts }}
+        value={{ appointments , rAppointments, getHairCutsByBarberId,barberHairCuts,setBarberHairCuts,currentDate,pageState,setPageState, getUpcomingHairCuts, getAllBarbers,activeHaircuts,setChooseBarber,chooseBarber,barbers,setChooseHairCut,chooseHairCut,pageState,haircuts,setChooseTime,chooseTime,setPageState, getAllHaircutsPrice,decoded,token,userHairCuts,setUserHairCuts }}
       >
         {children}
       </HairCutsContext.Provider>
