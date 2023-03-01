@@ -97,7 +97,7 @@ function HairCutsProvider(props) {
         let eventsCounter=0;
         
   
-        const response = await axios.get("http://localhost:4000/api/v1/event");
+        const response = await axios.get(process.env.REACT_APP_RENDER_URL+"/event");
     
           for(let i = 0; i <response.data.length; i++){
   
